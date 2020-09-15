@@ -15,7 +15,7 @@ import Foundation
 
 extension App {
     struct String {
-        static let error = "ERROR".localized()
-        static let ok = "OK".localized()
+        static let error = "ERROR"
+        static let ok = "OK"
     }
 }
