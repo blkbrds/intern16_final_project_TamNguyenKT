@@ -20,6 +20,14 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Properties
     private var appleButton: ASAuthorizationAppleIDButton!
+
+    enum ErrorSignIn: String {
+        case cancel = "Cancel.Sign in again"
+        case unknown = "Unknown. Sign in again"
+        case invalidResponse = "InvalidResponse. Sign in again"
+        case notHandle = "Not Handle. Sign in again"
+        case failed = "Failed. Sign in again"
+    }
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -49,7 +57,6 @@ final class LoginViewController: UIViewController {
             appleButton = ASAuthorizationAppleIDButton(type: .default, style: .white)
             appleButton.frame = frame
             view.addSubview(appleButton)
-            
         default:
             let frame = appleButton.frame
             appleButton.removeFromSuperview()
@@ -75,6 +82,13 @@ final class LoginViewController: UIViewController {
     private func configGoogleButton() {
         googleButton.style = .wide
         googleButton.colorScheme = .light
+    }
+    
+    private func createAlert(title: String) {
+        let alert = UIAlertController(title: title)
+        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc private func appleButtonTouchUpInside() {
@@ -115,17 +129,17 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
         guard let error = error as? ASAuthorizationError else { return }
         switch error.code {
         case .canceled:
-            print("Canceled")
+            createAlert(title: ErrorSignIn.cancel.rawValue)
         case .unknown:
-            print("Unknown")
+            createAlert(title: ErrorSignIn.unknown.rawValue)
         case .invalidResponse:
-            print("Invalid Respone")
+            createAlert(title: ErrorSignIn.invalidResponse.rawValue)
         case .notHandled:
-            print("Not handled")
+            createAlert(title: ErrorSignIn.notHandle.rawValue)
         case .failed:
-            print("Failed")
+            createAlert(title: ErrorSignIn.failed.rawValue)
         @unknown default:
-            print("Default")
+            createAlert(title: ErrorSignIn.unknown.rawValue)
         }
     }
 }

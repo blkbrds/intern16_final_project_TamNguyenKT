@@ -16,6 +16,20 @@ final class BaseTabBarViewController: UITabBarController {
     private var mapNavi = UINavigationController(rootViewController: MapViewController())
     private var followNavi = UINavigationController(rootViewController: FollowViewController())
     
+    enum Title: String {
+        case stats = "Stats"
+        case search = "Search"
+        case map = "Map"
+        case follow = "Follow"
+    }
+    
+    enum ImageTabBar: String {
+        case stats = "icon1"
+        case search = "icon2"
+        case map = "icon3"
+        case follow = "icon4"
+    }
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +39,16 @@ final class BaseTabBarViewController: UITabBarController {
     
     // MARK: - Private methods
     private func configViewController() {
-        statsNavi.tabBarItem = UITabBarItem(title: "Stats", image: #imageLiteral(resourceName: "icons8-bar-chart-50.png"), tag: 0)
-        searchNavi.tabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "icons8-search-50.png"), tag: 1)
-        mapNavi.tabBarItem = UITabBarItem(title: "Map", image: #imageLiteral(resourceName: "icons8-map-50.png"), tag: 2)
-        followNavi.tabBarItem = UITabBarItem(title: "Follow", image: #imageLiteral(resourceName: "icons8-latvia-country-50.png"), tag: 3)
+        statsNavi.tabBarItem = UITabBarItem(title: Title.stats.rawValue, image: UIImage(named: ImageTabBar.stats.rawValue), tag: 0)
+        searchNavi.tabBarItem = UITabBarItem(title: Title.search.rawValue, image: UIImage(named: ImageTabBar.search.rawValue), tag: 1)
+        mapNavi.tabBarItem = UITabBarItem(title: Title.map.rawValue, image: UIImage(named: ImageTabBar.map.rawValue), tag: 2)
+        followNavi.tabBarItem = UITabBarItem(title: Title.follow.rawValue, image: UIImage(named: ImageTabBar.follow.rawValue), tag: 3)
         
         setViewControllers([statsNavi, searchNavi, mapNavi, followNavi], animated: false)
     }
     
     private func configTabBar() {
         tabBar.tintColor = .black
-        tabBar.backgroundColor = UIColor(red: 255, green: 251, blue: 245, alpha: 1)
+        tabBar.backgroundColor = App.Color.tabBarBackgroundColor
     }
 }
