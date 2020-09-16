@@ -22,6 +22,10 @@
 		3145406C251091E700696E49 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145406B251091E700696E49 /* DeviceType.swift */; };
 		314540702510948700696E49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3145406F2510948700696E49 /* GoogleService-Info.plist */; };
 		314540832511B8B200696E49 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314540822511B8B200696E49 /* Enum.swift */; };
+		31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */; };
+		31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFD2511E8EF007F8F8D /* ViewController.swift */; };
+		31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFE2511E8EF007F8F8D /* TableCell.swift */; };
+		31FE1D032511E8EF007F8F8D /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFF2511E8EF007F8F8D /* Button.swift */; };
 		D140168E250A322400110A13 /* FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140168D250A322400110A13 /* FinalProjectTests.swift */; };
 		D1401699250A322400110A13 /* FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1401698250A322400110A13 /* FinalProjectUITests.swift */; };
 		D14016D1250A335300110A13 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D14016A8250A335200110A13 /* .gitkeep */; };
@@ -84,6 +88,10 @@
 		3145406F2510948700696E49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31454071251094F200696E49 /* FinalProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinalProject.entitlements; sourceTree = "<group>"; };
 		314540822511B8B200696E49 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		31FE1CFD2511E8EF007F8F8D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		31FE1CFE2511E8EF007F8F8D /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		31FE1CFF2511E8EF007F8F8D /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		55A32BBB6E0353D615726FAB /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 		6307785093DE94D446824149 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1401673250A321B00110A13 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,11 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				31454069251090E900696E49 /* AppDelegate.swift */,
+				31FE1CFB2511E8EF007F8F8D /* Base */,
 				3145404D25108C5800696E49 /* Follow */,
-				3145405025108C5800696E49 /* Search */,
-				3145405325108C5800696E49 /* Map */,
-				3145405625108C5800696E49 /* BaseTabBar */,
 				3145405825108C5800696E49 /* Login */,
+				3145405325108C5800696E49 /* Map */,
+				3145405025108C5800696E49 /* Search */,
 				3145405B25108C5800696E49 /* Stats */,
 			);
 			path = View;
@@ -186,14 +194,6 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		3145405625108C5800696E49 /* BaseTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				3145405725108C5800696E49 /* BaseTabBarViewController.swift */,
-			);
-			path = BaseTabBar;
-			sourceTree = "<group>";
-		};
 		3145405825108C5800696E49 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +210,18 @@
 				3145405D25108C5800696E49 /* StatsViewController.swift */,
 			);
 			path = Stats;
+			sourceTree = "<group>";
+		};
+		31FE1CFB2511E8EF007F8F8D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3145405725108C5800696E49 /* BaseTabBarViewController.swift */,
+				31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */,
+				31FE1CFD2511E8EF007F8F8D /* ViewController.swift */,
+				31FE1CFE2511E8EF007F8F8D /* TableCell.swift */,
+				31FE1CFF2511E8EF007F8F8D /* Button.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		81D8036ED095E621A79E1154 /* Pods */ = {
@@ -639,10 +651,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */,
 				D14016E2250A335300110A13 /* MapperExt.swift in Sources */,
 				D14016EB250A335300110A13 /* Color.swift in Sources */,
 				D14016D5250A335300110A13 /* ResponseSerializer.swift in Sources */,
 				3145406625108C5800696E49 /* LoginViewController.swift in Sources */,
+				31FE1D032511E8EF007F8F8D /* Button.swift in Sources */,
 				D1BB1301250A5ECC00FA0B80 /* DictionaryExt.swift in Sources */,
 				314540832511B8B200696E49 /* Enum.swift in Sources */,
 				D14016E9250A335300110A13 /* Font.swift in Sources */,
@@ -650,6 +664,7 @@
 				D14016E1250A335300110A13 /* UIViewControllerExt.swift in Sources */,
 				3145406425108C5800696E49 /* BaseTabBarViewController.swift in Sources */,
 				D1BB1303250A5F0C00FA0B80 /* Measurement.swift in Sources */,
+				31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */,
 				3145406825108C5800696E49 /* StatsViewController.swift in Sources */,
 				D14016D3250A335300110A13 /* Error.swift in Sources */,
 				D1BB12FD250A57B100FA0B80 /* NSURL.swift in Sources */,
@@ -658,6 +673,7 @@
 				3145406C251091E700696E49 /* DeviceType.swift in Sources */,
 				D14016D4250A335300110A13 /* ApiManager.swift in Sources */,
 				D14016D6250A335300110A13 /* Api.swift in Sources */,
+				31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */,
 				3145406225108C5800696E49 /* MapViewController.swift in Sources */,
 				D14016EA250A335300110A13 /* App.swift in Sources */,
 				D14016E8250A335300110A13 /* String.swift in Sources */,
