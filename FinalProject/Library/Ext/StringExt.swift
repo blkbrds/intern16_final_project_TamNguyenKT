@@ -19,7 +19,7 @@ extension String {
     public func localized(_ comment: String = "") -> String {
         return NSLocalizedString(self, comment: comment)
     }
-
+    
     var trimmed: String {
         return trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }

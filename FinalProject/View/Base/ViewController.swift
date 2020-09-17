@@ -9,4 +9,16 @@
 import UIKit
 import MVVM
 
-class ViewController: UIViewController, MVVM.View { }
+class ViewController: UIViewController, MVVM.View {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateview()
+    }
+    
+    func updateview() {
+    }
+    
+    func updateData() {
+    }
+}

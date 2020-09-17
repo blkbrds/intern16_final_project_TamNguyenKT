@@ -13,7 +13,7 @@
 		3145406125108C5800696E49 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405225108C5800696E49 /* SearchViewController.xib */; };
 		3145406225108C5800696E49 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405425108C5800696E49 /* MapViewController.swift */; };
 		3145406325108C5800696E49 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405525108C5800696E49 /* MapViewController.xib */; };
-		3145406425108C5800696E49 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405725108C5800696E49 /* BaseTabBarViewController.swift */; };
+		3145406425108C5800696E49 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405725108C5800696E49 /* TabBarViewController.swift */; };
 		3145406525108C5800696E49 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405925108C5800696E49 /* LoginViewController.xib */; };
 		3145406625108C5800696E49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405A25108C5800696E49 /* LoginViewController.swift */; };
 		3145406725108C5800696E49 /* StatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405C25108C5800696E49 /* StatsViewController.xib */; };
@@ -78,7 +78,7 @@
 		3145405225108C5800696E49 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		3145405425108C5800696E49 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3145405525108C5800696E49 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
-		3145405725108C5800696E49 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
+		3145405725108C5800696E49 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3145405925108C5800696E49 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3145405A25108C5800696E49 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3145405C25108C5800696E49 /* StatsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsViewController.xib; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		31FE1CFB2511E8EF007F8F8D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				3145405725108C5800696E49 /* BaseTabBarViewController.swift */,
+				3145405725108C5800696E49 /* TabBarViewController.swift */,
 				31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */,
 				31FE1CFD2511E8EF007F8F8D /* ViewController.swift */,
 				31FE1CFE2511E8EF007F8F8D /* TableCell.swift */,
@@ -662,7 +662,7 @@
 				D14016E9250A335300110A13 /* Font.swift in Sources */,
 				D14016E3250A335300110A13 /* DefaultsExt.swift in Sources */,
 				D14016E1250A335300110A13 /* UIViewControllerExt.swift in Sources */,
-				3145406425108C5800696E49 /* BaseTabBarViewController.swift in Sources */,
+				3145406425108C5800696E49 /* TabBarViewController.swift in Sources */,
 				D1BB1303250A5F0C00FA0B80 /* Measurement.swift in Sources */,
 				31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */,
 				3145406825108C5800696E49 /* StatsViewController.swift in Sources */,

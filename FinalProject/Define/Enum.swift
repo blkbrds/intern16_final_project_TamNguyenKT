@@ -9,8 +9,4 @@
 import Foundation
 
 extension App {
-    
-    enum <#name#> {
-        case <#case#>
-    }
 }

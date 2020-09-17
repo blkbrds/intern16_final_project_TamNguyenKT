@@ -13,21 +13,13 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleSignIn
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: ViewController {
     
     // MARK: - IBOulets
     @IBOutlet private weak var googleButton: GIDSignInButton!
     
     // MARK: - Properties
     private var appleButton: ASAuthorizationAppleIDButton!
-
-    enum ErrorSignIn: String {
-        case cancel = "Cancel.Sign in again"
-        case unknown = "Unknown. Sign in again"
-        case invalidResponse = "InvalidResponse. Sign in again"
-        case notHandle = "Not Handle. Sign in again"
-        case failed = "Failed. Sign in again"
-    }
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -84,13 +76,6 @@ final class LoginViewController: UIViewController {
         googleButton.colorScheme = .light
     }
     
-    private func createAlert(title: String) {
-        let alert = UIAlertController(title: title)
-        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     @objc private func appleButtonTouchUpInside() {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
@@ -129,17 +114,17 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
         guard let error = error as? ASAuthorizationError else { return }
         switch error.code {
         case .canceled:
-            createAlert(title: ErrorSignIn.cancel.rawValue)
+            alert(title: App.ErrorSignIn.cancel)
         case .unknown:
-            createAlert(title: ErrorSignIn.unknown.rawValue)
+            alert(title: App.ErrorSignIn.unknown)
         case .invalidResponse:
-            createAlert(title: ErrorSignIn.invalidResponse.rawValue)
+            alert(title: App.ErrorSignIn.invalidResponse)
         case .notHandled:
-            createAlert(title: ErrorSignIn.notHandle.rawValue)
+            alert(title: App.ErrorSignIn.notHandled)
         case .failed:
-            createAlert(title: ErrorSignIn.failed.rawValue)
+            alert(title: App.ErrorSignIn.failed)
         @unknown default:
-            createAlert(title: ErrorSignIn.unknown.rawValue)
+            alert(title: App.ErrorSignIn.unknown)
         }
     }
 }
