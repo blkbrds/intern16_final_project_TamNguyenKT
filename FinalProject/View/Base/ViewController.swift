@@ -8,17 +8,36 @@
 
 import UIKit
 import MVVM
-
 class ViewController: UIViewController, MVVM.View {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updateview()
-    }
+  // MARK: - Life cycle
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+  }
     
-    func updateview() {
-    }
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
     
-    func updateData() {
-    }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
+    
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setUpData()
+    setUpUI()
+  }
+    
+  // MARK: - Public functions
+  func setUpData() { }
+    
+  func setUpUI() {
+    configNavi()
+  }
+    
+  // MARK: - Private functions
+  private func configNavi() {
+    // code here
+  }
 }
