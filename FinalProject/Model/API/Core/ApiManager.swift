@@ -13,7 +13,25 @@ typealias JSObject = [String: Any]
 typealias JSArray = [JSObject]
 
 typealias Completion = (Result<Any>) -> Void
+typealias APICompleetion = (APIResult) -> Void
 
+enum APIResult {
+    case success
+    case failure(Error)
+}
+
+// MARK: - Get error for api result
+extension APIResult {
+    
+    var error: Error? {
+        switch self {
+        case .success:
+            return nil
+        case .failure(let error):
+            return error
+        }
+    }
+}
 let api = ApiManager()
 
 final class ApiManager {

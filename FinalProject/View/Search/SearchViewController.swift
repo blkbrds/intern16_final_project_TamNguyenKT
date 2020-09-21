@@ -8,23 +8,42 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
-
+final class SearchViewController: ViewController {
+    
+    // MARK: - IBOulets
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var searchBar: UISearchBar!
+    
+    // MARK: - Properties
+    private var cellIdentifier: String = "SearchCell"
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func setUpUI() {
+        let nib = UINib(nibName: "SearchTableViewCell", bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
-    */
+    // MARK: - Private methods
 
+}
+// MARK: - Extension UITableViewDataSource
+extension SearchViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+// MARK: - Extension UITableViewDelegate
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 }

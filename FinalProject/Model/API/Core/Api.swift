@@ -20,6 +20,27 @@ final class Api {
     }
 }
 
+final class Path {
+    
+    struct CovidPath {
+        static let baseURL = "https://api.covid19api.com"
+        static let summaryURL = "/summary"
+        static let liveURL = "/live/country"
+        static let worldURL = "/world/total"
+        static let countriesURL = "/countries"
+    }
+    
+    struct Stats { }
+    struct Search { }
+    struct Detail { }
+}
+
+extension Api.Path {
+    struct Search {
+        var searchURL: String { return Path.CovidPath.baseURL + Path.CovidPath.summaryURL }
+    }
+}
+
 protocol URLStringConvertible {
     var urlString: String { get }
 }
