@@ -26,6 +26,5 @@ extension App {
         static let invalidResponse = "InvalidResponse"
         static let notHandled = "NotHandled"
         static let failed = "Failed"
-        
     }
 }

@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="FinalProject" customModuleProvider="target">
             <connections>
-                <outlet property="searchBar" destination="B3G-91-a0u" id="lCi-lL-WD6"/>
                 <outlet property="tableView" destination="xef-Eb-fUV" id="ZdM-dU-qcs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,28 +19,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xef-Eb-fUV">
-                    <rect key="frame" x="0.0" y="79" width="414" height="783"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="ngk-uD-PuH"/>
                         <outlet property="delegate" destination="-1" id="dyJ-r2-Tkh"/>
                     </connections>
                 </tableView>
-                <searchBar contentMode="redraw" fixedFrame="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B3G-91-a0u">
-                    <rect key="frame" x="0.0" y="35" width="414" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="8uk-9a-ayT"/>
-                    </connections>
-                </searchBar>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="xef-Eb-fUV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0FG-LH-ZbO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xef-Eb-fUV" secondAttribute="trailing" id="1Tm-HA-MJg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xef-Eb-fUV" secondAttribute="bottom" id="AJf-o3-Fl3"/>
-                <constraint firstItem="xef-Eb-fUV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="35" id="uGF-7H-B85"/>
+                <constraint firstItem="xef-Eb-fUV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uGF-7H-B85"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="133" y="138"/>

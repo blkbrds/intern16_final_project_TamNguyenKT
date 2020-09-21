@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import  Alamofire
 
 final class Api {
     struct Path {
@@ -20,7 +21,7 @@ final class Api {
     }
 }
 
-final class Path {
+extension Api.Path {
     
     struct CovidPath {
         static let baseURL = "https://api.covid19api.com"
@@ -33,12 +34,6 @@ final class Path {
     struct Stats { }
     struct Search { }
     struct Detail { }
-}
-
-extension Api.Path {
-    struct Search {
-        var searchURL: String { return Path.CovidPath.baseURL + Path.CovidPath.summaryURL }
-    }
 }
 
 protocol URLStringConvertible {

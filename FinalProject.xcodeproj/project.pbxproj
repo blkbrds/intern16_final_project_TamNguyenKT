@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3117441B251843DF006D2516 /* API.Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117441A251843DF006D2516 /* API.Covid.swift */; };
+		3117441D25185EB7006D2516 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117441C25185EB7006D2516 /* SearchViewModel.swift */; };
 		3143526E2513178E000CBA59 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526D2513178E000CBA59 /* Country.swift */; };
 		3143527025131B94000CBA59 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526F25131B94000CBA59 /* Covid.swift */; };
 		3143527225131DDA000CBA59 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143527125131DDA000CBA59 /* Global.swift */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		07F80737CD9B19E7B3ADD5F6 /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
 		3117441A251843DF006D2516 /* API.Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Covid.swift; sourceTree = "<group>"; };
+		3117441C25185EB7006D2516 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		3143526D2513178E000CBA59 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		3143526F25131B94000CBA59 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		3143527125131DDA000CBA59 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				31FE1D042512FF7C007F8F8D /* Cell */,
 				3145405125108C5800696E49 /* SearchViewController.swift */,
+				3117441C25185EB7006D2516 /* SearchViewModel.swift */,
 				3145405225108C5800696E49 /* SearchViewController.xib */,
 			);
 			path = Search;
@@ -704,6 +707,7 @@
 				D14016E2250A335300110A13 /* MapperExt.swift in Sources */,
 				D14016EB250A335300110A13 /* Color.swift in Sources */,
 				3143527025131B94000CBA59 /* Covid.swift in Sources */,
+				3117441D25185EB7006D2516 /* SearchViewModel.swift in Sources */,
 				D14016D5250A335300110A13 /* ResponseSerializer.swift in Sources */,
 				3145406625108C5800696E49 /* LoginViewController.swift in Sources */,
 				31FE1D032511E8EF007F8F8D /* Button.swift in Sources */,
