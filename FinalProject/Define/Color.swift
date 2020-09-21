@@ -19,7 +19,7 @@ extension App {
         static let tableHeaderView = UIColor.gray
         static let tableFooterView = UIColor.red
         static let tableCellTextLabel = UIColor.yellow
-
+        static let tabBarBackgroundColor = UIColor(red: 255, green: 251, blue: 245, alpha: 1)
         static func button(state: UIControl.State) -> UIColor {
             switch state {
             case UIControl.State.normal: return .blue

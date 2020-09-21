@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3145405E25108C5800696E49 /* FollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145404E25108C5800696E49 /* FollowViewController.xib */; };
+		3145405F25108C5800696E49 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145404F25108C5800696E49 /* FollowViewController.swift */; };
+		3145406025108C5800696E49 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405125108C5800696E49 /* SearchViewController.swift */; };
+		3145406125108C5800696E49 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405225108C5800696E49 /* SearchViewController.xib */; };
+		3145406225108C5800696E49 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405425108C5800696E49 /* MapViewController.swift */; };
+		3145406325108C5800696E49 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405525108C5800696E49 /* MapViewController.xib */; };
+		3145406425108C5800696E49 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405725108C5800696E49 /* TabBarViewController.swift */; };
+		3145406525108C5800696E49 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405925108C5800696E49 /* LoginViewController.xib */; };
+		3145406625108C5800696E49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405A25108C5800696E49 /* LoginViewController.swift */; };
+		3145406725108C5800696E49 /* StatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405C25108C5800696E49 /* StatsViewController.xib */; };
+		3145406825108C5800696E49 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405D25108C5800696E49 /* StatsViewController.swift */; };
+		3145406A251090E900696E49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31454069251090E900696E49 /* AppDelegate.swift */; };
+		3145406C251091E700696E49 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145406B251091E700696E49 /* DeviceType.swift */; };
+		314540702510948700696E49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3145406F2510948700696E49 /* GoogleService-Info.plist */; };
+		314540832511B8B200696E49 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314540822511B8B200696E49 /* Enum.swift */; };
+		31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */; };
+		31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFD2511E8EF007F8F8D /* ViewController.swift */; };
+		31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFE2511E8EF007F8F8D /* TableCell.swift */; };
+		31FE1D032511E8EF007F8F8D /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFF2511E8EF007F8F8D /* Button.swift */; };
 		D140168E250A322400110A13 /* FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140168D250A322400110A13 /* FinalProjectTests.swift */; };
 		D1401699250A322400110A13 /* FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1401698250A322400110A13 /* FinalProjectUITests.swift */; };
 		D14016D1250A335300110A13 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D14016A8250A335200110A13 /* .gitkeep */; };
@@ -15,14 +34,6 @@
 		D14016D4250A335300110A13 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016AD250A335200110A13 /* ApiManager.swift */; };
 		D14016D5250A335300110A13 /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016AE250A335200110A13 /* ResponseSerializer.swift */; };
 		D14016D6250A335300110A13 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016AF250A335200110A13 /* Api.swift */; };
-		D14016D7250A335300110A13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14016B2250A335200110A13 /* LaunchScreen.storyboard */; };
-		D14016D8250A335300110A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016B3250A335200110A13 /* AppDelegate.swift */; };
-		D14016D9250A335300110A13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016B4250A335200110A13 /* ContentView.swift */; };
-		D14016DA250A335300110A13 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016B6250A335200110A13 /* CollectionCell.swift */; };
-		D14016DB250A335300110A13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016B7250A335200110A13 /* ViewController.swift */; };
-		D14016DC250A335300110A13 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016B8250A335200110A13 /* TableCell.swift */; };
-		D14016DD250A335300110A13 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016B9250A335200110A13 /* Button.swift */; };
-		D14016DE250A335300110A13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016BA250A335200110A13 /* SceneDelegate.swift */; };
 		D14016DF250A335300110A13 /* InputViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016BD250A335300110A13 /* InputViewExt.swift */; };
 		D14016E0250A335300110A13 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016BE250A335300110A13 /* StringExt.swift */; };
 		D14016E1250A335300110A13 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14016BF250A335300110A13 /* UIViewControllerExt.swift */; };
@@ -61,6 +72,26 @@
 
 /* Begin PBXFileReference section */
 		07F80737CD9B19E7B3ADD5F6 /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
+		3145404E25108C5800696E49 /* FollowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowViewController.xib; sourceTree = "<group>"; };
+		3145404F25108C5800696E49 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		3145405125108C5800696E49 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3145405225108C5800696E49 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		3145405425108C5800696E49 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3145405525108C5800696E49 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		3145405725108C5800696E49 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3145405925108C5800696E49 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3145405A25108C5800696E49 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3145405C25108C5800696E49 /* StatsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsViewController.xib; sourceTree = "<group>"; };
+		3145405D25108C5800696E49 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		31454069251090E900696E49 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../../Desktop/DayByDay/LoginwthGoogleApplewihFirebase/LoginwthGoogleApplewihFirebase/AppDelegate.swift; sourceTree = "<group>"; };
+		3145406B251091E700696E49 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		3145406F2510948700696E49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31454071251094F200696E49 /* FinalProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinalProject.entitlements; sourceTree = "<group>"; };
+		314540822511B8B200696E49 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		31FE1CFD2511E8EF007F8F8D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		31FE1CFE2511E8EF007F8F8D /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		31FE1CFF2511E8EF007F8F8D /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		55A32BBB6E0353D615726FAB /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 		6307785093DE94D446824149 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1401673250A321B00110A13 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,14 +107,6 @@
 		D14016AD250A335200110A13 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		D14016AE250A335200110A13 /* ResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		D14016AF250A335200110A13 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		D14016B2250A335200110A13 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D14016B3250A335200110A13 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D14016B4250A335200110A13 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D14016B6250A335200110A13 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
-		D14016B7250A335200110A13 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D14016B8250A335200110A13 /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
-		D14016B9250A335200110A13 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		D14016BA250A335200110A13 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D14016BD250A335300110A13 /* InputViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewExt.swift; sourceTree = "<group>"; };
 		D14016BE250A335300110A13 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		D14016BF250A335300110A13 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -130,6 +153,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3145404C25108C5800696E49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				31454069251090E900696E49 /* AppDelegate.swift */,
+				31FE1CFB2511E8EF007F8F8D /* Base */,
+				3145404D25108C5800696E49 /* Follow */,
+				3145405825108C5800696E49 /* Login */,
+				3145405325108C5800696E49 /* Map */,
+				3145405025108C5800696E49 /* Search */,
+				3145405B25108C5800696E49 /* Stats */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3145404D25108C5800696E49 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				3145404E25108C5800696E49 /* FollowViewController.xib */,
+				3145404F25108C5800696E49 /* FollowViewController.swift */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		3145405025108C5800696E49 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				3145405125108C5800696E49 /* SearchViewController.swift */,
+				3145405225108C5800696E49 /* SearchViewController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		3145405325108C5800696E49 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3145405425108C5800696E49 /* MapViewController.swift */,
+				3145405525108C5800696E49 /* MapViewController.xib */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		3145405825108C5800696E49 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3145405925108C5800696E49 /* LoginViewController.xib */,
+				3145405A25108C5800696E49 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3145405B25108C5800696E49 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				3145405C25108C5800696E49 /* StatsViewController.xib */,
+				3145405D25108C5800696E49 /* StatsViewController.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		31FE1CFB2511E8EF007F8F8D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3145405725108C5800696E49 /* TabBarViewController.swift */,
+				31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */,
+				31FE1CFD2511E8EF007F8F8D /* ViewController.swift */,
+				31FE1CFE2511E8EF007F8F8D /* TableCell.swift */,
+				31FE1CFF2511E8EF007F8F8D /* Button.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		81D8036ED095E621A79E1154 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,13 +258,15 @@
 		D1401675250A321C00110A13 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				31454071251094F200696E49 /* FinalProject.entitlements */,
+				3145406F2510948700696E49 /* GoogleService-Info.plist */,
 				D14016CA250A335300110A13 /* Define */,
 				D14016BB250A335300110A13 /* Library */,
 				D14016A6250A335200110A13 /* Model */,
 				D14016C2250A335300110A13 /* Preview Content */,
 				D14016C4250A335300110A13 /* Resources */,
 				D14016C8250A335300110A13 /* Supports */,
-				D14016B0250A335200110A13 /* View */,
+				3145404C25108C5800696E49 /* View */,
 				D14016CF250A335300110A13 /* ViewModel */,
 			);
 			path = FinalProject;
@@ -231,37 +327,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		D14016B0250A335200110A13 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D14016B3250A335200110A13 /* AppDelegate.swift */,
-				D14016B5250A335200110A13 /* Base */,
-				D14016B4250A335200110A13 /* ContentView.swift */,
-				D14016BA250A335200110A13 /* SceneDelegate.swift */,
-				D14016B1250A335200110A13 /* Storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D14016B1250A335200110A13 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				D14016B2250A335200110A13 /* LaunchScreen.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		D14016B5250A335200110A13 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				D14016B6250A335200110A13 /* CollectionCell.swift */,
-				D14016B7250A335200110A13 /* ViewController.swift */,
-				D14016B8250A335200110A13 /* TableCell.swift */,
-				D14016B9250A335200110A13 /* Button.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		D14016BB250A335300110A13 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,10 +379,12 @@
 			isa = PBXGroup;
 			children = (
 				D14016CD250A335300110A13 /* App.swift */,
+				314540822511B8B200696E49 /* Enum.swift */,
 				D14016CE250A335300110A13 /* Color.swift */,
 				D14016CC250A335300110A13 /* Font.swift */,
 				D1BB1302250A5F0C00FA0B80 /* Measurement.swift */,
 				D14016CB250A335300110A13 /* String.swift */,
+				3145406B251091E700696E49 /* DeviceType.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -351,6 +418,7 @@
 				D1401670250A321B00110A13 /* Frameworks */,
 				D1401671250A321B00110A13 /* Resources */,
 				0C1F96507180FBF166515C21 /* [CP] Embed Pods Frameworks */,
+				6E03542C36FFBEDFACFED1F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -445,10 +513,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3145406525108C5800696E49 /* LoginViewController.xib in Resources */,
 				D14016E4250A335300110A13 /* Preview Assets.xcassets in Resources */,
-				D14016D7250A335300110A13 /* LaunchScreen.storyboard in Resources */,
+				3145405E25108C5800696E49 /* FollowViewController.xib in Resources */,
+				3145406125108C5800696E49 /* SearchViewController.xib in Resources */,
 				D14016E6250A335300110A13 /* LaunchScreen.storyboard in Resources */,
+				3145406325108C5800696E49 /* MapViewController.xib in Resources */,
 				D14016D1250A335300110A13 /* .gitkeep in Resources */,
+				314540702510948700696E49 /* GoogleService-Info.plist in Resources */,
+				3145406725108C5800696E49 /* StatsViewController.xib in Resources */,
 				D14016E5250A335300110A13 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,15 +554,23 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MVVM-Swift/MVVM.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -497,19 +578,49 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVM.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E03542C36FFBEDFACFED1F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		87B63BD2BAF4902C4EEDC8AB /* [CP] Check Pods Manifest.lock */ = {
@@ -559,31 +670,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */,
 				D14016E2250A335300110A13 /* MapperExt.swift in Sources */,
-				D14016DC250A335300110A13 /* TableCell.swift in Sources */,
 				D14016EB250A335300110A13 /* Color.swift in Sources */,
-				D14016D8250A335300110A13 /* AppDelegate.swift in Sources */,
 				D14016D5250A335300110A13 /* ResponseSerializer.swift in Sources */,
+				3145406625108C5800696E49 /* LoginViewController.swift in Sources */,
+				31FE1D032511E8EF007F8F8D /* Button.swift in Sources */,
 				D1BB1301250A5ECC00FA0B80 /* DictionaryExt.swift in Sources */,
+				314540832511B8B200696E49 /* Enum.swift in Sources */,
 				D14016E9250A335300110A13 /* Font.swift in Sources */,
-				D14016D9250A335300110A13 /* ContentView.swift in Sources */,
 				D14016E3250A335300110A13 /* DefaultsExt.swift in Sources */,
-				D14016DB250A335300110A13 /* ViewController.swift in Sources */,
 				D14016E1250A335300110A13 /* UIViewControllerExt.swift in Sources */,
-				D14016DA250A335300110A13 /* CollectionCell.swift in Sources */,
+				3145406425108C5800696E49 /* TabBarViewController.swift in Sources */,
 				D1BB1303250A5F0C00FA0B80 /* Measurement.swift in Sources */,
+				31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */,
+				3145406825108C5800696E49 /* StatsViewController.swift in Sources */,
 				D14016D3250A335300110A13 /* Error.swift in Sources */,
 				D1BB12FD250A57B100FA0B80 /* NSURL.swift in Sources */,
+				3145406A251090E900696E49 /* AppDelegate.swift in Sources */,
+				3145406025108C5800696E49 /* SearchViewController.swift in Sources */,
+				3145406C251091E700696E49 /* DeviceType.swift in Sources */,
 				D14016D4250A335300110A13 /* ApiManager.swift in Sources */,
 				D14016D6250A335300110A13 /* Api.swift in Sources */,
+				31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */,
+				3145406225108C5800696E49 /* MapViewController.swift in Sources */,
 				D14016EA250A335300110A13 /* App.swift in Sources */,
 				D14016E8250A335300110A13 /* String.swift in Sources */,
 				D14016D2250A335300110A13 /* RequestSerializer.swift in Sources */,
 				D14016E0250A335300110A13 /* StringExt.swift in Sources */,
-				D14016DD250A335300110A13 /* Button.swift in Sources */,
+				3145405F25108C5800696E49 /* FollowViewController.swift in Sources */,
 				D14016DF250A335300110A13 /* InputViewExt.swift in Sources */,
 				D1BB12FF250A5E4E00FA0B80 /* DataExt.swift in Sources */,
-				D14016DE250A335300110A13 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,8 +866,10 @@
 			baseConfigurationReference = 55A32BBB6E0353D615726FAB /* Pods-FinalProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FinalProject/FinalProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalProject/Preview Content\"";
+				DEVELOPMENT_TEAM = 359AM89X26;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FinalProject/Supports/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -769,8 +888,10 @@
 			baseConfigurationReference = 07F80737CD9B19E7B3ADD5F6 /* Pods-FinalProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FinalProject/FinalProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalProject/Preview Content\"";
+				DEVELOPMENT_TEAM = 359AM89X26;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FinalProject/Supports/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
