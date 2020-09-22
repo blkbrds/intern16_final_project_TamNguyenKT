@@ -14,7 +14,6 @@ final class Api {
     struct Path {
         static let baseURL = "https://api.covid19api.com"
         static let summaryURL = "/summary"
-        static let liveURL = "/live/country"
         static let worldURL = "/world/total"
         static let countriesURL = "/countries"
         static let dayoneURL = "/dayone/country/"
@@ -57,7 +56,7 @@ extension CustomStringConvertible where Self: URLStringConvertible {
 extension Api.Path {
 
     struct Detail {
-        static var path: String { return baseURL + dayoneURL + "" }
+        static var path: String { return baseURL + dayoneURL }
     }
 
     struct Search {

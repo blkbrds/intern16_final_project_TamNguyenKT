@@ -19,3 +19,5 @@ struct Facebook {
     static var apiPublicKey: String { return "publicKey" }
     static var apiSecretKey: String { return "secretKey" }
 }
+
+

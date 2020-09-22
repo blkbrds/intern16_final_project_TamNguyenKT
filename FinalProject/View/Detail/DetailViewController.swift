@@ -15,10 +15,12 @@ final class DetailViewController: ViewController {
 
     // MARK: - Properties
     private var cellIdentifier: String = "DetailCell"
+    var viewModel: DetailViewModel = DetailViewModel()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = viewModel.title
     }
 
     // MARK: - Override methods
@@ -40,8 +42,8 @@ extension DetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
+        //cell.viewModel = viewModel.
     }
 }
 

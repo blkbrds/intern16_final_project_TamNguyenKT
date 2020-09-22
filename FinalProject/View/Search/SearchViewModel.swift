@@ -16,7 +16,7 @@ final class SearchViewModel {
 
     // MARK: - Function
     func getData(completion: @escaping APICompletion) {
-        Api.Path.Search.getAllDataInSearch() { (result) in
+        Api.Path.Search.getAllDataInSearch() { result in
             switch result {
             case .failure(let error):
                 completion( .failure(error))
@@ -38,9 +38,11 @@ final class SearchViewModel {
         return viewModel
     }
 
-    func getNameCountry(at indexPath: IndexPath) -> String {
+    func getNameCountry(at indexPath: IndexPath) -> DetailViewModel {
         let item = filter[indexPath.row]
         let nameCountry = item.countryName
-        return nameCountry
+        let codeCountry = item.countryCode
+        let detail = DetailViewModel(title: nameCountry, codeCountry: codeCountry)
+        return detail
     }
 }

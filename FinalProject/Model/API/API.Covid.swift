@@ -14,7 +14,7 @@ extension Api.Path.Search {
 
     static func getAllDataInSearch(completion: @escaping CompletionResult<[Country]>) {
         let urlString = path
-        api.request(method: .get, urlString: urlString) { (result) in
+        api.request(method: .get, urlString: urlString) { result in
             switch result {
             case .success(let data):
                 if let data = data as? JSObject, let countries = data["Countries"] as? JSArray {
@@ -36,10 +36,24 @@ extension Api.Path.Search {
 
 extension Api.Path.Detail {
 
-        static func getDataCellOne(completion: @escaping CompletionResult<Country>) {
-            let urlString = path
-            api.request(method: .get, urlString: urlString) { (result) in
-
+    static func getDataCellOne(urlString: String, completion: @escaping CompletionResult<DayOneCountry>) {
+        api.request(method: .get, urlString: urlString) { result in
+            switch result {
+            case .success(let data):
+                if let data = data as? JSArray {
+                    let item: [DayOneCountry] = Mapper<DayOneCountry>().mapArray(JSONArray: data)
+                    let lastItem = item.last
+                    if lastItem != nil {
+                        completion( .success(lastItem ?? DayOneCountry()))
+                    } else {
+                        completion( .failure(Api.Error.emptyData))
+                    }
+                } else {
+                    completion( .failure(Api.Error.emptyData))
+                }
+            case .failure(let error):
+                completion( .failure(error))
             }
         }
+    }
 }

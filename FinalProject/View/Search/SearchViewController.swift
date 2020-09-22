@@ -95,7 +95,7 @@ extension SearchViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         let vc = DetailViewController()
-        vc.title = viewModel.getNameCountry(at: indexPath)
+        vc.viewModel = viewModel.getNameCountry(at: indexPath)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
