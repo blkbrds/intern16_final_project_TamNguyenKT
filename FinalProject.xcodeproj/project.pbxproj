@@ -13,6 +13,8 @@
 		31174422251994E1006D2516 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31174420251994E1006D2516 /* DetailViewController.xib */; };
 		31174426251995FB006D2516 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31174424251995FB006D2516 /* DetailTableViewCell.swift */; };
 		31174427251995FB006D2516 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31174425251995FB006D2516 /* DetailTableViewCell.xib */; };
+		311744292519AD32006D2516 /* DetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311744282519AD32006D2516 /* DetailCellModel.swift */; };
+		3117442B2519AF2C006D2516 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117442A2519AF2C006D2516 /* DetailViewModel.swift */; };
 		3143526E2513178E000CBA59 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526D2513178E000CBA59 /* Country.swift */; };
 		3143527025131B94000CBA59 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526F25131B94000CBA59 /* Covid.swift */; };
 		3143527225131DDA000CBA59 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143527125131DDA000CBA59 /* Global.swift */; };
@@ -90,6 +92,8 @@
 		31174420251994E1006D2516 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		31174424251995FB006D2516 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		31174425251995FB006D2516 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		311744282519AD32006D2516 /* DetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellModel.swift; sourceTree = "<group>"; };
+		3117442A2519AF2C006D2516 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		3143526D2513178E000CBA59 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		3143526F25131B94000CBA59 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		3143527125131DDA000CBA59 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			children = (
 				31174423251995DB006D2516 /* DetailCell */,
 				3117441F251994E1006D2516 /* DetailViewController.swift */,
+				3117442A2519AF2C006D2516 /* DetailViewModel.swift */,
 				31174420251994E1006D2516 /* DetailViewController.xib */,
 			);
 			path = Detail;
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				31174424251995FB006D2516 /* DetailTableViewCell.swift */,
+				311744282519AD32006D2516 /* DetailCellModel.swift */,
 				31174425251995FB006D2516 /* DetailTableViewCell.xib */,
 			);
 			path = DetailCell;
@@ -751,6 +757,7 @@
 				3143527225131DDA000CBA59 /* Global.swift in Sources */,
 				3145406425108C5800696E49 /* TabBarViewController.swift in Sources */,
 				D1BB1303250A5F0C00FA0B80 /* Measurement.swift in Sources */,
+				311744292519AD32006D2516 /* DetailCellModel.swift in Sources */,
 				31174426251995FB006D2516 /* DetailTableViewCell.swift in Sources */,
 				31FE1D072512FFB2007F8F8D /* SearchTableViewCell.swift in Sources */,
 				31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */,
@@ -769,6 +776,7 @@
 				D14016EA250A335300110A13 /* App.swift in Sources */,
 				D14016E8250A335300110A13 /* String.swift in Sources */,
 				D14016D2250A335300110A13 /* RequestSerializer.swift in Sources */,
+				3117442B2519AF2C006D2516 /* DetailViewModel.swift in Sources */,
 				D14016E0250A335300110A13 /* StringExt.swift in Sources */,
 				3145405F25108C5800696E49 /* FollowViewController.swift in Sources */,
 				D14016DF250A335300110A13 /* InputViewExt.swift in Sources */,

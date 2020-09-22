@@ -92,7 +92,11 @@ extension SearchViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = DetailViewController()
+        vc.title = viewModel.getNameCountry(at: indexPath)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

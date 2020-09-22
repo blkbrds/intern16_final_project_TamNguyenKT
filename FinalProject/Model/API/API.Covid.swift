@@ -12,14 +12,8 @@ import ObjectMapper
 
 extension Api.Path.Search {
 
-    struct GetUrlString {
-        func getUrlString() -> String {
-            return Api.Path.CovidPath.baseURL + Api.Path.CovidPath.summaryURL
-        }
-    }
-
     static func getAllDataInSearch(completion: @escaping CompletionResult<[Country]>) {
-        let urlString = GetUrlString().getUrlString()
+        let urlString = path
         api.request(method: .get, urlString: urlString) { (result) in
             switch result {
             case .success(let data):
@@ -38,4 +32,14 @@ extension Api.Path.Search {
             }
         }
     }
+}
+
+extension Api.Path.Detail {
+
+        static func getDataCellOne(completion: @escaping CompletionResult<Country>) {
+            let urlString = path
+            api.request(method: .get, urlString: urlString) { (result) in
+                
+            }
+        }
 }

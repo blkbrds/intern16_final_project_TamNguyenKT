@@ -11,6 +11,9 @@ import UIKit
 final class DetailTableViewCell: UITableViewCell {
 
     // MARK: - IBOulets
+    @IBOutlet private weak var newCasesLabel: UILabel!
+    @IBOutlet private weak var newDeathsLabel: UILabel!
+    @IBOutlet private weak var newRecoveredLabel: UILabel!
     // MARK: - Properties
     // MARK: - Private methods
 }

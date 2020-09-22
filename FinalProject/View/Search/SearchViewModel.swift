@@ -37,4 +37,10 @@ final class SearchViewModel {
         let viewModel = SearchCellModel(country: item)
         return viewModel
     }
+
+    func getNameCountry(at indexPath: IndexPath) -> String {
+        let item = filter[indexPath.row]
+        let nameCountry = item.countryName
+        return nameCountry
+    }
 }

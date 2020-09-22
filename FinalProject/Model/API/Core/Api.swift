@@ -10,30 +10,20 @@ import Foundation
 import  Alamofire
 
 final class Api {
+
     struct Path {
-        #if DEBUG
-            static let baseURL = "https://dev-asiantech.vn"
-        #elseif STG
-            static let baseURL = "https://stg-asiantech.vn"
-        #else
-            static let baseURL = "https://pro-asiantech.vn"
-        #endif
-    }
-}
-
-extension Api.Path {
-
-    struct CovidPath {
         static let baseURL = "https://api.covid19api.com"
         static let summaryURL = "/summary"
         static let liveURL = "/live/country"
         static let worldURL = "/world/total"
         static let countriesURL = "/countries"
+        static let dayoneURL = "/dayone/country/"
     }
-
+    
     struct Stats { }
     struct Search { }
     struct Detail { }
+    struct Map {}
 }
 
 protocol URLStringConvertible {
@@ -62,4 +52,15 @@ extension String: URLStringConvertible {
 
 extension CustomStringConvertible where Self: URLStringConvertible {
     var urlString: String { return description }
+}
+
+extension Api.Path {
+
+    struct Detail {
+        static var path: String { return baseURL + dayoneURL + "" }
+    }
+
+    struct Search {
+        static var path: String { return baseURL + summaryURL }
+    }
 }
