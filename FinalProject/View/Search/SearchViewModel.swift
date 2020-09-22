@@ -9,11 +9,11 @@
 import Foundation
 
 final class SearchViewModel {
-    
+
     // MARK: - Properties
     var countries: [Country] = []
     var filter: [Country] = []
-    
+
     // MARK: - Function
     func getData(completion: @escaping APICompletion) {
         Api.Path.Search.getAllDataInSearch() { (result) in
@@ -27,11 +27,11 @@ final class SearchViewModel {
             }
         }
     }
-    
+
     func numberOfRowInSection() -> Int {
         return filter.count
     }
-    
+
     func viewModelForCell(at indexPath: IndexPath) -> SearchCellModel {
         let item = filter[indexPath.row]
         let viewModel = SearchCellModel(country: item)

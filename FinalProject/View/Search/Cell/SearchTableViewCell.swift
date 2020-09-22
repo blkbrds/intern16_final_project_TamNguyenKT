@@ -16,14 +16,15 @@ final class SearchTableViewCell: UITableViewCell {
     @IBOutlet private weak var numbercaseLabel: UILabel!
     @IBOutlet private weak var numberDeadthLabel: UILabel!
     @IBOutlet private weak var numberRecoveredLabel: UILabel!
-    
+    @IBOutlet private weak var followButton: UIButton!
+
     // MARK: - Properties
     var viewModel: SearchCellModel? {
         didSet {
             updateView()
         }
     }
-    
+
     // MARK: - Private methods
     private func updateView() {
         countryNameLabel.text = viewModel?.countryName

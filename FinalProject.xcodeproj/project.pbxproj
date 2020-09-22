@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3117441B251843DF006D2516 /* API.Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117441A251843DF006D2516 /* API.Covid.swift */; };
 		3117441D25185EB7006D2516 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117441C25185EB7006D2516 /* SearchViewModel.swift */; };
+		31174421251994E1006D2516 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117441F251994E1006D2516 /* DetailViewController.swift */; };
+		31174422251994E1006D2516 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31174420251994E1006D2516 /* DetailViewController.xib */; };
+		31174426251995FB006D2516 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31174424251995FB006D2516 /* DetailTableViewCell.swift */; };
+		31174427251995FB006D2516 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31174425251995FB006D2516 /* DetailTableViewCell.xib */; };
 		3143526E2513178E000CBA59 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526D2513178E000CBA59 /* Country.swift */; };
 		3143527025131B94000CBA59 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526F25131B94000CBA59 /* Covid.swift */; };
 		3143527225131DDA000CBA59 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143527125131DDA000CBA59 /* Global.swift */; };
@@ -82,6 +86,10 @@
 		07F80737CD9B19E7B3ADD5F6 /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
 		3117441A251843DF006D2516 /* API.Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Covid.swift; sourceTree = "<group>"; };
 		3117441C25185EB7006D2516 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		3117441F251994E1006D2516 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		31174420251994E1006D2516 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		31174424251995FB006D2516 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		31174425251995FB006D2516 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		3143526D2513178E000CBA59 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		3143526F25131B94000CBA59 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		3143527125131DDA000CBA59 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -169,9 +177,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3117441E25199479006D2516 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				31174423251995DB006D2516 /* DetailCell */,
+				3117441F251994E1006D2516 /* DetailViewController.swift */,
+				31174420251994E1006D2516 /* DetailViewController.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		31174423251995DB006D2516 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				31174424251995FB006D2516 /* DetailTableViewCell.swift */,
+				31174425251995FB006D2516 /* DetailTableViewCell.xib */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
 		3145404C25108C5800696E49 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3117441E25199479006D2516 /* Detail */,
 				31454069251090E900696E49 /* AppDelegate.swift */,
 				31FE1CFB2511E8EF007F8F8D /* Base */,
 				3145404D25108C5800696E49 /* Follow */,
@@ -546,12 +574,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3145406525108C5800696E49 /* LoginViewController.xib in Resources */,
+				31174427251995FB006D2516 /* DetailTableViewCell.xib in Resources */,
 				D14016E4250A335300110A13 /* Preview Assets.xcassets in Resources */,
 				3145405E25108C5800696E49 /* FollowViewController.xib in Resources */,
 				3145406125108C5800696E49 /* SearchViewController.xib in Resources */,
 				D14016E6250A335300110A13 /* LaunchScreen.storyboard in Resources */,
 				31FE1D082512FFB2007F8F8D /* SearchTableViewCell.xib in Resources */,
 				3145406325108C5800696E49 /* MapViewController.xib in Resources */,
+				31174422251994E1006D2516 /* DetailViewController.xib in Resources */,
 				D14016D1250A335300110A13 /* .gitkeep in Resources */,
 				314540702510948700696E49 /* GoogleService-Info.plist in Resources */,
 				3145406725108C5800696E49 /* StatsViewController.xib in Resources */,
@@ -703,6 +733,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31174421251994E1006D2516 /* DetailViewController.swift in Sources */,
 				31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */,
 				D14016E2250A335300110A13 /* MapperExt.swift in Sources */,
 				D14016EB250A335300110A13 /* Color.swift in Sources */,
@@ -720,6 +751,7 @@
 				3143527225131DDA000CBA59 /* Global.swift in Sources */,
 				3145406425108C5800696E49 /* TabBarViewController.swift in Sources */,
 				D1BB1303250A5F0C00FA0B80 /* Measurement.swift in Sources */,
+				31174426251995FB006D2516 /* DetailTableViewCell.swift in Sources */,
 				31FE1D072512FFB2007F8F8D /* SearchTableViewCell.swift in Sources */,
 				31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */,
 				3145406825108C5800696E49 /* StatsViewController.swift in Sources */,

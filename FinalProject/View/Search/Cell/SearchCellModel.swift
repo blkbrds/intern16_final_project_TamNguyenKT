@@ -27,7 +27,7 @@ final class SearchCellModel {
     var countryCode: String? {
         return country.countryCode
     }
-    
+
     // MARK: - Initial
     init(country: Country) {
         self.country = country

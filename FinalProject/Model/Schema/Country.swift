@@ -10,21 +10,21 @@ import Foundation
 import ObjectMapper
 
 final class Country: Mappable {
-    
+
     // MARK: - Properties
-    var countryName: String?
-    var countryCode: String?
+    var countryName: String = ""
+    var countryCode: String = ""
     var newConfirmed: Int?
     var totalconfirmed: Int?
     var newDeaths: Int?
     var totalDeaths: Int?
     var newRecovered: Int?
     var totalRecovered: Int?
-    
+
     // MARK: - Initial
     init?(map: Map) {
     }
-    
+
     // MARK: - Function
     func mapping(map: Map) {
         countryName <- map["Country"]

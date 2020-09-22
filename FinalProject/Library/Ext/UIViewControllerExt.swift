@@ -23,7 +23,7 @@ extension UIViewController {
         }
         present(alert, animated: true, completion: nil)
     }
-    
+
     func alert(title: String) {
         let alert = UIAlertController(title: title)
         let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

@@ -22,7 +22,7 @@ final class Api {
 }
 
 extension Api.Path {
-    
+
     struct CovidPath {
         static let baseURL = "https://api.covid19api.com"
         static let summaryURL = "/summary"
@@ -30,7 +30,7 @@ extension Api.Path {
         static let worldURL = "/world/total"
         static let countriesURL = "/countries"
     }
-    
+
     struct Stats { }
     struct Search { }
     struct Detail { }

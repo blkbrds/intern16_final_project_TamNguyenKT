@@ -10,14 +10,14 @@ import Foundation
 import ObjectMapper
 
 final class Covid: Mappable {
-    
+
     // MARK: - Properties
     var countries: [Country]?
-    
+
     // MARK: - Initial
     init?(map: Map) {
     }
-    
+
     // MARK: - Functions
     func mapping(map: Map) {
         countries <- map["Countries"]

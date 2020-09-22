@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 final class Global: Mappable {
-    
+
     // MARK: - Properties
     var newConfirmed: Int?
     var totalconfirmed: Int?
@@ -18,11 +18,11 @@ final class Global: Mappable {
     var totalDeaths: Int?
     var newRecovered: Int?
     var totalRecovered: Int?
-    
+
     // MARK: - Initial
     init?(map: Map) {
     }
-    
+
     // MARK: - Functions
     func mapping(map: Map) {
         newConfirmed <- map["NewConfirmed"]

@@ -14,12 +14,12 @@
 import Foundation
 
 extension App {
-    
+
     struct String {
         static let error = "ERROR"
         static let ok = "OK"
     }
-    
+
     struct ErrorSignIn {
         static let cancel = "Cancel"
         static let unknown = "Unknown"
