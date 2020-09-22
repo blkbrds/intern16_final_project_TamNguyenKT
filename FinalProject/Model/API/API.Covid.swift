@@ -39,7 +39,7 @@ extension Api.Path.Detail {
         static func getDataCellOne(completion: @escaping CompletionResult<Country>) {
             let urlString = path
             api.request(method: .get, urlString: urlString) { (result) in
-                
+
             }
         }
 }

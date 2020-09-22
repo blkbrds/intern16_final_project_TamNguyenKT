@@ -19,7 +19,7 @@ final class Api {
         static let countriesURL = "/countries"
         static let dayoneURL = "/dayone/country/"
     }
-    
+
     struct Stats { }
     struct Search { }
     struct Detail { }

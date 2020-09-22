@@ -36,4 +36,7 @@ final class SearchTableViewCell: UITableViewCell {
         guard let numberRecovered = viewModel?.totalRecovered else { return }
         numberRecoveredLabel.text = String(numberRecovered)
     }
+
+    @IBAction private func followButtonTouchUpInside(_ sender: UIButton) {
+    }
 }

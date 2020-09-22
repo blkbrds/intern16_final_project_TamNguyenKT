@@ -221,6 +221,9 @@
                                                 <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="followButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BLE-He-MJP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

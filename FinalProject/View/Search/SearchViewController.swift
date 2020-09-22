@@ -15,6 +15,7 @@ final class SearchViewController: ViewController {
 
     // MARK: - Properties
     private var cellIdentifier: String = "SearchCell"
+    private var titleSearch: String = "Search"
     private var viewModel = SearchViewModel()
     private lazy var searchController = UISearchController(searchResultsController: nil)
 
@@ -35,11 +36,10 @@ final class SearchViewController: ViewController {
 
     // MARK: - Private methods
     private func configSearchController() {
-        title = "Search"
+        title = titleSearch
         navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Type country here"
     }
 
     private func loadData() {
@@ -93,7 +93,7 @@ extension SearchViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         let vc = DetailViewController()
         vc.title = viewModel.getNameCountry(at: indexPath)
         navigationController?.pushViewController(vc, animated: true)

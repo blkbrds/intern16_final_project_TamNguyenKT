@@ -47,5 +47,5 @@ extension DetailViewController: UITableViewDataSource {
 
 // MARK: - Extension UITableViewDelegate
 extension DetailViewController: UITableViewDelegate {
-    
+
 }
