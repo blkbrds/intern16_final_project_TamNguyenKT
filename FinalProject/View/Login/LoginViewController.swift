@@ -102,7 +102,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
                 return
             }
 
-            guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+            guard String(data: appleIDToken, encoding: .utf8) != nil else {
                 print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
                 return
             }
