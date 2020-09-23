@@ -49,7 +49,7 @@ init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = Day
     }
 
     func viewModelForCirceChart(at indexPath: IndexPath) -> DetailCellModel {
-        let viewModel = DetailCellModel(dayOneCountry: lastItem)
+        let viewModel = DetailCellModel(country: cellOne)
         return viewModel
     }
 

@@ -12,13 +12,13 @@ import ObjectMapper
 final class DayOneCountry: Mappable {
 
     // MARK: - Properties
-    var country: String?
-    var lat: Int?
-    var lon: Int?
-    var confirmed: Int?
-    var deaths: Int?
-    var recovered: Int?
-    var active: Int?
+    var country: String = ""
+    var lat: Double = 0.0
+    var lon: Double = 0.0
+    var confirmed: Int = 0
+    var deaths: Int = 0
+    var recovered: Int = 0
+    var active: Int = 0
 
     // MARK: - Initial
     init?(map: Map) { }

@@ -40,12 +40,7 @@ final class SearchViewModel {
 
     func getNameCountry(at indexPath: IndexPath) -> DetailViewModel {
         let item = filter[indexPath.row]
-        let nameCountry = item.countryName
-        let codeCountry = item.countryCode
-        if let totalCase = item.totalconfirmed, let totalDeadth = item.totalDeaths, let totalRecovered = item.totalRecovered {
-            let detail = DetailViewModel(title: nameCountry, codeCountry: codeCountry, totalCase: totalCase, totalRecovered: totalRecovered, totalDeath: totalDeadth, cellOne: item)
-            return detail
-        }
-        return DetailViewModel()
+let detail = DetailViewModel(title: item.countryName, codeCountry: item.countryCode, totalCase: item.totalconfirmed, totalRecovered: item.totalRecovered, totalDeath: item.totalDeaths, cellOne: item)
+        return detail
     }
 }

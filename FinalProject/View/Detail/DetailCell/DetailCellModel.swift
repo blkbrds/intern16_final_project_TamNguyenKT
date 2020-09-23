@@ -11,23 +11,23 @@ import Foundation
 final class DetailCellModel {
 
     // MARK: - Properties
-    var dayOneCountry: DayOneCountry
-    var newConfirmed: Int? {
-        return dayOneCountry.confirmed
+    var country: Country
+    var confirmed: Int {
+        return country.totalconfirmed
     }
-    var newDeadth: Int? {
-        return dayOneCountry.deaths
+    var deadth: Int {
+        return country.totalDeaths
     }
-    var newRecovered: Int? {
-        return dayOneCountry.recovered
+    var recovered: Int {
+        return country.totalRecovered
     }
 
-    var newActive: Int? {
-        return dayOneCountry.active
+    var active: Int {
+        return confirmed - deadth - recovered
     }
 
     // MARK: - Initial
-    init(dayOneCountry: DayOneCountry) {
-        self.dayOneCountry = dayOneCountry
+    init(country: Country) {
+        self.country = country
     }
 }

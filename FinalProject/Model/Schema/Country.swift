@@ -14,17 +14,18 @@ final class Country: Mappable {
     // MARK: - Properties
     var countryName: String = ""
     var countryCode: String = ""
-    var newConfirmed: Int?
-    var totalconfirmed: Int?
-    var newDeaths: Int?
-    var totalDeaths: Int?
-    var newRecovered: Int?
-    var totalRecovered: Int?
+    var newConfirmed: Int = 0
+    var totalconfirmed: Int = 0
+    var newDeaths: Int = 0
+    var totalDeaths: Int = 0
+    var newRecovered: Int = 0
+    var totalRecovered: Int = 0
 
     // MARK: - Initial
     init?(map: Map) { }
 
     init() { }
+    
     // MARK: - Function
     func mapping(map: Map) {
         countryName <- map["Country"]
