@@ -19,11 +19,12 @@ final class DayOneCountry: Mappable {
     var deaths: Int?
     var recovered: Int?
     var active: Int?
+
+    // MARK: - Initial
     init?(map: Map) {
     }
 
-    init() {
-    }
+    init() {}
 
     func mapping(map: Map) {
         country <- map["Country"]
@@ -34,4 +35,14 @@ final class DayOneCountry: Mappable {
         recovered <- map["Recovered"]
         active <- map["Active"]
     }
+
+//    var deathRate: Double {
+//        return (Double(deaths) / Double(confirmed)) * 100
+//    }
+//    var recoverRate: Double {
+//        return (Double(recovered) / Double(confirmed)) * 100
+//    }
+//    var activeRate: Double {
+//        return Double()
+//    }
 }

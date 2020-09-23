@@ -14,11 +14,20 @@ final class DetailViewModel {
     var title: String = ""
     var codeCountry: String = ""
     var lastItem: DayOneCountry
+    var totalCase: Int = 0
+    var totalRecovered: Int = 0
+    var totalDeath: Int = 0
+    var cellOne: Country
 
-    init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = DayOneCountry()) {
+    // MARK: - Initial
+init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = DayOneCountry(), totalCase: Int = 0, totalRecovered: Int = 0, totalDeath: Int = 0, cellOne: Country = Country()) {
         self.title = title
         self.codeCountry = codeCountry
         self.lastItem = lastItem
+        self.totalCase = totalCase
+        self.totalDeath = totalDeath
+        self.totalRecovered = totalRecovered
+        self.cellOne = cellOne
     }
 
     // MARK: - Function
@@ -38,6 +47,12 @@ final class DetailViewModel {
     func viewModelForCirceChart(at indexPath: IndexPath) -> DetailCellModel {
         let item = lastItem
         let viewModel = DetailCellModel(dayOneCountry: item)
+        return viewModel
+    }
+
+    func viewModelForCellOne(at indexPath: IndexPath) -> CellOneCellModel {
+        let item = cellOne
+        let viewModel = CellOneCellModel(cellOne: item)
         return viewModel
     }
 }
