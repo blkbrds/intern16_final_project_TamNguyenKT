@@ -21,10 +21,9 @@ final class DayOneCountry: Mappable {
     var active: Int?
 
     // MARK: - Initial
-    init?(map: Map) {
-    }
+    init?(map: Map) { }
 
-    init() {}
+    init() { }
 
     func mapping(map: Map) {
         country <- map["Country"]

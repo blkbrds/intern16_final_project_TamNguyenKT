@@ -15,8 +15,7 @@ final class Covid: Mappable {
     var countries: [Country]?
 
     // MARK: - Initial
-    init?(map: Map) {
-    }
+    init?(map: Map) { }
 
     // MARK: - Functions
     func mapping(map: Map) {

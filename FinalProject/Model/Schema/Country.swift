@@ -22,11 +22,9 @@ final class Country: Mappable {
     var totalRecovered: Int?
 
     // MARK: - Initial
-    init?(map: Map) {
-    }
+    init?(map: Map) { }
 
-    init() {
-    }
+    init() { }
     // MARK: - Function
     func mapping(map: Map) {
         countryName <- map["Country"]

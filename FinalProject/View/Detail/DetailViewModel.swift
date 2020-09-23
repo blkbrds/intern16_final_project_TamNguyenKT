@@ -44,9 +44,12 @@ init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = Day
         }
     }
 
+    func numberOfRowInSection() -> Int {
+        return 3
+    }
+
     func viewModelForCirceChart(at indexPath: IndexPath) -> DetailCellModel {
-        let item = lastItem
-        let viewModel = DetailCellModel(dayOneCountry: item)
+        let viewModel = DetailCellModel(dayOneCountry: lastItem)
         return viewModel
     }
 

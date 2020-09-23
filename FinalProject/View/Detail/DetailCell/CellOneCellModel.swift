@@ -27,4 +27,3 @@ final class CellOneCellModel {
         self.cellOne = cellOne
     }
 }
-

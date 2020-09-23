@@ -15,6 +15,7 @@ final class DetailTableViewCell: UITableViewCell {
     @IBOutlet private weak var newDeathsLabel: UILabel!
     @IBOutlet private weak var newRecoveredLabel: UILabel!
     @IBOutlet private weak var newActiveLabel: UILabel!
+    
     // MARK: - Properties
     var viewModel: DetailCellModel? {
         didSet {

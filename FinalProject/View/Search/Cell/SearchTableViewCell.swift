@@ -38,5 +38,6 @@ final class SearchTableViewCell: UITableViewCell {
     }
 
     @IBAction private func followButtonTouchUpInside(_ sender: UIButton) {
+        //TODO: - Handle Realm
     }
 }

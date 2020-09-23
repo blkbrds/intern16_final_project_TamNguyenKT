@@ -22,7 +22,7 @@ final class Api {
     struct Stats { }
     struct Search { }
     struct Detail { }
-    struct Map {}
+    struct Map { }
 }
 
 protocol URLStringConvertible {

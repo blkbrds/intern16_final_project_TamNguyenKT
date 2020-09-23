@@ -26,7 +26,6 @@ final class LoginViewController: ViewController {
         super.viewDidLoad()
         configAppleButton()
         configGoogleButton()
-        GIDSignIn.sharedInstance()?.presentingViewController = self
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -72,6 +71,7 @@ final class LoginViewController: ViewController {
     }
 
     private func configGoogleButton() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
         googleButton.style = .wide
         googleButton.colorScheme = .light
     }
