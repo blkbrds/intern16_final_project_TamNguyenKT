@@ -57,3 +57,24 @@ extension Api.Path.Detail {
         }
     }
 }
+
+extension Api.Path.Stats {
+
+    static func getDataCellOne(completion: @escaping CompletionResult<Global>) {
+        let urlString = pathWorld
+        api.request(method: .get, urlString: urlString) { result in
+            switch result {
+            case . success(let data):
+                if let data = data as? JSObject {
+                    if let item: Global = Mapper<Global>().map(JSONObject: data) {
+                        completion( .success(item))
+                    } else {
+                        completion( .failure(Api.Error.emptyData))
+                    }
+                }
+            case .failure(let error):
+                completion( .failure(error))
+            }
+        }
+    }
+}

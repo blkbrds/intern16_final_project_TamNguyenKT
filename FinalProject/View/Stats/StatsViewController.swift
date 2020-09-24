@@ -14,6 +14,7 @@ final class StatsViewController: ViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
+    var viewModel: StatsViewModel = StatsViewModel()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ final class StatsViewController: ViewController {
 
     // MARK: - Override methods
     override func setUpUI() {
+        tableView.register(nibWithCellClass: StatsCellOneTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -31,11 +33,11 @@ final class StatsViewController: ViewController {
 extension StatsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return viewModel.numberOfRowInsection()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return UITableViewCell()
     }
 }
 

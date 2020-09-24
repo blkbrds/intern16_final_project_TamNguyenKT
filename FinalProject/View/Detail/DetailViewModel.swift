@@ -33,12 +33,13 @@ init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = Day
     // MARK: - Function
     func getData(completion: @escaping APICompletion) {
         let urlString = Api.Path.Detail.path + codeCountry
-        Api.Path.Detail.getDataCellOne(urlString: urlString) { result in
+        Api.Path.Detail.getDataCellOne(urlString: urlString) { [weak self] result in
+            guard let this = self else { return }
             switch result {
             case .failure(let error):
                 completion( .failure(error))
             case .success(let result):
-                self.lastItem = result
+                this.lastItem = result
                 completion( .success)
             }
         }
@@ -54,8 +55,7 @@ init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = Day
     }
 
     func viewModelForCellOne(at indexPath: IndexPath) -> CellOneCellModel {
-        let item = cellOne
-        let viewModel = CellOneCellModel(cellOne: item)
+        let viewModel = CellOneCellModel(cellOne: cellOne)
         return viewModel
     }
 }

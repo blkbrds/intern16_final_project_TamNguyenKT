@@ -25,6 +25,10 @@
 		314489FF251AF8BB006F5230 /* CellOneCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314489FE251AF8BB006F5230 /* CellOneCellModel.swift */; };
 		31448A02251B4D44006F5230 /* CellThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31448A00251B4D44006F5230 /* CellThreeTableViewCell.swift */; };
 		31448A03251B4D44006F5230 /* CellThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31448A01251B4D44006F5230 /* CellThreeTableViewCell.xib */; };
+		3144D2AA251C7A7D000F6E3F /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144D2A9251C7A7D000F6E3F /* StatsViewModel.swift */; };
+		3144D2AE251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144D2AC251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift */; };
+		3144D2AF251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3144D2AD251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib */; };
+		3144D2B1251C8417000F6E3F /* StatsCellOneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144D2B0251C8417000F6E3F /* StatsCellOneModel.swift */; };
 		3145405E25108C5800696E49 /* FollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145404E25108C5800696E49 /* FollowViewController.xib */; };
 		3145405F25108C5800696E49 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145404F25108C5800696E49 /* FollowViewController.swift */; };
 		3145406025108C5800696E49 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405125108C5800696E49 /* SearchViewController.swift */; };
@@ -110,6 +114,10 @@
 		314489FE251AF8BB006F5230 /* CellOneCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOneCellModel.swift; sourceTree = "<group>"; };
 		31448A00251B4D44006F5230 /* CellThreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellThreeTableViewCell.swift; sourceTree = "<group>"; };
 		31448A01251B4D44006F5230 /* CellThreeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellThreeTableViewCell.xib; sourceTree = "<group>"; };
+		3144D2A9251C7A7D000F6E3F /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		3144D2AC251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellOneTableViewCell.swift; sourceTree = "<group>"; };
+		3144D2AD251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCellOneTableViewCell.xib; sourceTree = "<group>"; };
+		3144D2B0251C8417000F6E3F /* StatsCellOneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellOneModel.swift; sourceTree = "<group>"; };
 		3145404E25108C5800696E49 /* FollowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowViewController.xib; sourceTree = "<group>"; };
 		3145404F25108C5800696E49 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		3145405125108C5800696E49 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +227,16 @@
 			path = DetailCell;
 			sourceTree = "<group>";
 		};
+		3144D2AB251C7A9D000F6E3F /* Stats Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3144D2AC251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift */,
+				3144D2AD251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib */,
+				3144D2B0251C8417000F6E3F /* StatsCellOneModel.swift */,
+			);
+			path = "Stats Cell";
+			sourceTree = "<group>";
+		};
 		3145404C25108C5800696E49 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,8 +293,10 @@
 		3145405B25108C5800696E49 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
+				3144D2AB251C7A9D000F6E3F /* Stats Cell */,
 				3145405C25108C5800696E49 /* StatsViewController.xib */,
 				3145405D25108C5800696E49 /* StatsViewController.swift */,
+				3144D2A9251C7A7D000F6E3F /* StatsViewModel.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -599,6 +619,7 @@
 			files = (
 				3145406525108C5800696E49 /* LoginViewController.xib in Resources */,
 				31174427251995FB006D2516 /* DetailTableViewCell.xib in Resources */,
+				3144D2AF251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib in Resources */,
 				D14016E4250A335300110A13 /* Preview Assets.xcassets in Resources */,
 				3145405E25108C5800696E49 /* FollowViewController.xib in Resources */,
 				3145406125108C5800696E49 /* SearchViewController.xib in Resources */,
@@ -759,6 +780,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3144D2AA251C7A7D000F6E3F /* StatsViewModel.swift in Sources */,
 				31174421251994E1006D2516 /* DetailViewController.swift in Sources */,
 				31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */,
 				D14016E2250A335300110A13 /* MapperExt.swift in Sources */,
@@ -788,11 +810,13 @@
 				D1BB12FD250A57B100FA0B80 /* NSURL.swift in Sources */,
 				3145406A251090E900696E49 /* AppDelegate.swift in Sources */,
 				3145406025108C5800696E49 /* SearchViewController.swift in Sources */,
+				3144D2AE251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift in Sources */,
 				314489FF251AF8BB006F5230 /* CellOneCellModel.swift in Sources */,
 				3145406C251091E700696E49 /* DeviceType.swift in Sources */,
 				D14016D4250A335300110A13 /* ApiManager.swift in Sources */,
 				D14016D6250A335300110A13 /* Api.swift in Sources */,
 				3117441B251843DF006D2516 /* API.Covid.swift in Sources */,
+				3144D2B1251C8417000F6E3F /* StatsCellOneModel.swift in Sources */,
 				31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */,
 				3143527425134B22000CBA59 /* SearchCellModel.swift in Sources */,
 				31448A02251B4D44006F5230 /* CellThreeTableViewCell.swift in Sources */,

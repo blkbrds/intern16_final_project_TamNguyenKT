@@ -12,24 +12,19 @@ import ObjectMapper
 final class Global: Mappable {
 
     // MARK: - Properties
-    var newConfirmed: Int?
-    var totalconfirmed: Int?
-    var newDeaths: Int?
-    var totalDeaths: Int?
-    var newRecovered: Int?
-    var totalRecovered: Int?
+    var totalConfirmed: Int = 0
+    var totalDeaths: Int = 0
+    var totalRecovered: Int = 0
 
     // MARK: - Initial
-    init?(map: Map) {
-    }
+    init?(map: Map) { }
+
+    init() { }
 
     // MARK: - Functions
     func mapping(map: Map) {
-        newConfirmed <- map["NewConfirmed"]
-        totalconfirmed <- map["Totalconfirmed"]
-        newDeaths <- map["NewDeaths"]
+        totalConfirmed <- map["Totalconfirmed"]
         totalDeaths <- map["TotalDeaths"]
-        newRecovered <- map["NewRecovered"]
         totalRecovered <- map["TotalRecovered"]
     }
 }
