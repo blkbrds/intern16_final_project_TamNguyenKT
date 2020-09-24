@@ -24,12 +24,10 @@ final class DetailTableViewCell: UITableViewCell {
     // MARK: - Override methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        let players = ["Total recovered", "Total deadths", "Total active"]
-        let goals = [40, 30, 30]
-        customizeChart(dataPoints: players, values: goals.map { Double($0) })}
+    }
 
     // MARK: - Private methods
-    
+
     private func customizeChart(dataPoints: [String], values: [Double]) {
 
         // 1. Set ChartDataEntry
@@ -64,9 +62,12 @@ final class DetailTableViewCell: UITableViewCell {
     }
 
     private func updateView() {
-
+        let items = ["Total recovered", "Total deadths", "Total active"]
+        let percents = [viewModel.recoverRate, viewModel.deadthRate, viewModel.activeRate]
+        customizeChart(dataPoints: items, values: percents.map { Double($0) })
     }
 }
+
 // MARK: - Extension CharViewDelegate
 extension DetailTableViewCell: ChartViewDelegate {
 }

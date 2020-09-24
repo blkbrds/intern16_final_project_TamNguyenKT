@@ -25,10 +25,8 @@ final class DetailViewController: ViewController {
 
     // MARK: - Override methods
     override func setUpUI() {
-        let nibCellOne = UINib(nibName: "CellOneTableViewCell", bundle: .main)
-        tableView.register(nibCellOne, forCellReuseIdentifier: cellIdentifierCellOne)
-        let nibCellTwo = UINib(nibName: "DetailTableViewCell", bundle: .main)
-        tableView.register(nibCellTwo, forCellReuseIdentifier: cellIdentifierCellTwo)
+        tableView.register(nibWithCellClass: CellOneTableViewCell.self)
+        tableView.register(nibWithCellClass: DetailTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         title = viewModel.title
@@ -47,12 +45,11 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            guard let cellOne = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCellOne, for: indexPath) as? CellOneTableViewCell else { return UITableViewCell() }
+            let cellOne = tableView.dequeueReusableCell(withClass: CellOneTableViewCell.self, for: indexPath)
             cellOne.viewModel = viewModel.viewModelForCellOne(at: indexPath)
             return cellOne
         case 1:
-            guard let cellTwo = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCellTwo, for: indexPath) as? DetailTableViewCell else {
-                return UITableViewCell() }
+            let cellTwo = tableView.dequeueReusableCell(withClass: DetailTableViewCell.self, for: indexPath)
             return cellTwo
         default:
             print("chua lam")
