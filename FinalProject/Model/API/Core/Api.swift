@@ -62,4 +62,12 @@ extension Api.Path {
     struct Search {
         static var path: String { return baseURL + summaryURL }
     }
+
+    struct Stats {
+        static var pathWorld: String { return baseURL + worldURL }
+    }
+
+    struct Map {
+        static var path: String { return baseURL + dayoneURL }
+    }
 }

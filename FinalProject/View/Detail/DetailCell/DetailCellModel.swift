@@ -26,8 +26,20 @@ final class DetailCellModel {
         return confirmed - deadth - recovered
     }
 
+    var deadthRate: Double {
+        return (Double(deadth) / Double(confirmed)) * 100
+    }
+
+    var recoverRate: Double {
+        return (Double(recovered) / Double(confirmed)) * 100
+    }
+
+    var activeRate: Double {
+        return 100 - deadthRate - recoverRate
+    }
+
     // MARK: - Initial
-    init(country: Country) {
+    init(country: Country = Country()) {
         self.country = country
     }
 }

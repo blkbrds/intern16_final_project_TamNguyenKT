@@ -46,13 +46,13 @@ extension DetailViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case 1:
+        case 0:
             guard let cellOne = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCellOne, for: indexPath) as? CellOneTableViewCell else { return UITableViewCell() }
             cellOne.viewModel = viewModel.viewModelForCellOne(at: indexPath)
             return cellOne
-        case 2:
-            guard let cellTwo = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCellTwo, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
-            cellTwo.viewModel = viewModel.viewModelForCirceChart(at: indexPath)
+        case 1:
+            guard let cellTwo = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCellTwo, for: indexPath) as? DetailTableViewCell else {
+                return UITableViewCell() }
             return cellTwo
         default:
             print("chua lam")
@@ -63,5 +63,12 @@ extension DetailViewController: UITableViewDataSource {
 
 // MARK: - Extension UITableViewDelegate
 extension DetailViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 1:
+            return 300
+        default:
+            return UITableView.automaticDimension
+        }
+    }
 }

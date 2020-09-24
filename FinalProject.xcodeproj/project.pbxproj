@@ -23,6 +23,8 @@
 		314489FC251AE4B6006F5230 /* CellOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314489FA251AE4B6006F5230 /* CellOneTableViewCell.swift */; };
 		314489FD251AE4B6006F5230 /* CellOneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314489FB251AE4B6006F5230 /* CellOneTableViewCell.xib */; };
 		314489FF251AF8BB006F5230 /* CellOneCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314489FE251AF8BB006F5230 /* CellOneCellModel.swift */; };
+		31448A02251B4D44006F5230 /* CellThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31448A00251B4D44006F5230 /* CellThreeTableViewCell.swift */; };
+		31448A03251B4D44006F5230 /* CellThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31448A01251B4D44006F5230 /* CellThreeTableViewCell.xib */; };
 		3145405E25108C5800696E49 /* FollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145404E25108C5800696E49 /* FollowViewController.xib */; };
 		3145405F25108C5800696E49 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145404F25108C5800696E49 /* FollowViewController.swift */; };
 		3145406025108C5800696E49 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405125108C5800696E49 /* SearchViewController.swift */; };
@@ -106,6 +108,8 @@
 		314489FA251AE4B6006F5230 /* CellOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOneTableViewCell.swift; sourceTree = "<group>"; };
 		314489FB251AE4B6006F5230 /* CellOneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellOneTableViewCell.xib; sourceTree = "<group>"; };
 		314489FE251AF8BB006F5230 /* CellOneCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOneCellModel.swift; sourceTree = "<group>"; };
+		31448A00251B4D44006F5230 /* CellThreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellThreeTableViewCell.swift; sourceTree = "<group>"; };
+		31448A01251B4D44006F5230 /* CellThreeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellThreeTableViewCell.xib; sourceTree = "<group>"; };
 		3145404E25108C5800696E49 /* FollowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowViewController.xib; sourceTree = "<group>"; };
 		3145404F25108C5800696E49 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		3145405125108C5800696E49 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 				314489FA251AE4B6006F5230 /* CellOneTableViewCell.swift */,
 				314489FB251AE4B6006F5230 /* CellOneTableViewCell.xib */,
 				314489FE251AF8BB006F5230 /* CellOneCellModel.swift */,
+				31448A00251B4D44006F5230 /* CellThreeTableViewCell.swift */,
+				31448A01251B4D44006F5230 /* CellThreeTableViewCell.xib */,
 			);
 			path = DetailCell;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				3145406325108C5800696E49 /* MapViewController.xib in Resources */,
 				314489FD251AE4B6006F5230 /* CellOneTableViewCell.xib in Resources */,
 				31174422251994E1006D2516 /* DetailViewController.xib in Resources */,
+				31448A03251B4D44006F5230 /* CellThreeTableViewCell.xib in Resources */,
 				D14016D1250A335300110A13 /* .gitkeep in Resources */,
 				314540702510948700696E49 /* GoogleService-Info.plist in Resources */,
 				3145406725108C5800696E49 /* StatsViewController.xib in Resources */,
@@ -788,6 +795,7 @@
 				3117441B251843DF006D2516 /* API.Covid.swift in Sources */,
 				31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */,
 				3143527425134B22000CBA59 /* SearchCellModel.swift in Sources */,
+				31448A02251B4D44006F5230 /* CellThreeTableViewCell.swift in Sources */,
 				3145406225108C5800696E49 /* MapViewController.swift in Sources */,
 				D14016EA250A335300110A13 /* App.swift in Sources */,
 				D14016E8250A335300110A13 /* String.swift in Sources */,

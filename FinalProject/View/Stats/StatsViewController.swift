@@ -8,23 +8,21 @@
 
 import UIKit
 
-class StatsViewController: UIViewController {
+final class StatsViewController: ViewController {
 
+    // MARK: - IBOulets
+    @IBOutlet private weak var tableView: UITableView!
+
+    // MARK: - Properties
+
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Override methods
+    override func setUpUI() {
+        //tableView.delegate = self
+        //tableView.dataSource = self
     }
-    */
-
 }
