@@ -97,10 +97,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            guard let appleIDToken = appleIDCredential.identityToken else {
-                print("Unable to fetch identity token")
-                return
-            }
+            guard let appleIDToken = appleIDCredential.identityToken else { return }
 
             guard String(data: appleIDToken, encoding: .utf8) != nil else {
                 print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")

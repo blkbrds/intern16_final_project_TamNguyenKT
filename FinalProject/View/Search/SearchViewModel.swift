@@ -16,13 +16,14 @@ final class SearchViewModel {
 
     // MARK: - Function
     func getData(completion: @escaping APICompletion) {
-        Api.Path.Search.getAllDataInSearch() { result in
+        Api.Path.Search.getAllDataInSearch() { [weak self] result in
             switch result {
             case .failure(let error):
                 completion( .failure(error))
             case .success(let result):
-                self.countries.append(contentsOf: result)
-                self.filter = self.countries
+                guard let this = self else { return }
+                this.countries.append(contentsOf: result)
+                this.filter = this.countries
                 completion( .success)
             }
         }
@@ -40,7 +41,7 @@ final class SearchViewModel {
 
     func getNameCountry(at indexPath: IndexPath) -> DetailViewModel {
         let item = filter[indexPath.row]
-let detail = DetailViewModel(title: item.countryName, codeCountry: item.countryCode, totalCase: item.totalconfirmed, totalRecovered: item.totalRecovered, totalDeath: item.totalDeaths, cellOne: item)
+    let detail = DetailViewModel(title: item.countryName, codeCountry: item.countryCode, totalCase: item.totalconfirmed, totalRecovered: item.totalRecovered, totalDeath: item.totalDeaths, cellOne: item)
         return detail
     }
 }

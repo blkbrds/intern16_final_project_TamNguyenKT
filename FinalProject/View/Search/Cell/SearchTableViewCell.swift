@@ -29,12 +29,15 @@ final class SearchTableViewCell: UITableViewCell {
     private func updateView() {
         countryNameLabel.text = viewModel?.countryName
         countryCodeLabel.text = viewModel?.countryCode
-        guard let numberCase = viewModel?.totalConfirmed else { return }
-        numbercaseLabel.text = String(numberCase)
-        guard let numberDeadth = viewModel?.totalDeadth else { return }
-        numberDeadthLabel.text = String(numberDeadth)
-        guard let numberRecovered = viewModel?.totalRecovered else { return }
-        numberRecoveredLabel.text = String(numberRecovered)
+        if let numberCase = viewModel?.totalConfirmed {
+            numbercaseLabel.text = String(numberCase)
+        }
+        if let numberDeadth = viewModel?.totalDeadth {
+            numberDeadthLabel.text = String(numberDeadth)
+        }
+        if let numberRecovered = viewModel?.totalRecovered {
+            numberRecoveredLabel.text = String(numberRecovered)
+        }
     }
 
     @IBAction private func followButtonTouchUpInside(_ sender: UIButton) {

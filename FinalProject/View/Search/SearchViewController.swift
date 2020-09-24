@@ -28,8 +28,7 @@ final class SearchViewController: ViewController {
 
     // MARK: - Override methods
     override func setUpUI() {
-        let nib = UINib(nibName: "SearchTableViewCell", bundle: .main)
-        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
+        tableView.register(nibWithCellClass: SearchTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -43,32 +42,32 @@ final class SearchViewController: ViewController {
     }
 
     private func loadData() {
-        viewModel.getData() { result in
+        viewModel.getData() { [weak self] result in
+            guard let this = self else { return }
             switch result {
             case .success:
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    this.tableView.reloadData()
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.alert(error: error)
+                    this.alert(error: error)
                 }
             }
         }
     }
 
-   private func filterCountry(for searchText: String) {
-            if searchText.isEmpty {
-                viewModel.filter = viewModel.countries
-            } else {
-                viewModel.filter = viewModel.countries.filter { country in
-                    return
-                    country.countryName.lowercased().hasPrefix(searchText.lowercased())
-                }
+    private func filterCountry(for searchText: String) {
+        if searchText.isEmpty {
+            viewModel.filter = viewModel.countries
+        } else {
+            viewModel.filter = viewModel.countries.filter { country in
+                country.countryName.lowercased().hasPrefix(searchText.lowercased())
             }
-            tableView.reloadData()
         }
+        tableView.reloadData()
     }
+}
 
 // MARK: - Extension UITableViewDataSource
 extension SearchViewController: UITableViewDataSource {
@@ -78,7 +77,7 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withClass: SearchTableViewCell.self, for: indexPath)
         cell.viewModel = viewModel.viewModelForCell(at: indexPath)
         return cell
     }
