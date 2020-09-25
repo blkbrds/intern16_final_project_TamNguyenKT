@@ -21,7 +21,14 @@ final class DetailViewModel {
     var date: String = ""
 
     // MARK: - Initial
-    init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = DayOneCountry(), totalCase: Int = 0, totalRecovered: Int = 0, totalDeath: Int = 0, cellOne: Country = Country(), date: String = "") {
+    init(title: String = "",
+         codeCountry: String = "",
+         lastItem: DayOneCountry = DayOneCountry(),
+         totalCase: Int = 0,
+         totalRecovered: Int = 0,
+         totalDeath: Int = 0,
+         cellOne: Country = Country(),
+         date: String = "") {
         self.title = title
         self.codeCountry = codeCountry
         self.lastItem = lastItem

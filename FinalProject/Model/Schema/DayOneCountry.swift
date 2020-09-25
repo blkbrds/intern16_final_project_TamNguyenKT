@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 final class DayOneCountry: Mappable {
-    
+
     // MARK: - Properties
     var country: String = ""
     var lat: Double = 0.0
@@ -19,12 +19,12 @@ final class DayOneCountry: Mappable {
     var deaths: Int = 0
     var recovered: Int = 0
     var active: Int = 0
-    
+
     // MARK: - Initial
     init?(map: Map) { }
-    
+
     init() { }
-    
+
     func mapping(map: Map) {
         country <- map["Country"]
         lat <- map["Lat"]
