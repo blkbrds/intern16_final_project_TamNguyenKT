@@ -18,9 +18,10 @@ final class DetailViewModel {
     var totalRecovered: Int = 0
     var totalDeath: Int = 0
     var cellOne: Country
+    var date: String = ""
 
     // MARK: - Initial
-init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = DayOneCountry(), totalCase: Int = 0, totalRecovered: Int = 0, totalDeath: Int = 0, cellOne: Country = Country()) {
+    init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = DayOneCountry(), totalCase: Int = 0, totalRecovered: Int = 0, totalDeath: Int = 0, cellOne: Country = Country(), date: String = "") {
         self.title = title
         self.codeCountry = codeCountry
         self.lastItem = lastItem
@@ -28,6 +29,7 @@ init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = Day
         self.totalDeath = totalDeath
         self.totalRecovered = totalRecovered
         self.cellOne = cellOne
+        self.date = date
     }
 
     // MARK: - Function
@@ -56,6 +58,11 @@ init(title: String = "", codeCountry: String = "", lastItem: DayOneCountry = Day
 
     func viewModelForCellOne(at indexPath: IndexPath) -> CellOneCellModel {
         let viewModel = CellOneCellModel(cellOne: cellOne)
+        return viewModel
+    }
+
+    func viewModelForCellTwo(at indexPath: IndexPath) -> DetailCellModel {
+        let viewModel = DetailCellModel(country: cellOne)
         return viewModel
     }
 }

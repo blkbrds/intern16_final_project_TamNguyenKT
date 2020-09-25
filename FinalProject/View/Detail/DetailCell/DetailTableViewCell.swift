@@ -21,13 +21,7 @@ final class DetailTableViewCell: UITableViewCell {
         }
     }
 
-    // MARK: - Override methods
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
     // MARK: - Private methods
-
     private func customizeChart(dataPoints: [String], values: [Double]) {
 
         // 1. Set ChartDataEntry
@@ -37,7 +31,7 @@ final class DetailTableViewCell: UITableViewCell {
             dataEntries.append(dataEntry)
         }
         // 2. Set ChartDataSet
-        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "Chart describes affected in \(viewModel.nameCountry)")
         pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
@@ -62,7 +56,7 @@ final class DetailTableViewCell: UITableViewCell {
     }
 
     private func updateView() {
-        let items = ["Total recovered", "Total deadths", "Total active"]
+        let items = ["Recovered", "Deadths", "Active"]
         let percents = [viewModel.recoverRate, viewModel.deadthRate, viewModel.activeRate]
         customizeChart(dataPoints: items, values: percents.map { Double($0) })
     }

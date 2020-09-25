@@ -12,6 +12,9 @@ final class DetailCellModel {
 
     // MARK: - Properties
     var country: Country
+    var nameCountry: String {
+        return country.countryName
+    }
     var confirmed: Int {
         return country.totalconfirmed
     }
@@ -26,6 +29,10 @@ final class DetailCellModel {
         return confirmed - deadth - recovered
     }
 
+    var date: String {
+        return country.date
+    }
+
     var deadthRate: Double {
         return (Double(deadth) / Double(confirmed)) * 100
     }
@@ -35,7 +42,19 @@ final class DetailCellModel {
     }
 
     var activeRate: Double {
-        return 100 - deadthRate - recoverRate
+        return 100.0 - deadthRate - recoverRate
+    }
+
+    var activeRateString: String {
+        return String(activeRate) + "%"
+    }
+
+    var deadthRateString: String {
+        return String(deadthRate) + "%"
+    }
+
+    var recoverRateString: String {
+        return String(recoverRate) + "%"
     }
 
     // MARK: - Initial

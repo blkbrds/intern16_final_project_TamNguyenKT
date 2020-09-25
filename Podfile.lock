@@ -131,6 +131,7 @@ PODS:
   - SwifterSwift/SwiftStdlib (4.6.0)
   - SwifterSwift/UIKit (4.6.0)
   - SwiftLint (0.27.0)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -148,6 +149,7 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.2)
   - SwifterSwift (~> 4.6)
   - SwiftLint (= 0.27)
+  - TinyConstraints
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -180,6 +182,7 @@ SPEC REPOS:
     - SVProgressHUD
     - SwifterSwift
     - SwiftLint
+    - TinyConstraints
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -211,7 +214,8 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: d41a4e13e8dd783aa6c99245148ffc75978624ce
+PODFILE CHECKSUM: ef427aca9c42a34c07f077920ad01a0fce8531df
 
 COCOAPODS: 1.5.3

@@ -20,6 +20,7 @@ final class Country: Mappable {
     var totalDeaths: Int = 0
     var newRecovered: Int = 0
     var totalRecovered: Int = 0
+    var date: String = ""
 
     // MARK: - Initial
     init?(map: Map) { }
@@ -36,5 +37,6 @@ final class Country: Mappable {
         totalDeaths <- map["TotalDeaths"]
         newRecovered <- map["NewRecovered"]
         totalRecovered <- map["TotalRecovered"]
+        date <- map["Date"]
     }
 }

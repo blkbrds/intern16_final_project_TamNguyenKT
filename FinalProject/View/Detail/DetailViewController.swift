@@ -27,6 +27,7 @@ final class DetailViewController: ViewController {
     override func setUpUI() {
         tableView.register(nibWithCellClass: CellOneTableViewCell.self)
         tableView.register(nibWithCellClass: DetailTableViewCell.self)
+        tableView.register(nibWithCellClass: CellThreeTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         title = viewModel.title
@@ -50,11 +51,14 @@ extension DetailViewController: UITableViewDataSource {
             return cellOne
         case 1:
             let cellTwo = tableView.dequeueReusableCell(withClass: DetailTableViewCell.self, for: indexPath)
+            cellTwo.viewModel = viewModel.viewModelForCellTwo(at: indexPath)
             return cellTwo
+        case 2:
+            let cellThree = tableView.dequeueReusableCell(withClass: CellThreeTableViewCell.self, for: indexPath)
+            return cellThree
         default:
-            print("chua lam")
+            return UITableViewCell()
         }
-        return UITableViewCell()
     }
 }
 
@@ -63,7 +67,9 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 1:
-            return 300
+            return 250
+        case 2:
+            return 450
         default:
             return UITableView.automaticDimension
         }
