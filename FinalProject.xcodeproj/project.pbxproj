@@ -29,6 +29,9 @@
 		3144D2AE251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144D2AC251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift */; };
 		3144D2AF251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3144D2AD251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib */; };
 		3144D2B1251C8417000F6E3F /* StatsCellOneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144D2B0251C8417000F6E3F /* StatsCellOneModel.swift */; };
+		3144D2C8251EFEFB000F6E3F /* CircleGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144D2C7251EFEFB000F6E3F /* CircleGraphic.swift */; };
+		3144D2CE251F85E3000F6E3F /* CustomChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144D2CD251F85E3000F6E3F /* CustomChart.swift */; };
+		3144D2D0251F8735000F6E3F /* BarEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144D2CF251F8735000F6E3F /* BarEntry.swift */; };
 		3145405E25108C5800696E49 /* FollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145404E25108C5800696E49 /* FollowViewController.xib */; };
 		3145405F25108C5800696E49 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145404F25108C5800696E49 /* FollowViewController.swift */; };
 		3145406025108C5800696E49 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405125108C5800696E49 /* SearchViewController.swift */; };
@@ -118,6 +121,9 @@
 		3144D2AC251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellOneTableViewCell.swift; sourceTree = "<group>"; };
 		3144D2AD251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCellOneTableViewCell.xib; sourceTree = "<group>"; };
 		3144D2B0251C8417000F6E3F /* StatsCellOneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellOneModel.swift; sourceTree = "<group>"; };
+		3144D2C7251EFEFB000F6E3F /* CircleGraphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGraphic.swift; sourceTree = "<group>"; };
+		3144D2CD251F85E3000F6E3F /* CustomChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChart.swift; sourceTree = "<group>"; };
+		3144D2CF251F8735000F6E3F /* BarEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarEntry.swift; sourceTree = "<group>"; };
 		3145404E25108C5800696E49 /* FollowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowViewController.xib; sourceTree = "<group>"; };
 		3145404F25108C5800696E49 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		3145405125108C5800696E49 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -237,9 +243,20 @@
 			path = "Stats Cell";
 			sourceTree = "<group>";
 		};
+		3144D2C6251EFEBE000F6E3F /* CustomChart */ = {
+			isa = PBXGroup;
+			children = (
+				3144D2C7251EFEFB000F6E3F /* CircleGraphic.swift */,
+				3144D2CD251F85E3000F6E3F /* CustomChart.swift */,
+				3144D2CF251F8735000F6E3F /* BarEntry.swift */,
+			);
+			path = CustomChart;
+			sourceTree = "<group>";
+		};
 		3145404C25108C5800696E49 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3144D2C6251EFEBE000F6E3F /* CustomChart */,
 				3117441E25199479006D2516 /* Detail */,
 				31454069251090E900696E49 /* AppDelegate.swift */,
 				31FE1CFB2511E8EF007F8F8D /* Base */,
@@ -665,7 +682,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
@@ -680,7 +696,6 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -690,7 +705,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
@@ -705,7 +719,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -786,8 +799,10 @@
 				31174421251994E1006D2516 /* DetailViewController.swift in Sources */,
 				31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */,
 				D14016E2250A335300110A13 /* MapperExt.swift in Sources */,
+				3144D2D0251F8735000F6E3F /* BarEntry.swift in Sources */,
 				D14016EB250A335300110A13 /* Color.swift in Sources */,
 				3143527025131B94000CBA59 /* Covid.swift in Sources */,
+				3144D2C8251EFEFB000F6E3F /* CircleGraphic.swift in Sources */,
 				3117441D25185EB7006D2516 /* SearchViewModel.swift in Sources */,
 				314489FC251AE4B6006F5230 /* CellOneTableViewCell.swift in Sources */,
 				D14016D5250A335300110A13 /* ResponseSerializer.swift in Sources */,
@@ -812,6 +827,7 @@
 				D1BB12FD250A57B100FA0B80 /* NSURL.swift in Sources */,
 				3145406A251090E900696E49 /* AppDelegate.swift in Sources */,
 				3145406025108C5800696E49 /* SearchViewController.swift in Sources */,
+				3144D2CE251F85E3000F6E3F /* CustomChart.swift in Sources */,
 				3144D2AE251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift in Sources */,
 				314489FF251AF8BB006F5230 /* CellOneCellModel.swift in Sources */,
 				3145406C251091E700696E49 /* DeviceType.swift in Sources */,

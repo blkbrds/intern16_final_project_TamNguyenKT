@@ -7,84 +7,37 @@
 //
 
 import UIKit
-import Charts
-import TinyConstraints
 
 final class CellThreeTableViewCell: UITableViewCell {
 
-    // MARK: - Properties
-    lazy var lineChartView: LineChartView = {
-        let chartView = LineChartView()
-        chartView.backgroundColor = .clear
+    // MARK: - IBOUlets
+    @IBOutlet private weak var barChart: CustomChart!
 
-        chartView.rightAxis.enabled = false
-
-        let yAxis = chartView.leftAxis
-        yAxis.labelFont = .boldSystemFont(ofSize: 12)
-        yAxis.setLabelCount(6, force: false)
-        yAxis.labelTextColor = .black
-        yAxis.axisLineColor = .black
-        yAxis.labelPosition = .insideChart
-
-        chartView.xAxis.labelPosition = .bottom
-        chartView.xAxis.enabled = false
-        chartView.xAxis.labelFont = .boldSystemFont(ofSize: 12)
-        chartView.xAxis.setLabelCount(6, force: false)
-        chartView.xAxis.labelTextColor = .white
-        chartView.xAxis.axisLineColor = .systemBlue
-
-        chartView.animate(xAxisDuration: 2)
-        return chartView
-    }()
+    // MARK: - Override methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addSubview(lineChartView)
-        lineChartView.centerInSuperview()
-        lineChartView.width(400)
-        lineChartView.heightToWidth(of: self)
-        setData1()
+        let dataEntries = generateDataEntries()
+        barChart.dataEntries = dataEntries
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
-    let yValues1: [ChartDataEntry] = [
-        ChartDataEntry(x: 0.0, y: 10.0),
-        ChartDataEntry(x: 1.0, y: 9.0),
-        ChartDataEntry(x: 2.0, y: 8.0),
-        ChartDataEntry(x: 3.0, y: 7.0),
-        ChartDataEntry(x: 4.0, y: 10.0),
-        ChartDataEntry(x: 5.0, y: 9.0),
-        ChartDataEntry(x: 6.0, y: 8.0),
-        ChartDataEntry(x: 7.0, y: 7.0),
-        ChartDataEntry(x: 8.0, y: 10.0),
-        ChartDataEntry(x: 9.0, y: 6.0),
-        ChartDataEntry(x: 10.0, y: 8.0),
-        ChartDataEntry(x: 11.0, y: 11.0),
-        ChartDataEntry(x: 12.0, y: 12.0),
-        ChartDataEntry(x: 13.0, y: 13.0),
-        ChartDataEntry(x: 14.0, y: 14.0),
-        ChartDataEntry(x: 15.0, y: 15.0),
-        ChartDataEntry(x: 16.0, y: 16.0),
-        ChartDataEntry(x: 17.0, y: 17.0),
-        ChartDataEntry(x: 18.0, y: 18.0),
-        ChartDataEntry(x: 19.0, y: 19.0),
-        ChartDataEntry(x: 20.0, y: 20.0)
-    ]
+    private func generateDataEntries() -> [BarEntry] {
+        let valueTotal = [40, 50, 60, 70, 80, 50, 50, 90, 50, 70]
+        let colors = [#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)]
+        var result: [BarEntry] = []
+        for i in 0 ..< valueTotal.count {
+            let value = valueTotal[i]
+            let height: Float = Float(value) / 100.0
 
-        func setData1() {
-            let set1 = LineChartDataSet(entries: yValues1, label: "hihi")
-            set1.mode = .cubicBezier
-            set1.setColor(.red)
-            //set1.fill = Fill(color: .black)
-            set1.fillAlpha = 0.8
-            set1.lineWidth = 2
-            set1.drawCirclesEnabled = false
-            //set1.drawFilledEnabled = true
-            let data1 = LineChartData(dataSet: set1)
-            lineChartView.data = data1
+            let formatter = DateFormatter()
+            formatter.dateFormat = "d MMM"
+            var date = Date()
+            date.addTimeInterval(TimeInterval(24 * 60 * 60 * i))
+            result.append(BarEntry(color: colors[i % colors.count], height: height, textValue: "\(value)", title: formatter.string(from: date)))
         }
+        return result
+    }
 }

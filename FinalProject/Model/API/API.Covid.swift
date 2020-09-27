@@ -36,15 +36,14 @@ extension Api.Path.Search {
 
 extension Api.Path.Detail {
 
-    static func getDataCellOne(urlString: String, completion: @escaping CompletionResult<DayOneCountry>) {
+    static func getDataInDetail(urlString: String, completion: @escaping CompletionResult<[DayOneCountry]>) {
         api.request(method: .get, urlString: urlString) { result in
             switch result {
             case .success(let data):
                 if let data = data as? JSArray {
                     let item: [DayOneCountry] = Mapper<DayOneCountry>().mapArray(JSONArray: data)
-                    let lastItem = item.last
-                    if lastItem != nil {
-                        completion( .success(lastItem ?? DayOneCountry()))
+                    if !item.isEmpty {
+                        completion( .success(item))
                     } else {
                         completion( .failure(Api.Error.emptyData))
                     }

@@ -7,9 +7,6 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
-  - Charts (3.5.0):
-    - Charts/Core (= 3.5.0)
-  - Charts/Core (3.5.0)
   - FBSDKCoreKit (7.1.1):
     - FBSDKCoreKit/Basics (= 7.1.1)
     - FBSDKCoreKit/Core (= 7.1.1)
@@ -131,12 +128,10 @@ PODS:
   - SwifterSwift/SwiftStdlib (4.6.0)
   - SwifterSwift/UIKit (4.6.0)
   - SwiftLint (0.27.0)
-  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireNetworkActivityIndicator (~> 2.3)
-  - Charts
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
@@ -149,14 +144,12 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.2)
   - SwifterSwift (~> 4.6)
   - SwiftLint (= 0.27)
-  - TinyConstraints
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireNetworkActivityIndicator
     - AppAuth
-    - Charts
     - FBSDKCoreKit
     - FBSDKLoginKit
     - Firebase
@@ -182,13 +175,11 @@ SPEC REPOS:
     - SVProgressHUD
     - SwifterSwift
     - SwiftLint
-    - TinyConstraints
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
-  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
   FBSDKLoginKit: 1a61d79e2b25e2fc0d03dccab1e34b38bbdf2546
   Firebase: 47176280bfba198e531f909cfb1612dad216cb96
@@ -214,8 +205,7 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
-  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: ef427aca9c42a34c07f077920ad01a0fce8531df
+PODFILE CHECKSUM: 3f318a409c69d0d6504f673e8177c9465abc3e87
 
 COCOAPODS: 1.5.3
