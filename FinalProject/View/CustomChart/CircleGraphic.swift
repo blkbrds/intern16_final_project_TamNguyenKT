@@ -21,10 +21,10 @@ class CircleGraphic: UIView {
       layer.masksToBounds = false
   }
 
-  convenience init(frame: CGRect,percent value: Int) {
+    convenience init(frame: CGRect, percent value: Int, title: String, color: UIColor) {
       self.init(frame: frame)
-      createCircle(with: value)
-      createLabel(with: value)
+      createCircle(with: value, with: color)
+      createLabel(with: value, with: title)
   }
 
   required init?(coder: NSCoder) {
@@ -32,7 +32,7 @@ class CircleGraphic: UIView {
   }
 
   // MARK: - Private functions
-  private func createCircle(with value: Int) {
+    private func createCircle(with value: Int, with color : UIColor) {
       // background layer
       let frameWidth = min(bounds.width, bounds.height)
       let path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: frameWidth, height: frameWidth))
@@ -50,7 +50,7 @@ class CircleGraphic: UIView {
       let path1 = UIBezierPath(arcCenter: center, radius: frameWidth / 2, startAngle: -.pi / 2, endAngle: 3 * .pi / 2, clockwise: true)
       shapeLayer1.path = path1.cgPath
       shapeLayer1.fillColor = UIColor.clear.cgColor
-      shapeLayer1.strokeColor = UIColor.green.cgColor
+        shapeLayer1.strokeColor = color.cgColor
       shapeLayer1.strokeStart = 0.0
       shapeLayer1.strokeEnd = CGFloat(value) / 100
       shapeLayer1.lineCap = .round
@@ -59,11 +59,16 @@ class CircleGraphic: UIView {
   }
 
   //create a number
-  private func createLabel(with num: Int) {
+    private func createLabel(with num: Int, with title: String) {
       let numberLabel = UILabel()
       numberLabel.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.width)
       numberLabel.textAlignment = .center
       numberLabel.text = String(num) + " %"
       self.addSubview(numberLabel)
+        let titleLabel = UILabel()
+        titleLabel.frame = CGRect(x: 0, y: 70, width: self.bounds.width, height: self.bounds.width)
+        titleLabel.textAlignment = .center
+        titleLabel.text = title
+        self.addSubview(titleLabel)
   }
 }

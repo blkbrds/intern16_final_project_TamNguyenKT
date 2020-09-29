@@ -81,9 +81,9 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 1:
-            return 200
+            return 150
         case 2:
-            return 450
+            return 380
         default:
             return UITableView.automaticDimension
         }
