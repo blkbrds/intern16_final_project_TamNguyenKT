@@ -7,22 +7,17 @@
 //
 
 import Foundation
-import  Alamofire
 
 final class Api {
-
     struct Path {
-        static let baseURL = "https://api.covid19api.com"
-        static let summaryURL = "/summary"
-        static let worldURL = "/world/total"
-        static let countriesURL = "/countries"
-        static let dayoneURL = "/dayone/country/"
+        #if DEBUG
+            static let baseURL = "https://dev-asiantech.vn"
+        #elseif STG
+            static let baseURL = "https://stg-asiantech.vn"
+        #else
+            static let baseURL = "https://pro-asiantech.vn"
+        #endif
     }
-
-    struct Stats { }
-    struct Search { }
-    struct Detail { }
-    struct Map { }
 }
 
 protocol URLStringConvertible {
@@ -51,23 +46,4 @@ extension String: URLStringConvertible {
 
 extension CustomStringConvertible where Self: URLStringConvertible {
     var urlString: String { return description }
-}
-
-extension Api.Path {
-
-    struct Detail {
-        static var path: String { return baseURL + dayoneURL }
-    }
-
-    struct Search {
-        static var path: String { return baseURL + summaryURL }
-    }
-
-    struct Stats {
-        static var pathWorld: String { return baseURL + worldURL }
-    }
-
-    struct Map {
-        static var path: String { return baseURL + dayoneURL }
-    }
 }

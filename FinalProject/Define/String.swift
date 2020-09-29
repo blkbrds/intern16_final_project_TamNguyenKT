@@ -14,17 +14,18 @@
 import Foundation
 
 extension App {
-
+    
     struct String {
         static let error = "ERROR"
         static let ok = "OK"
     }
-
+    
     struct ErrorSignIn {
         static let cancel = "Cancel"
         static let unknown = "Unknown"
         static let invalidResponse = "InvalidResponse"
         static let notHandled = "NotHandled"
         static let failed = "Failed"
+        
     }
 }

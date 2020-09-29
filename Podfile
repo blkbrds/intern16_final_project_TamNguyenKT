@@ -27,5 +27,5 @@ target 'FinalProject' do
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
     pod 'FBSDKLoginKit'
-    pod 'TinyConstraints'
+
 end
