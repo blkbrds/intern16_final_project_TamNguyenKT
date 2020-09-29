@@ -47,6 +47,8 @@
 		3145406C251091E700696E49 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145406B251091E700696E49 /* DeviceType.swift */; };
 		314540702510948700696E49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3145406F2510948700696E49 /* GoogleService-Info.plist */; };
 		314540832511B8B200696E49 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314540822511B8B200696E49 /* Enum.swift */; };
+		31C3A7D2252373DF0001E53B /* StatsCellTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7D0252373DF0001E53B /* StatsCellTwoTableViewCell.swift */; };
+		31C3A7D3252373DF0001E53B /* StatsCellTwoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7D1252373DF0001E53B /* StatsCellTwoTableViewCell.xib */; };
 		31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */; };
 		31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFD2511E8EF007F8F8D /* ViewController.swift */; };
 		31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFE2511E8EF007F8F8D /* TableCell.swift */; };
@@ -140,6 +142,8 @@
 		3145406F2510948700696E49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31454071251094F200696E49 /* FinalProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinalProject.entitlements; sourceTree = "<group>"; };
 		314540822511B8B200696E49 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		31C3A7D0252373DF0001E53B /* StatsCellTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellTwoTableViewCell.swift; sourceTree = "<group>"; };
+		31C3A7D1252373DF0001E53B /* StatsCellTwoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCellTwoTableViewCell.xib; sourceTree = "<group>"; };
 		31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		31FE1CFD2511E8EF007F8F8D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31FE1CFE2511E8EF007F8F8D /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
@@ -236,9 +240,8 @@
 		3144D2AB251C7A9D000F6E3F /* Stats Cell */ = {
 			isa = PBXGroup;
 			children = (
-				3144D2AC251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift */,
-				3144D2AD251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib */,
-				3144D2B0251C8417000F6E3F /* StatsCellOneModel.swift */,
+				31C3A7CF2523739A0001E53B /* CellTwo */,
+				31C3A7CE2523737A0001E53B /* CellOne */,
 			);
 			path = "Stats Cell";
 			sourceTree = "<group>";
@@ -316,6 +319,25 @@
 				3144D2A9251C7A7D000F6E3F /* StatsViewModel.swift */,
 			);
 			path = Stats;
+			sourceTree = "<group>";
+		};
+		31C3A7CE2523737A0001E53B /* CellOne */ = {
+			isa = PBXGroup;
+			children = (
+				3144D2B0251C8417000F6E3F /* StatsCellOneModel.swift */,
+				3144D2AD251C7AD0000F6E3F /* StatsCellOneTableViewCell.xib */,
+				3144D2AC251C7AD0000F6E3F /* StatsCellOneTableViewCell.swift */,
+			);
+			path = CellOne;
+			sourceTree = "<group>";
+		};
+		31C3A7CF2523739A0001E53B /* CellTwo */ = {
+			isa = PBXGroup;
+			children = (
+				31C3A7D0252373DF0001E53B /* StatsCellTwoTableViewCell.swift */,
+				31C3A7D1252373DF0001E53B /* StatsCellTwoTableViewCell.xib */,
+			);
+			path = CellTwo;
 			sourceTree = "<group>";
 		};
 		31FE1CFB2511E8EF007F8F8D /* Base */ = {
@@ -644,6 +666,7 @@
 				31FE1D082512FFB2007F8F8D /* SearchTableViewCell.xib in Resources */,
 				3145406325108C5800696E49 /* MapViewController.xib in Resources */,
 				314489FD251AE4B6006F5230 /* CellOneTableViewCell.xib in Resources */,
+				31C3A7D3252373DF0001E53B /* StatsCellTwoTableViewCell.xib in Resources */,
 				31174422251994E1006D2516 /* DetailViewController.xib in Resources */,
 				31448A03251B4D44006F5230 /* CellThreeTableViewCell.xib in Resources */,
 				D14016D1250A335300110A13 /* .gitkeep in Resources */,
@@ -799,6 +822,7 @@
 				31174421251994E1006D2516 /* DetailViewController.swift in Sources */,
 				31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */,
 				D14016E2250A335300110A13 /* MapperExt.swift in Sources */,
+				31C3A7D2252373DF0001E53B /* StatsCellTwoTableViewCell.swift in Sources */,
 				3144D2D0251F8735000F6E3F /* BarEntry.swift in Sources */,
 				D14016EB250A335300110A13 /* Color.swift in Sources */,
 				3143527025131B94000CBA59 /* Covid.swift in Sources */,

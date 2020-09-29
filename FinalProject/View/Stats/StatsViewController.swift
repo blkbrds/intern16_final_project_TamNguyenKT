@@ -19,6 +19,7 @@ final class StatsViewController: ViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataCellOne()
     }
 
     // MARK: - Override methods
@@ -26,6 +27,23 @@ final class StatsViewController: ViewController {
         tableView.register(nibWithCellClass: StatsCellOneTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+    }
+
+    // MARK: - Private methods
+    private func loadDataCellOne() {
+        viewModel.getDataCellOne { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    this.tableView.reloadData()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    this.alert(error: error)
+                }
+            }
+        }
     }
 }
 
@@ -37,13 +55,25 @@ extension StatsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        switch indexPath.row {
+        case 0:
+            let cellOne = tableView.dequeueReusableCell(withClass: StatsCellOneTableViewCell.self, for: indexPath)
+            cellOne.viewModel = viewModel.viewModelForCellOne(at: indexPath)
+            return cellOne
+        default:
+            return UITableViewCell()
+        }
     }
 }
 
 // MARK: - Extension UITableViewDelegate
 extension StatsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        switch indexPath.row {
+        case 0:
+            return 100
+        default:
+            return UITableView.automaticDimension
+        }
     }
 }
