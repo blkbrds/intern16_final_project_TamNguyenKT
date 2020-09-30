@@ -55,6 +55,8 @@
 		31C3A7DE252428630001E53B /* CellRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7DC252428630001E53B /* CellRankTableViewCell.swift */; };
 		31C3A7DF252428630001E53B /* CellRankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7DD252428630001E53B /* CellRankTableViewCell.xib */; };
 		31C3A7E12524287A0001E53B /* CellRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7E02524287A0001E53B /* CellRankModel.swift */; };
+		31C3A7E5252447D60001E53B /* StatsCellFiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7E3252447D60001E53B /* StatsCellFiveTableViewCell.swift */; };
+		31C3A7E6252447D60001E53B /* StatsCellFiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7E4252447D60001E53B /* StatsCellFiveTableViewCell.xib */; };
 		31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */; };
 		31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFD2511E8EF007F8F8D /* ViewController.swift */; };
 		31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFE2511E8EF007F8F8D /* TableCell.swift */; };
@@ -156,6 +158,8 @@
 		31C3A7DC252428630001E53B /* CellRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRankTableViewCell.swift; sourceTree = "<group>"; };
 		31C3A7DD252428630001E53B /* CellRankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellRankTableViewCell.xib; sourceTree = "<group>"; };
 		31C3A7E02524287A0001E53B /* CellRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRankModel.swift; sourceTree = "<group>"; };
+		31C3A7E3252447D60001E53B /* StatsCellFiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellFiveTableViewCell.swift; sourceTree = "<group>"; };
+		31C3A7E4252447D60001E53B /* StatsCellFiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCellFiveTableViewCell.xib; sourceTree = "<group>"; };
 		31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		31FE1CFD2511E8EF007F8F8D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31FE1CFE2511E8EF007F8F8D /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 		3144D2AB251C7A9D000F6E3F /* Stats Cell */ = {
 			isa = PBXGroup;
 			children = (
+				31C3A7E2252447930001E53B /* CellFive */,
 				31C3A7DB252428410001E53B /* CellRank */,
 				31C3A7D4252377030001E53B /* CellThree */,
 				31C3A7CF2523739A0001E53B /* CellTwo */,
@@ -372,6 +377,15 @@
 				31C3A7E02524287A0001E53B /* CellRankModel.swift */,
 			);
 			path = CellRank;
+			sourceTree = "<group>";
+		};
+		31C3A7E2252447930001E53B /* CellFive */ = {
+			isa = PBXGroup;
+			children = (
+				31C3A7E3252447D60001E53B /* StatsCellFiveTableViewCell.swift */,
+				31C3A7E4252447D60001E53B /* StatsCellFiveTableViewCell.xib */,
+			);
+			path = CellFive;
 			sourceTree = "<group>";
 		};
 		31FE1CFB2511E8EF007F8F8D /* Base */ = {
@@ -701,6 +715,7 @@
 				31FE1D082512FFB2007F8F8D /* SearchTableViewCell.xib in Resources */,
 				3145406325108C5800696E49 /* MapViewController.xib in Resources */,
 				314489FD251AE4B6006F5230 /* CellOneTableViewCell.xib in Resources */,
+				31C3A7E6252447D60001E53B /* StatsCellFiveTableViewCell.xib in Resources */,
 				31C3A7D3252373DF0001E53B /* StatsCellTwoTableViewCell.xib in Resources */,
 				31174422251994E1006D2516 /* DetailViewController.xib in Resources */,
 				31448A03251B4D44006F5230 /* CellThreeTableViewCell.xib in Resources */,
@@ -888,6 +903,7 @@
 				31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */,
 				3145406825108C5800696E49 /* StatsViewController.swift in Sources */,
 				D14016D3250A335300110A13 /* Error.swift in Sources */,
+				31C3A7E5252447D60001E53B /* StatsCellFiveTableViewCell.swift in Sources */,
 				D1BB12FD250A57B100FA0B80 /* NSURL.swift in Sources */,
 				3145406A251090E900696E49 /* AppDelegate.swift in Sources */,
 				3145406025108C5800696E49 /* SearchViewController.swift in Sources */,

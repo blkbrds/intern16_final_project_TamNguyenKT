@@ -20,18 +20,56 @@ final class StatsViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDataCellOne()
+        loadDataCellThree()
+        loadDataCellRank()
     }
 
     // MARK: - Override methods
     override func setUpUI() {
         tableView.register(nibWithCellClass: StatsCellOneTableViewCell.self)
+        tableView.register(nibWithCellClass: StatsCellThreeTableViewCell.self)
+        tableView.register(nibWithCellClass: StatsCellFiveTableViewCell.self)
+        tableView.register(nibWithCellClass: CellRankTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        title = "Statistics"
     }
 
     // MARK: - Private methods
     private func loadDataCellOne() {
         viewModel.getDataCellOne { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    this.tableView.reloadData()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    this.alert(error: error)
+                }
+            }
+        }
+    }
+
+    private func loadDataCellThree() {
+        viewModel.getDataCellThree { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    this.tableView.reloadData()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    this.alert(error: error)
+                }
+            }
+        }
+    }
+
+    private func loadDataCellRank() {
+        viewModel.getDataCellRank { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .success:
@@ -60,6 +98,17 @@ extension StatsViewController: UITableViewDataSource {
             let cellOne = tableView.dequeueReusableCell(withClass: StatsCellOneTableViewCell.self, for: indexPath)
             cellOne.viewModel = viewModel.viewModelForCellOne(at: indexPath)
             return cellOne
+        case 2:
+            let cellThree = tableView.dequeueReusableCell(withClass: StatsCellThreeTableViewCell.self, for: indexPath)
+            cellThree.viewModel = viewModel.viewModelForCellThree(at: indexPath)
+            return cellThree
+        case 4:
+            let cellFive = tableView.dequeueReusableCell(withClass: StatsCellFiveTableViewCell.self, for: indexPath)
+            return cellFive
+        case 5 ... 20:
+            let cellRank = tableView.dequeueReusableCell(withClass: CellRankTableViewCell.self, for: indexPath)
+            cellRank.viewModel = viewModel.viewModelForCellRank(at: indexPath)
+            return cellRank
         default:
             return UITableViewCell()
         }
@@ -72,6 +121,10 @@ extension StatsViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             return 100
+        case 2:
+            return 120
+        case 4:
+            return 50
         default:
             return UITableView.automaticDimension
         }

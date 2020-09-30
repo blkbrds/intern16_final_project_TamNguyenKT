@@ -14,6 +14,7 @@ final class StatsCellOneTableViewCell: UITableViewCell {
     @IBOutlet private weak var numberConfirmed: UILabel!
     @IBOutlet private weak var numberDeadth: UILabel!
     @IBOutlet private weak var numberRecovered: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
 
     // MARK: - Properties
     var viewModel: StatsCellOneModel? {
@@ -33,5 +34,10 @@ final class StatsCellOneTableViewCell: UITableViewCell {
         if let recover = viewModel?.recovered {
             numberRecovered.text = String(recover)
         }
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        dateFormatter.timeStyle = .medium
+        dateLabel.text = dateFormatter.string(from: currentDate)
     }
 }

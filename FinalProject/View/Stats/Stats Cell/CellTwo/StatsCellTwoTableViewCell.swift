@@ -9,7 +9,4 @@
 import UIKit
 
 final class StatsCellTwoTableViewCell: UITableViewCell {
-
-    // MARK: - Properties
-    
 }

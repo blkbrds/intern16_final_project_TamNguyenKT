@@ -10,15 +10,29 @@ import UIKit
 
 final class StatsCellThreeTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - IBOulets
+    @IBOutlet private weak var totalCases: UILabel!
+    @IBOutlet private weak var totalRecovered: UILabel!
+    @IBOutlet private weak var totalDeadth: UILabel!
+    @IBOutlet private weak var newCases: UILabel!
+    @IBOutlet private weak var newRecovered: UILabel!
+    @IBOutlet private weak var newDeadth: UILabel!
+
+    // MARK: - Properties
+    var viewModel: StatsCellThreeModel? {
+        didSet {
+            updateView()
+        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    // MARK: - Private methods
+    private func updateView() {
+        guard let viewModel = viewModel else { return }
+        totalCases.text = String(viewModel.cases)
+        totalRecovered.text = String(viewModel.recovered)
+        totalDeadth.text = String(viewModel.deadth)
+        newCases.text = String(viewModel.newCase)
+        newRecovered.text = String(viewModel.newRecovered)
+        newDeadth.text = String(viewModel.newDeadth)
     }
-    
 }

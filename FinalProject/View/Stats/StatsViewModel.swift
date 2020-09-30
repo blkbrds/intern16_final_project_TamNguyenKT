@@ -32,41 +32,39 @@ final class StatsViewModel {
     }
 
     func getDataCellThree(completion: @escaping APICompletion) {
-        Api.Path.Stats.getDataCellThree{ [weak self] result in
+        Api.Path.Stats.getDataCellThree { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .failure(let error):
                 completion( .failure(error))
             case .success(let result):
                 this.countries = result
-                this.itemVN = getVietNam()
+                this.itemVN = this.getVietNam()
                 completion( .success)
             }
         }
+    }
 
-        func getDataCellRank(completion: @escaping APICompletion) {
-            Api.Path.Stats.getDataCellRank() { [weak self] result in
-                switch result {
-                case .failure(let error):
-                    completion( .failure(error))
-                case .success(let result):
-                    guard let this = self else { return }
-                    this.countries.append(contentsOf: result)
-                    this.rankCountries = this.countries
-                    this.rankCountries = this.countries.sorted { $0.totalconfirmed > $1.totalconfirmed }
-                    completion( .success)
-                }
+    func getDataCellRank(completion: @escaping APICompletion) {
+        Api.Path.Stats.getDataCellRank { [weak self] result in
+            switch result {
+            case .failure(let error):
+                completion( .failure(error))
+            case .success(let result):
+                guard let this = self else { return }
+                this.countries = result
+                this.rankCountries = this.countries
+                this.rankCountries = this.countries.sorted { $0.totalconfirmed > $1.totalconfirmed }
+                completion( .success)
             }
         }
+    }
 
-        func getVietNam() -> Country {
-            for index in 0 ..< countries.count {
-                if countries[index].countryName == "Viet Nam" {
-                    return countries[index]
-                }
+    func getVietNam() -> Country {
+        for index in 0 ..< countries.count where countries[index].countryName == "Viet Nam" {
+                return countries[index]
             }
-            return Country()
-        }
+        return Country()
     }
 
     func numberOfRowInsection() -> Int {
@@ -84,8 +82,8 @@ final class StatsViewModel {
     }
 
     func viewModelForCellRank(at indexPath: IndexPath) -> CellRankModel {
-        let item = rankCountries[indexPath.row - 6]
-        let viewModel = CellRankModel(rankItem: item, index: indexPath.row - 5)
+        guard let item = rankCountries[safe: indexPath.row - 5] else { return CellRankModel() }
+        let viewModel = CellRankModel(rankItem: item, index: indexPath.row - 4)
         return viewModel
     }
 }

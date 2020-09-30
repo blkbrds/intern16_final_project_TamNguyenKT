@@ -10,15 +10,23 @@ import UIKit
 
 class CellRankTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - IBOulets
+    @IBOutlet private weak var nameCountry: UILabel!
+    @IBOutlet private weak var totalCasesLabel: UILabel!
+    @IBOutlet private weak var rankLabel: UILabel!
+
+    // MARK: - Properties
+    var viewModel: CellRankModel? {
+        didSet {
+            updateView()
+        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    // MARK: - Private methods
+    private func updateView() {
+        guard let viewModel = viewModel else { return }
+        nameCountry.text = viewModel.nameCountry
+        totalCasesLabel.text = String(viewModel.totalCases)
+        rankLabel.text = String(viewModel.index) + "."
     }
-    
 }
