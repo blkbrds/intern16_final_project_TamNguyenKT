@@ -32,7 +32,7 @@ class CircleGraphic: UIView {
   }
 
   // MARK: - Private functions
-    private func createCircle(with value: Int, with color : UIColor) {
+    private func createCircle(with value: Int, with color: UIColor) {
       // background layer
       let frameWidth = min(bounds.width, bounds.height)
       let path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: frameWidth, height: frameWidth))
