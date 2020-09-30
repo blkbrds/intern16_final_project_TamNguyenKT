@@ -14,14 +14,14 @@ final class DetailTableViewCell: UITableViewCell {
     // MARK: - Properties
     private var graphs = CircleGraphic()
 
-     override func awakeFromNib() {
-           super.awakeFromNib()
-           configCircleView()
-       }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configCircleView()
+    }
 
-       override func setSelected(_ selected: Bool, animated: Bool) {
-           super.setSelected(selected, animated: animated)
-       }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 
     // MARK: - Private methods
     private func configCircleView() {
