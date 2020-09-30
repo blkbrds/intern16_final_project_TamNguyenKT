@@ -49,6 +49,9 @@
 		314540832511B8B200696E49 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314540822511B8B200696E49 /* Enum.swift */; };
 		31C3A7D2252373DF0001E53B /* StatsCellTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7D0252373DF0001E53B /* StatsCellTwoTableViewCell.swift */; };
 		31C3A7D3252373DF0001E53B /* StatsCellTwoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7D1252373DF0001E53B /* StatsCellTwoTableViewCell.xib */; };
+		31C3A7D7252377260001E53B /* StatsCellThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7D5252377260001E53B /* StatsCellThreeTableViewCell.swift */; };
+		31C3A7D8252377260001E53B /* StatsCellThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7D6252377260001E53B /* StatsCellThreeTableViewCell.xib */; };
+		31C3A7DA2523775E0001E53B /* StatsCellThreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7D92523775E0001E53B /* StatsCellThreeModel.swift */; };
 		31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */; };
 		31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFD2511E8EF007F8F8D /* ViewController.swift */; };
 		31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFE2511E8EF007F8F8D /* TableCell.swift */; };
@@ -144,6 +147,9 @@
 		314540822511B8B200696E49 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		31C3A7D0252373DF0001E53B /* StatsCellTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellTwoTableViewCell.swift; sourceTree = "<group>"; };
 		31C3A7D1252373DF0001E53B /* StatsCellTwoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCellTwoTableViewCell.xib; sourceTree = "<group>"; };
+		31C3A7D5252377260001E53B /* StatsCellThreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellThreeTableViewCell.swift; sourceTree = "<group>"; };
+		31C3A7D6252377260001E53B /* StatsCellThreeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCellThreeTableViewCell.xib; sourceTree = "<group>"; };
+		31C3A7D92523775E0001E53B /* StatsCellThreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellThreeModel.swift; sourceTree = "<group>"; };
 		31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		31FE1CFD2511E8EF007F8F8D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31FE1CFE2511E8EF007F8F8D /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
@@ -240,6 +246,7 @@
 		3144D2AB251C7A9D000F6E3F /* Stats Cell */ = {
 			isa = PBXGroup;
 			children = (
+				31C3A7D4252377030001E53B /* CellThree */,
 				31C3A7CF2523739A0001E53B /* CellTwo */,
 				31C3A7CE2523737A0001E53B /* CellOne */,
 			);
@@ -338,6 +345,16 @@
 				31C3A7D1252373DF0001E53B /* StatsCellTwoTableViewCell.xib */,
 			);
 			path = CellTwo;
+			sourceTree = "<group>";
+		};
+		31C3A7D4252377030001E53B /* CellThree */ = {
+			isa = PBXGroup;
+			children = (
+				31C3A7D5252377260001E53B /* StatsCellThreeTableViewCell.swift */,
+				31C3A7D6252377260001E53B /* StatsCellThreeTableViewCell.xib */,
+				31C3A7D92523775E0001E53B /* StatsCellThreeModel.swift */,
+			);
+			path = CellThree;
 			sourceTree = "<group>";
 		};
 		31FE1CFB2511E8EF007F8F8D /* Base */ = {
@@ -662,6 +679,7 @@
 				D14016E4250A335300110A13 /* Preview Assets.xcassets in Resources */,
 				3145405E25108C5800696E49 /* FollowViewController.xib in Resources */,
 				3145406125108C5800696E49 /* SearchViewController.xib in Resources */,
+				31C3A7D8252377260001E53B /* StatsCellThreeTableViewCell.xib in Resources */,
 				D14016E6250A335300110A13 /* LaunchScreen.storyboard in Resources */,
 				31FE1D082512FFB2007F8F8D /* SearchTableViewCell.xib in Resources */,
 				3145406325108C5800696E49 /* MapViewController.xib in Resources */,
@@ -830,6 +848,7 @@
 				3117441D25185EB7006D2516 /* SearchViewModel.swift in Sources */,
 				314489FC251AE4B6006F5230 /* CellOneTableViewCell.swift in Sources */,
 				D14016D5250A335300110A13 /* ResponseSerializer.swift in Sources */,
+				31C3A7DA2523775E0001E53B /* StatsCellThreeModel.swift in Sources */,
 				3145406625108C5800696E49 /* LoginViewController.swift in Sources */,
 				31FE1D032511E8EF007F8F8D /* Button.swift in Sources */,
 				D1BB1301250A5ECC00FA0B80 /* DictionaryExt.swift in Sources */,
@@ -842,6 +861,7 @@
 				3145406425108C5800696E49 /* TabBarViewController.swift in Sources */,
 				D1BB1303250A5F0C00FA0B80 /* Measurement.swift in Sources */,
 				311744292519AD32006D2516 /* DetailCellModel.swift in Sources */,
+				31C3A7D7252377260001E53B /* StatsCellThreeTableViewCell.swift in Sources */,
 				3117442D2519E7AF006D2516 /* DayOneCountry.swift in Sources */,
 				31174426251995FB006D2516 /* DetailTableViewCell.swift in Sources */,
 				31FE1D072512FFB2007F8F8D /* SearchTableViewCell.swift in Sources */,
