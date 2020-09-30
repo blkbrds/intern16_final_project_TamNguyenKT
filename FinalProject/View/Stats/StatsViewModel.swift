@@ -13,6 +13,7 @@ final class StatsViewModel {
     // MARK: - Properties
     var item: Global = Global()
     var countries: [Country] = []
+    var rankCountries: [Country] = []
     var itemVN: Country = Country()
 
     // MARK: - Function
@@ -43,6 +44,21 @@ final class StatsViewModel {
             }
         }
 
+        func getDataCellRank(completion: @escaping APICompletion) {
+            Api.Path.Stats.getDataCellRank() { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    completion( .failure(error))
+                case .success(let result):
+                    guard let this = self else { return }
+                    this.countries.append(contentsOf: result)
+                    this.rankCountries = this.countries
+                    this.rankCountries = this.countries.sorted { $0.totalconfirmed > $1.totalconfirmed }
+                    completion( .success)
+                }
+            }
+        }
+
         func getVietNam() -> Country {
             for index in 0 ..< countries.count {
                 if countries[index].countryName == "Viet Nam" {
@@ -64,6 +80,12 @@ final class StatsViewModel {
 
     func viewModelForCellThree(at indexPath: IndexPath) -> StatsCellThreeModel {
         let viewModel = StatsCellThreeModel(country: itemVN)
+        return viewModel
+    }
+
+    func viewModelForCellRank(at indexPath: IndexPath) -> CellRankModel {
+        let item = rankCountries[indexPath.row - 6]
+        let viewModel = CellRankModel(rankItem: item, index: indexPath.row - 5)
         return viewModel
     }
 }

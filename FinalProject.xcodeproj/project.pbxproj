@@ -52,6 +52,9 @@
 		31C3A7D7252377260001E53B /* StatsCellThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7D5252377260001E53B /* StatsCellThreeTableViewCell.swift */; };
 		31C3A7D8252377260001E53B /* StatsCellThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7D6252377260001E53B /* StatsCellThreeTableViewCell.xib */; };
 		31C3A7DA2523775E0001E53B /* StatsCellThreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7D92523775E0001E53B /* StatsCellThreeModel.swift */; };
+		31C3A7DE252428630001E53B /* CellRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7DC252428630001E53B /* CellRankTableViewCell.swift */; };
+		31C3A7DF252428630001E53B /* CellRankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7DD252428630001E53B /* CellRankTableViewCell.xib */; };
+		31C3A7E12524287A0001E53B /* CellRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7E02524287A0001E53B /* CellRankModel.swift */; };
 		31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */; };
 		31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFD2511E8EF007F8F8D /* ViewController.swift */; };
 		31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFE2511E8EF007F8F8D /* TableCell.swift */; };
@@ -150,6 +153,9 @@
 		31C3A7D5252377260001E53B /* StatsCellThreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellThreeTableViewCell.swift; sourceTree = "<group>"; };
 		31C3A7D6252377260001E53B /* StatsCellThreeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCellThreeTableViewCell.xib; sourceTree = "<group>"; };
 		31C3A7D92523775E0001E53B /* StatsCellThreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellThreeModel.swift; sourceTree = "<group>"; };
+		31C3A7DC252428630001E53B /* CellRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRankTableViewCell.swift; sourceTree = "<group>"; };
+		31C3A7DD252428630001E53B /* CellRankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellRankTableViewCell.xib; sourceTree = "<group>"; };
+		31C3A7E02524287A0001E53B /* CellRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRankModel.swift; sourceTree = "<group>"; };
 		31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		31FE1CFD2511E8EF007F8F8D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31FE1CFE2511E8EF007F8F8D /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 		3144D2AB251C7A9D000F6E3F /* Stats Cell */ = {
 			isa = PBXGroup;
 			children = (
+				31C3A7DB252428410001E53B /* CellRank */,
 				31C3A7D4252377030001E53B /* CellThree */,
 				31C3A7CF2523739A0001E53B /* CellTwo */,
 				31C3A7CE2523737A0001E53B /* CellOne */,
@@ -355,6 +362,16 @@
 				31C3A7D92523775E0001E53B /* StatsCellThreeModel.swift */,
 			);
 			path = CellThree;
+			sourceTree = "<group>";
+		};
+		31C3A7DB252428410001E53B /* CellRank */ = {
+			isa = PBXGroup;
+			children = (
+				31C3A7DC252428630001E53B /* CellRankTableViewCell.swift */,
+				31C3A7DD252428630001E53B /* CellRankTableViewCell.xib */,
+				31C3A7E02524287A0001E53B /* CellRankModel.swift */,
+			);
+			path = CellRank;
 			sourceTree = "<group>";
 		};
 		31FE1CFB2511E8EF007F8F8D /* Base */ = {
@@ -690,6 +707,7 @@
 				D14016D1250A335300110A13 /* .gitkeep in Resources */,
 				314540702510948700696E49 /* GoogleService-Info.plist in Resources */,
 				3145406725108C5800696E49 /* StatsViewController.xib in Resources */,
+				31C3A7DF252428630001E53B /* CellRankTableViewCell.xib in Resources */,
 				D14016E5250A335300110A13 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -852,11 +870,13 @@
 				3145406625108C5800696E49 /* LoginViewController.swift in Sources */,
 				31FE1D032511E8EF007F8F8D /* Button.swift in Sources */,
 				D1BB1301250A5ECC00FA0B80 /* DictionaryExt.swift in Sources */,
+				31C3A7E12524287A0001E53B /* CellRankModel.swift in Sources */,
 				3143526E2513178E000CBA59 /* Country.swift in Sources */,
 				314540832511B8B200696E49 /* Enum.swift in Sources */,
 				D14016E9250A335300110A13 /* Font.swift in Sources */,
 				D14016E3250A335300110A13 /* DefaultsExt.swift in Sources */,
 				D14016E1250A335300110A13 /* UIViewControllerExt.swift in Sources */,
+				31C3A7DE252428630001E53B /* CellRankTableViewCell.swift in Sources */,
 				3143527225131DDA000CBA59 /* Global.swift in Sources */,
 				3145406425108C5800696E49 /* TabBarViewController.swift in Sources */,
 				D1BB1303250A5F0C00FA0B80 /* Measurement.swift in Sources */,
