@@ -16,7 +16,7 @@ final class SearchViewModel {
 
     // MARK: - Function
     func getData(completion: @escaping APICompletion) {
-        Api.Path.Search.getAllDataInSearch() { [weak self] result in
+        Api.Path.Search.getAllDataInSearch { [weak self] result in
             switch result {
             case .failure(let error):
                 completion( .failure(error))

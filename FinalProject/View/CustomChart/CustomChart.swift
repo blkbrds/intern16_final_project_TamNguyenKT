@@ -20,7 +20,7 @@ final class CustomChart: UIView {
 
     var dataEntries: [BarEntry]? = nil {
         didSet {
-            mainLayer.sublayers?.forEach( {$0.removeFromSuperlayer()})
+            mainLayer.sublayers?.forEach({ $0.removeFromSuperlayer() })
 
             if let dataEntries = dataEntries {
                 scrollView.contentSize = CGSize(width: (barWidth) * CGFloat(dataEntries.count + 1) / 2, height: self.frame.size.height)
@@ -68,9 +68,6 @@ final class CustomChart: UIView {
 
         drawBar(xPos: xPos, yPos: yPos, height: height, color: entry.color)
 
-        // Draw the top bubble
-        drawTopBuble(xPos: xPos + barWidth / 2 - topBubbleRadius, yPos: round(yPos - height - 80), color: entry.color)
-
         // Draw the line that connect top of the bar to the top bubble
         drawLinkingLine(xPos: xPos + barWidth / 2, yPos: yPos - height - 4, color: entry.color)
 
@@ -84,7 +81,10 @@ final class CustomChart: UIView {
     private func drawBar(xPos: CGFloat, yPos: CGFloat, height: CGFloat, color: UIColor) {
         let leftPath: UIBezierPath = UIBezierPath()
         leftPath.move(to: CGPoint(x: xPos, y: yPos))
-        leftPath.addCurve(to: CGPoint(x: xPos + barWidth / 2, y: yPos - height), controlPoint1: CGPoint(x: (xPos + barWidth / 2), y: yPos), controlPoint2: CGPoint(x: xPos + barWidth * 3 / 10, y: yPos - height))
+        leftPath.addCurve(to: CGPoint(x: xPos + barWidth / 2, y: yPos - height),
+                          controlPoint1: CGPoint(x: (xPos + barWidth / 2), y: yPos),
+                          controlPoint2: CGPoint(x: xPos + barWidth * 3 / 10,
+                                                 y: yPos - height))
         leftPath.addLine(to: CGPoint(x: xPos + barWidth / 2, y: yPos))
 
         let leftLine = CAShapeLayer()
@@ -95,7 +95,10 @@ final class CustomChart: UIView {
 
         let rightPath: UIBezierPath = UIBezierPath()
         rightPath.move(to: CGPoint(x: xPos + barWidth, y: yPos))
-        rightPath.addCurve(to: CGPoint(x: xPos + barWidth / 2,y: yPos - height),controlPoint1: CGPoint(x: xPos + barWidth / 2,y: yPos),controlPoint2: CGPoint(x: xPos + barWidth * 7 / 10,y: yPos - height))
+        rightPath.addCurve(to: CGPoint(x: xPos + barWidth / 2, y: yPos - height),
+                           controlPoint1: CGPoint(x: xPos + barWidth / 2, y: yPos),
+                           controlPoint2: CGPoint(x: xPos + barWidth * 7 / 10,
+                                                  y: yPos - height))
         rightPath.addLine(to: CGPoint(x: xPos + barWidth / 2, y: yPos))
 
         let rightLine = CAShapeLayer()
@@ -106,55 +109,6 @@ final class CustomChart: UIView {
 
         mainLayer.addSublayer(leftLine)
         mainLayer.addSublayer(rightLine)
-    }
-
-    private func drawTopBuble(xPos: CGFloat, yPos: CGFloat, color: UIColor) {
-        // This magicValue helps to create 2 control points that can be used to draw a quater of a circle using Bezier curve function
-        let magicValue: CGFloat = 0.552284749831 * topBubbleRadius
-
-        let segment1Path = UIBezierPath()
-        segment1Path.move(to: CGPoint(x: xPos, y: yPos))
-        segment1Path.addCurve(to: CGPoint(x: xPos + topBubbleRadius, y: yPos - topBubbleRadius), controlPoint1: CGPoint(x: xPos, y: yPos - magicValue), controlPoint2: CGPoint(x: xPos + topBubbleRadius - magicValue, y: yPos - topBubbleRadius))
-        segment1Path.addLine(to: CGPoint(x: xPos + topBubbleRadius, y: yPos))
-        let segment1Layer = CAShapeLayer()
-        segment1Layer.path = segment1Path.cgPath
-        segment1Layer.fillColor = color.cgColor
-        segment1Layer.strokeColor = color.cgColor
-        segment1Layer.lineWidth = 0.0
-        mainLayer.addSublayer(segment1Layer)
-
-        let segment2Path = UIBezierPath()
-        segment2Path.move(to: CGPoint(x: xPos + topBubbleRadius, y: yPos - topBubbleRadius))
-        segment2Path.addCurve(to: CGPoint(x: xPos + topBubbleRadius * 2, y: yPos), controlPoint1: CGPoint(x: xPos + topBubbleRadius + magicValue, y: yPos - topBubbleRadius), controlPoint2: CGPoint(x: xPos+topBubbleRadius * 2, y: yPos - magicValue))
-        segment2Path.addLine(to: CGPoint(x: xPos + topBubbleRadius, y: yPos))
-        let segment2Layer = CAShapeLayer()
-        segment2Layer.path = segment2Path.cgPath
-        segment2Layer.fillColor = color.cgColor
-        segment2Layer.strokeColor = color.cgColor
-        segment2Layer.lineWidth = 0.0
-        mainLayer.addSublayer(segment2Layer)
-
-        let segment3Path = UIBezierPath()
-        segment3Path.move(to: CGPoint(x: xPos, y: yPos))
-        segment3Path.addCurve(to: CGPoint(x: xPos + topBubbleRadius, y: yPos + topBubbleRadius * 1.5), controlPoint1: CGPoint(x: xPos, y: yPos + magicValue), controlPoint2: CGPoint(x: xPos + topBubbleRadius - magicValue, y: yPos + topBubbleRadius))
-        segment3Path.addLine(to: CGPoint(x: xPos + topBubbleRadius, y: yPos))
-        let segment3Layer = CAShapeLayer()
-        segment3Layer.path = segment3Path.cgPath
-        segment3Layer.fillColor = color.cgColor
-        segment3Layer.strokeColor = color.cgColor
-        segment3Layer.lineWidth = 0.0
-        mainLayer.addSublayer(segment3Layer)
-
-        let segment4Path = UIBezierPath()
-        segment4Path.move(to: CGPoint(x: xPos + topBubbleRadius * 2, y: yPos))
-        segment4Path.addCurve(to: CGPoint(x: xPos + topBubbleRadius, y: yPos + topBubbleRadius * 1.5), controlPoint1: CGPoint(x: xPos + topBubbleRadius * 2, y: yPos + magicValue), controlPoint2: CGPoint(x: xPos + topBubbleRadius + magicValue, y: yPos + topBubbleRadius))
-        segment4Path.addLine(to: CGPoint(x: xPos + topBubbleRadius, y: yPos))
-        let segment4Layer = CAShapeLayer()
-        segment4Layer.path = segment4Path.cgPath
-        segment4Layer.fillColor = color.cgColor
-        segment4Layer.strokeColor = color.cgColor
-        segment4Layer.lineWidth = 0.0
-        mainLayer.addSublayer(segment4Layer)
     }
 
     private func drawTextValue(xPos: CGFloat, yPos: CGFloat, textValue: String) {

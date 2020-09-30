@@ -42,7 +42,7 @@ final class SearchViewController: ViewController {
     }
 
     private func loadData() {
-        viewModel.getData() { [weak self] result in
+        viewModel.getData { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .success:
