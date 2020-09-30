@@ -10,27 +10,28 @@ import UIKit
 
 final class CustomChart: UIView {
 
-    /// the width of each bar
+    // MARK: - Properties
+    // the width of each bar
     let barWidth: CGFloat = 40.0
 
-    /// space between each bar
+    // space between each bar
     let space: CGFloat = 20.0
 
-    /// space at the bottom of the bar to show the title
+    // space at the bottom of the bar to show the title
     private let bottomSpace: CGFloat = 40.0
 
-    /// space at the top of each bar to show the value
+    // space at the top of each bar to show the value
     private let topSpace: CGFloat = 40.0
 
-    /// contain all layers of the chart
+    // contain all layers of the chart
     private let mainLayer: CALayer = CALayer()
 
-    /// contain mainLayer to support scrolling
+    // contain mainLayer to support scrolling
     private let scrollView: UIScrollView = UIScrollView()
 
     var dataEntries: [BarEntry]? = nil {
         didSet {
-            mainLayer.sublayers?.forEach({ $0.removeFromSuperlayer()})
+            mainLayer.sublayers?.forEach({ $0.removeFromSuperlayer() })
 
             if let dataEntries = dataEntries {
                 scrollView.contentSize = CGSize(width: (barWidth + space) * CGFloat(dataEntries.count), height: self.frame.size.height)
@@ -70,24 +71,27 @@ final class CustomChart: UIView {
     }
 
     private func showEntry(index: Int, entry: BarEntry) {
-        /// Starting x postion of the bar
+        // Starting x postion of the bar
         let xPos: CGFloat = space + CGFloat(index) * (barWidth + space)
 
-        /// Starting y postion of the bar
+        // Starting y postion of the bar
         let yPos: CGFloat = translateHeightValueToYPosition(value: entry.height)
 
         drawBar(xPos: xPos, yPos: yPos, color: entry.color)
 
-        /// Draw text above the bar
+        // Draw text above the bar
         drawTextValue(xPos: xPos - space / 2, yPos: yPos - 30, textValue: entry.textValue, color: .black)
 
-        /// Draw text below the bar
+        // Draw text below the bar
         drawTitle(xPos: xPos - space / 2, yPos: mainLayer.frame.height - bottomSpace + 10, title: entry.title, color: .black)
     }
 
     private func drawBar(xPos: CGFloat, yPos: CGFloat, color: UIColor) {
         let barLayer = CALayer()
-        barLayer.frame = CGRect(x: xPos, y: yPos, width: barWidth, height: mainLayer.frame.height - bottomSpace - yPos)
+        barLayer.frame = CGRect(x: xPos,
+                                y: yPos,
+                                width: barWidth,
+                                height: mainLayer.frame.height - bottomSpace - yPos)
         barLayer.backgroundColor = color.cgColor
         mainLayer.addSublayer(barLayer)
     }

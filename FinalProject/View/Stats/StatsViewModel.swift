@@ -16,7 +16,7 @@ final class StatsViewModel {
     // MARK: - Function
 
     func getDataCellOne(completion: @escaping APICompletion) {
-        Api.Path.Stats.getDataCellOne() { [weak self] result in
+        Api.Path.Stats.getDataCellOne { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .failure(let error):

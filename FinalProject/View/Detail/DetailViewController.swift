@@ -21,7 +21,7 @@ final class DetailViewController: ViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getDataInDetail() { [weak self] result in
+        viewModel.getDataInDetail { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .success:
