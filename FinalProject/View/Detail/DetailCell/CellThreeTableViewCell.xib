@@ -15,24 +15,9 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="542" height="358"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWW-IC-4GP" customClass="CustomChart" customModule="FinalProject" customModuleProvider="target">
-                        <rect key="frame" x="20" y="11" width="502" height="336"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="GWW-IC-4GP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Hi2-E4-aOe"/>
-                    <constraint firstItem="GWW-IC-4GP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="SGd-BC-YZa"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="GWW-IC-4GP" secondAttribute="bottom" id="jM7-rb-ENq"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="GWW-IC-4GP" secondAttribute="trailing" id="oUg-9M-G5f"/>
-                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="barChart" destination="GWW-IC-4GP" id="A1i-nb-Wnk"/>
-            </connections>
             <point key="canvasLocation" x="51" y="123"/>
         </tableViewCell>
     </objects>
