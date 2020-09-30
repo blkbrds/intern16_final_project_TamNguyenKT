@@ -37,8 +37,6 @@ final class CustomChart: UIView {
                 scrollView.contentSize = CGSize(width: (barWidth + space) * CGFloat(dataEntries.count), height: self.frame.size.height)
                 mainLayer.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)
 
-                drawHorizontalLines()
-
                 for i in 0..<dataEntries.count {
                     showEntry(index: i, entry: dataEntries[i])
                 }
@@ -94,32 +92,6 @@ final class CustomChart: UIView {
                                 height: mainLayer.frame.height - bottomSpace - yPos)
         barLayer.backgroundColor = color.cgColor
         mainLayer.addSublayer(barLayer)
-    }
-
-    private func drawHorizontalLines() {
-        self.layer.sublayers?.forEach({
-            if $0 is CAShapeLayer {
-                $0.removeFromSuperlayer()
-            }
-        })
-        let horizontalLineInfos = [["value": Float(0.0), "dashed": false], ["value": Float(0.5), "dashed": true], ["value": Float(1.0), "dashed": false]]
-        for lineInfo in horizontalLineInfos {
-            let xPos = CGFloat(0.0)
-            guard let line = lineInfo["value"] as? Float else { return }
-            let yPos = translateHeightValueToYPosition(value: line)
-            let path = UIBezierPath()
-            path.move(to: CGPoint(x: xPos, y: yPos))
-            path.addLine(to: CGPoint(x: scrollView.frame.size.width, y: yPos))
-            let lineLayer = CAShapeLayer()
-            lineLayer.path = path.cgPath
-            lineLayer.lineWidth = 0.5
-            guard let lineInfo = lineInfo["dashed"] as? Bool else { return }
-            if lineInfo {
-                lineLayer.lineDashPattern = [4, 4]
-            }
-            lineLayer.strokeColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor
-            self.layer.insertSublayer(lineLayer, at: 0)
-        }
     }
 
     private func drawTextValue(xPos: CGFloat, yPos: CGFloat, textValue: String, color: UIColor) {
