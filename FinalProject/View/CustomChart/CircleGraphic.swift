@@ -10,27 +10,27 @@ import UIKit
 
 @IBDesignable
 class CircleGraphic: UIView {
-    
+
     // MARK: - Properties
     private var path = UIBezierPath()
     private let shapeLayer1 = CAShapeLayer()
-    
+
     // MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.masksToBounds = false
     }
-    
+
     convenience init(frame: CGRect, percent value: Int, title: String, color: UIColor) {
         self.init(frame: frame)
         createCircle(with: value, with: color)
         createLabel(with: value, with: title)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Private functions
     private func createCircle(with value: Int, with color: UIColor) {
         // background layer
@@ -44,7 +44,6 @@ class CircleGraphic: UIView {
         shapeLayer.strokeEnd = 1
         shapeLayer.lineWidth = 20
         self.layer.addSublayer(shapeLayer)
-        
         //ADD LAYER
         let center = CGPoint(x: bounds.height / 2, y: bounds.width / 2)
         let path1 = UIBezierPath(arcCenter: center, radius: frameWidth / 2, startAngle: -.pi / 2, endAngle: 3 * .pi / 2, clockwise: true)
@@ -57,8 +56,7 @@ class CircleGraphic: UIView {
         shapeLayer1.lineWidth = 20
         self.layer.addSublayer(shapeLayer1)
     }
-    
-    //create a number
+
     private func createLabel(with num: Int, with title: String) {
         let numberLabel = UILabel()
         numberLabel.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.width)
