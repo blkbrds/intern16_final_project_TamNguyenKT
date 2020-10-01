@@ -39,7 +39,7 @@ final class StatsViewModel {
                 completion( .failure(error))
             case .success(let result):
                 this.countries = result
-                this.itemVN = this.getVietNam()
+                this.itemVN = this.getItemVN()
                 completion( .success)
             }
         }
@@ -53,14 +53,13 @@ final class StatsViewModel {
             case .success(let result):
                 guard let this = self else { return }
                 this.countries = result
-                this.rankCountries = this.countries
                 this.rankCountries = this.countries.sorted { $0.totalconfirmed > $1.totalconfirmed }
                 completion( .success)
             }
         }
     }
 
-    func getVietNam() -> Country {
+    func getItemVN() -> Country {
         for index in 0 ..< countries.count where countries[index].countryName == "Viet Nam" {
                 return countries[index]
             }

@@ -21,20 +21,7 @@ final class DetailViewController: ViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getDataInDetail { [weak self] result in
-            guard let this = self else { return }
-            switch result {
-            case .success:
-                DispatchQueue.main.async {
-                    this.tableView.reloadData()
-                    print(result)
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    this.alert(error: error)
-                }
-            }
-        }
+        loadDataInDetail()
     }
 
     // MARK: - Override methods
@@ -48,6 +35,19 @@ final class DetailViewController: ViewController {
     }
 
     // MARK: - Private methods
+    private func loadDataInDetail() {
+        viewModel.getDataInDetail { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                    DispatchQueue.main.async {
+                        this.tableView.reloadData()
+                    }
+            case .failure(let error):
+                    this.alert(error: error)
+            }
+        }
+    }
 }
 
 // MARK: - Extension UITableViewDataSource

@@ -33,4 +33,7 @@ extension App {
         static let recovered = "Recovered"
         static let active = "Active"
     }
+    struct TitleInNavigation {
+        static let stats = "Statistics"
+    }
 }

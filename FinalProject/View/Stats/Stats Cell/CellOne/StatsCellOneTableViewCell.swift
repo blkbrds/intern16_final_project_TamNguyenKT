@@ -17,6 +17,7 @@ final class StatsCellOneTableViewCell: UITableViewCell {
     @IBOutlet private weak var dateLabel: UILabel!
 
     // MARK: - Properties
+    let currentDate = Date()
     var viewModel: StatsCellOneModel? {
         didSet {
             updateView()
@@ -34,10 +35,6 @@ final class StatsCellOneTableViewCell: UITableViewCell {
         if let recover = viewModel?.recovered {
             numberRecovered.text = String(recover)
         }
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .medium
-        dateLabel.text = dateFormatter.string(from: currentDate)
+        dateLabel.text = DateFormatter.dateFormatter().string(from: currentDate)
     }
 }

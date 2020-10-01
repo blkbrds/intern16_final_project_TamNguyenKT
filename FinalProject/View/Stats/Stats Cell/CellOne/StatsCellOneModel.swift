@@ -25,14 +25,14 @@ final class StatsCellOneModel {
         if confirmed == 0 {
             return 0
         } else {
-        return Float(Float(deadth) / Float(confirmed)) * 100
+            return Float(Float(deadth) / Float(confirmed)) * 100
         }
     }
     var recoverRate: Float {
         if confirmed == 0 {
             return 0
         } else {
-        return Float(Float(recovered) / Float(confirmed)) * 100
+            return Float(Float(recovered) / Float(confirmed)) * 100
         }
     }
     var activeRate: Float {

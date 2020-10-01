@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 final class StatsViewController: ViewController {
 
@@ -34,22 +35,23 @@ final class StatsViewController: ViewController {
         tableView.register(nibWithCellClass: CellRankTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        title = "Statistics"
+        title = App.TitleInNavigation.stats
     }
 
     // MARK: - Private methods
     private func loadDataCellOne() {
+        SVProgressHUD.show()
+        SVProgressHUD.setDefaultStyle(.light)
         viewModel.getDataCellOne { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .success:
-                DispatchQueue.main.async {
-                    this.tableView.reloadData()
-                }
+                this.updateUI()
+                SVProgressHUD.dismiss()
             case .failure(let error):
-                DispatchQueue.main.async {
-                    this.alert(error: error)
-                }
+                SVProgressHUD.dismiss()
+                SVProgressHUD.setMinimumDismissTimeInterval(1)
+                this.alert(error: error)
             }
         }
     }
@@ -59,13 +61,12 @@ final class StatsViewController: ViewController {
             guard let this = self else { return }
             switch result {
             case .success:
-                DispatchQueue.main.async {
-                    this.tableView.reloadData()
-                }
+                this.updateUI()
+                SVProgressHUD.dismiss()
             case .failure(let error):
-                DispatchQueue.main.async {
-                    this.alert(error: error)
-                }
+                SVProgressHUD.dismiss()
+                SVProgressHUD.setMinimumDismissTimeInterval(1)
+                this.alert(error: error)
             }
         }
     }
@@ -75,14 +76,20 @@ final class StatsViewController: ViewController {
             guard let this = self else { return }
             switch result {
             case .success:
-                DispatchQueue.main.async {
-                    this.tableView.reloadData()
-                }
+                this.updateUI()
+                SVProgressHUD.dismiss()
             case .failure(let error):
-                DispatchQueue.main.async {
-                    this.alert(error: error)
-                }
+                SVProgressHUD.dismiss()
+                SVProgressHUD.setMinimumDismissTimeInterval(1)
+                this.alert(error: error)
             }
+        }
+    }
+
+    // MARK: - Public methods
+    func updateUI() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }

@@ -18,6 +18,7 @@
 		3117442D2519E7AF006D2516 /* DayOneCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117442C2519E7AF006D2516 /* DayOneCountry.swift */; };
 		3142B46425256F25006D238A /* StatsCellFourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B46225256F25006D238A /* StatsCellFourTableViewCell.swift */; };
 		3142B46525256F25006D238A /* StatsCellFourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3142B46325256F25006D238A /* StatsCellFourTableViewCell.xib */; };
+		3142B4672525876C006D238A /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B4662525876C006D238A /* DateExt.swift */; };
 		3143526E2513178E000CBA59 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526D2513178E000CBA59 /* Country.swift */; };
 		3143527025131B94000CBA59 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526F25131B94000CBA59 /* Covid.swift */; };
 		3143527225131DDA000CBA59 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143527125131DDA000CBA59 /* Global.swift */; };
@@ -122,6 +123,7 @@
 		3117442C2519E7AF006D2516 /* DayOneCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOneCountry.swift; sourceTree = "<group>"; };
 		3142B46225256F25006D238A /* StatsCellFourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellFourTableViewCell.swift; sourceTree = "<group>"; };
 		3142B46325256F25006D238A /* StatsCellFourTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCellFourTableViewCell.xib; sourceTree = "<group>"; };
+		3142B4662525876C006D238A /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		3143526D2513178E000CBA59 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		3143526F25131B94000CBA59 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		3143527125131DDA000CBA59 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 				D1BB12FC250A57B100FA0B80 /* NSURL.swift */,
 				D14016BE250A335300110A13 /* StringExt.swift */,
 				D14016BF250A335300110A13 /* UIViewControllerExt.swift */,
+				3142B4662525876C006D238A /* DateExt.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -931,6 +934,7 @@
 				D14016D6250A335300110A13 /* Api.swift in Sources */,
 				3117441B251843DF006D2516 /* API.Covid.swift in Sources */,
 				3144D2B1251C8417000F6E3F /* StatsCellOneModel.swift in Sources */,
+				3142B4672525876C006D238A /* DateExt.swift in Sources */,
 				31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */,
 				3143527425134B22000CBA59 /* SearchCellModel.swift in Sources */,
 				31448A02251B4D44006F5230 /* CellThreeTableViewCell.swift in Sources */,
