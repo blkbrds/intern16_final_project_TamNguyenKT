@@ -27,7 +27,9 @@ final class StatsViewController: ViewController {
     // MARK: - Override methods
     override func setUpUI() {
         tableView.register(nibWithCellClass: StatsCellOneTableViewCell.self)
+        tableView.register(nibWithCellClass: StatsCellTwoTableViewCell.self)
         tableView.register(nibWithCellClass: StatsCellThreeTableViewCell.self)
+        tableView.register(nibWithCellClass: StatsCellFourTableViewCell.self)
         tableView.register(nibWithCellClass: StatsCellFiveTableViewCell.self)
         tableView.register(nibWithCellClass: CellRankTableViewCell.self)
         tableView.delegate = self
@@ -98,10 +100,18 @@ extension StatsViewController: UITableViewDataSource {
             let cellOne = tableView.dequeueReusableCell(withClass: StatsCellOneTableViewCell.self, for: indexPath)
             cellOne.viewModel = viewModel.viewModelForCellOne(at: indexPath)
             return cellOne
+        case 1:
+            let cellTwo = tableView.dequeueReusableCell(withClass: StatsCellTwoTableViewCell.self, for: indexPath)
+            cellTwo.viewModel = viewModel.viewModelForCellOne(at: indexPath)
+            return cellTwo
         case 2:
             let cellThree = tableView.dequeueReusableCell(withClass: StatsCellThreeTableViewCell.self, for: indexPath)
             cellThree.viewModel = viewModel.viewModelForCellThree(at: indexPath)
             return cellThree
+        case 3:
+            let cellFour = tableView.dequeueReusableCell(withClass: StatsCellFourTableViewCell.self, for: indexPath)
+            cellFour.viewModel = viewModel.viewModelForCellThree(at: indexPath)
+            return cellFour
         case 4:
             let cellFive = tableView.dequeueReusableCell(withClass: StatsCellFiveTableViewCell.self, for: indexPath)
             return cellFive
@@ -121,8 +131,12 @@ extension StatsViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             return 100
+        case 1:
+            return 180
         case 2:
             return 120
+        case 3:
+            return 180
         case 4:
             return 50
         default:

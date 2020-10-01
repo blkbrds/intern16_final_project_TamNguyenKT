@@ -1,17 +1,17 @@
 //
-//  StatsCellTwoTableViewCell.swift
+//  StatsCellFourTableViewCell.swift
 //  FinalProject
 //
-//  Created by PCI0001 on 9/29/20.
+//  Created by PCI0001 on 10/1/20.
 //  Copyright © 2020 Thinh Nguyen X. All rights reserved.
 //
 
 import UIKit
 
-final class StatsCellTwoTableViewCell: UITableViewCell {
+final class StatsCellFourTableViewCell: UITableViewCell {
 
     // MARK: - Properties
-    var viewModel: StatsCellOneModel? {
+    var viewModel: StatsCellThreeModel? {
         didSet {
             updateView()
         }
@@ -21,7 +21,7 @@ final class StatsCellTwoTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.subviews.forEach { (item) in
-             item.removeFromSuperview()
+            item.removeFromSuperview()
         }
     }
 
@@ -43,7 +43,7 @@ final class StatsCellTwoTableViewCell: UITableViewCell {
                                         percent: Int(recovered), title: App.TitleInChart.recovered, color: #colorLiteral(red: 1, green: 0.4078431373, blue: 0.7921568627, alpha: 1))
             self.addSubview(circle1)
         }
-        if let deadth = viewModel?.deadRate {
+        if let deadth = viewModel?.activeRate {
             let widthCircle2: CGFloat = 100
             let circle2 = CircleGraphic(frame: CGRect(x: (self.width - widthCircle2) / 3 + 195,
                                                       y: (self.height - widthCircle2) / 3,

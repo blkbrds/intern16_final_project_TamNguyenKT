@@ -16,6 +16,8 @@
 		311744292519AD32006D2516 /* DetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311744282519AD32006D2516 /* DetailCellModel.swift */; };
 		3117442B2519AF2C006D2516 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117442A2519AF2C006D2516 /* DetailViewModel.swift */; };
 		3117442D2519E7AF006D2516 /* DayOneCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117442C2519E7AF006D2516 /* DayOneCountry.swift */; };
+		3142B46425256F25006D238A /* StatsCellFourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B46225256F25006D238A /* StatsCellFourTableViewCell.swift */; };
+		3142B46525256F25006D238A /* StatsCellFourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3142B46325256F25006D238A /* StatsCellFourTableViewCell.xib */; };
 		3143526E2513178E000CBA59 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526D2513178E000CBA59 /* Country.swift */; };
 		3143527025131B94000CBA59 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526F25131B94000CBA59 /* Covid.swift */; };
 		3143527225131DDA000CBA59 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143527125131DDA000CBA59 /* Global.swift */; };
@@ -118,6 +120,8 @@
 		311744282519AD32006D2516 /* DetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellModel.swift; sourceTree = "<group>"; };
 		3117442A2519AF2C006D2516 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		3117442C2519E7AF006D2516 /* DayOneCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOneCountry.swift; sourceTree = "<group>"; };
+		3142B46225256F25006D238A /* StatsCellFourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCellFourTableViewCell.swift; sourceTree = "<group>"; };
+		3142B46325256F25006D238A /* StatsCellFourTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCellFourTableViewCell.xib; sourceTree = "<group>"; };
 		3143526D2513178E000CBA59 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		3143526F25131B94000CBA59 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		3143527125131DDA000CBA59 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -253,9 +257,19 @@
 			path = DetailCell;
 			sourceTree = "<group>";
 		};
+		3142B46125256EFC006D238A /* CelllFour */ = {
+			isa = PBXGroup;
+			children = (
+				3142B46225256F25006D238A /* StatsCellFourTableViewCell.swift */,
+				3142B46325256F25006D238A /* StatsCellFourTableViewCell.xib */,
+			);
+			path = CelllFour;
+			sourceTree = "<group>";
+		};
 		3144D2AB251C7A9D000F6E3F /* Stats Cell */ = {
 			isa = PBXGroup;
 			children = (
+				3142B46125256EFC006D238A /* CelllFour */,
 				31C3A7E2252447930001E53B /* CellFive */,
 				31C3A7DB252428410001E53B /* CellRank */,
 				31C3A7D4252377030001E53B /* CellThree */,
@@ -721,6 +735,7 @@
 				31448A03251B4D44006F5230 /* CellThreeTableViewCell.xib in Resources */,
 				D14016D1250A335300110A13 /* .gitkeep in Resources */,
 				314540702510948700696E49 /* GoogleService-Info.plist in Resources */,
+				3142B46525256F25006D238A /* StatsCellFourTableViewCell.xib in Resources */,
 				3145406725108C5800696E49 /* StatsViewController.xib in Resources */,
 				31C3A7DF252428630001E53B /* CellRankTableViewCell.xib in Resources */,
 				D14016E5250A335300110A13 /* Assets.xcassets in Resources */,
@@ -888,6 +903,7 @@
 				31C3A7E12524287A0001E53B /* CellRankModel.swift in Sources */,
 				3143526E2513178E000CBA59 /* Country.swift in Sources */,
 				314540832511B8B200696E49 /* Enum.swift in Sources */,
+				3142B46425256F25006D238A /* StatsCellFourTableViewCell.swift in Sources */,
 				D14016E9250A335300110A13 /* Font.swift in Sources */,
 				D14016E3250A335300110A13 /* DefaultsExt.swift in Sources */,
 				D14016E1250A335300110A13 /* UIViewControllerExt.swift in Sources */,
