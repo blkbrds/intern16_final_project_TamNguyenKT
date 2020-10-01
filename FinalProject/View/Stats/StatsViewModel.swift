@@ -70,19 +70,19 @@ final class StatsViewModel {
         return 20
     }
 
-    func viewModelForCellOne(at indexPath: IndexPath) -> StatsCellOneModel {
-        let viewModel = StatsCellOneModel(cellOne: item)
+    func viewModelForCellOne(at indexPath: IndexPath) -> WorldStatsCellModel {
+        let viewModel = WorldStatsCellModel(cellOne: item)
         return viewModel
     }
 
-    func viewModelForCellThree(at indexPath: IndexPath) -> StatsCellThreeModel {
-        let viewModel = StatsCellThreeModel(country: itemVN)
+    func viewModelForCellThree(at indexPath: IndexPath) -> VNStatsCellModel {
+        let viewModel = VNStatsCellModel(country: itemVN)
         return viewModel
     }
 
-    func viewModelForCellRank(at indexPath: IndexPath) -> CellRankModel {
-        guard let item = rankCountries[safe: indexPath.row - 5] else { return CellRankModel() }
-        let viewModel = CellRankModel(rankItem: item, index: indexPath.row - 4)
+    func viewModelForCellRank(at indexPath: IndexPath) -> RankCellModel {
+        guard let item = rankCountries[safe: indexPath.row - 5] else { return RankCellModel() }
+        let viewModel = RankCellModel(rankItem: item, index: indexPath.row - 4)
         return viewModel
     }
 }

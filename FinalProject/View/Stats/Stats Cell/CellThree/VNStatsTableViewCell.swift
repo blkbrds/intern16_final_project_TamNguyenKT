@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class StatsCellThreeTableViewCell: UITableViewCell {
+final class VNStatsTableViewCell: UITableViewCell {
 
     // MARK: - IBOulets
     @IBOutlet private weak var totalCases: UILabel!
@@ -19,7 +19,7 @@ final class StatsCellThreeTableViewCell: UITableViewCell {
     @IBOutlet private weak var newDeadth: UILabel!
 
     // MARK: - Properties
-    var viewModel: StatsCellThreeModel? {
+    var viewModel: VNStatsCellModel? {
         didSet {
             updateView()
         }

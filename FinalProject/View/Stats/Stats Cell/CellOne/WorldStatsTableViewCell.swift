@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class StatsCellOneTableViewCell: UITableViewCell {
+final class WorldStatsTableViewCell: UITableViewCell {
 
     // MARK: - IBOulets
     @IBOutlet private weak var numberConfirmed: UILabel!
@@ -18,7 +18,7 @@ final class StatsCellOneTableViewCell: UITableViewCell {
 
     // MARK: - Properties
     let currentDate = Date()
-    var viewModel: StatsCellOneModel? {
+    var viewModel: WorldStatsCellModel? {
         didSet {
             updateView()
         }

@@ -27,11 +27,11 @@ final class StatsViewController: ViewController {
 
     // MARK: - Override methods
     override func setUpUI() {
-        tableView.register(nibWithCellClass: StatsCellOneTableViewCell.self)
-        tableView.register(nibWithCellClass: StatsCellTwoTableViewCell.self)
-        tableView.register(nibWithCellClass: StatsCellThreeTableViewCell.self)
-        tableView.register(nibWithCellClass: StatsCellFourTableViewCell.self)
-        tableView.register(nibWithCellClass: StatsCellFiveTableViewCell.self)
+        tableView.register(nibWithCellClass: WorldStatsTableViewCell.self)
+        tableView.register(nibWithCellClass: WorldChartTableViewCell.self)
+        tableView.register(nibWithCellClass: VNStatsTableViewCell.self)
+        tableView.register(nibWithCellClass: VNChartTableViewCell.self)
+        tableView.register(nibWithCellClass: StatsTableViewCell.self)
         tableView.register(nibWithCellClass: CellRankTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
@@ -104,23 +104,23 @@ extension StatsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cellOne = tableView.dequeueReusableCell(withClass: StatsCellOneTableViewCell.self, for: indexPath)
+            let cellOne = tableView.dequeueReusableCell(withClass: WorldStatsTableViewCell.self, for: indexPath)
             cellOne.viewModel = viewModel.viewModelForCellOne(at: indexPath)
             return cellOne
         case 1:
-            let cellTwo = tableView.dequeueReusableCell(withClass: StatsCellTwoTableViewCell.self, for: indexPath)
+            let cellTwo = tableView.dequeueReusableCell(withClass: WorldChartTableViewCell.self, for: indexPath)
             cellTwo.viewModel = viewModel.viewModelForCellOne(at: indexPath)
             return cellTwo
         case 2:
-            let cellThree = tableView.dequeueReusableCell(withClass: StatsCellThreeTableViewCell.self, for: indexPath)
+            let cellThree = tableView.dequeueReusableCell(withClass: VNStatsTableViewCell.self, for: indexPath)
             cellThree.viewModel = viewModel.viewModelForCellThree(at: indexPath)
             return cellThree
         case 3:
-            let cellFour = tableView.dequeueReusableCell(withClass: StatsCellFourTableViewCell.self, for: indexPath)
+            let cellFour = tableView.dequeueReusableCell(withClass: VNChartTableViewCell.self, for: indexPath)
             cellFour.viewModel = viewModel.viewModelForCellThree(at: indexPath)
             return cellFour
         case 4:
-            let cellFive = tableView.dequeueReusableCell(withClass: StatsCellFiveTableViewCell.self, for: indexPath)
+            let cellFive = tableView.dequeueReusableCell(withClass: StatsTableViewCell.self, for: indexPath)
             return cellFive
         case 5 ... 20:
             let cellRank = tableView.dequeueReusableCell(withClass: CellRankTableViewCell.self, for: indexPath)

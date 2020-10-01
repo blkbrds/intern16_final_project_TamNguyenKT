@@ -16,7 +16,7 @@ class CellRankTableViewCell: UITableViewCell {
     @IBOutlet private weak var rankLabel: UILabel!
 
     // MARK: - Properties
-    var viewModel: CellRankModel? {
+    var viewModel: RankCellModel? {
         didSet {
             updateView()
         }

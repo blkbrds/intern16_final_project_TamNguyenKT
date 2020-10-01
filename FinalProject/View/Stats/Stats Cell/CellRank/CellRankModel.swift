@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class CellRankModel {
+final class RankCellModel {
     var rankItem: Country
     var nameCountry: String {
         return rankItem.countryName

@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class StatsCellThreeModel {
+final class VNStatsCellModel {
 
     // MARK: - Properties
     var country: Country

@@ -8,5 +8,5 @@
 
 import UIKit
 
-final class StatsCellFiveTableViewCell: UITableViewCell {
+final class StatsTableViewCell: UITableViewCell {
 }

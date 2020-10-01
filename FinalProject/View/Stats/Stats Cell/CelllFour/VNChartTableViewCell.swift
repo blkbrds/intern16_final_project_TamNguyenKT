@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class StatsCellFourTableViewCell: UITableViewCell {
+final class VNChartTableViewCell: UITableViewCell {
 
     // MARK: - Properties
-    var viewModel: StatsCellThreeModel? {
+    var viewModel: VNStatsCellModel? {
         didSet {
             updateView()
         }
