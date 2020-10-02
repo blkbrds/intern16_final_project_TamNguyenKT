@@ -88,6 +88,7 @@ final class StatsViewController: ViewController {
 
         dispatchGroup.notify(queue: .main) {
             HUD.popActivity()
+            self.updateView()
         }
     }
 
