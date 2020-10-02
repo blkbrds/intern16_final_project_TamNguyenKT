@@ -19,6 +19,10 @@
 		3142B46425256F25006D238A /* VNChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B46225256F25006D238A /* VNChartTableViewCell.swift */; };
 		3142B46525256F25006D238A /* VNChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3142B46325256F25006D238A /* VNChartTableViewCell.xib */; };
 		3142B4672525876C006D238A /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B4662525876C006D238A /* DateExt.swift */; };
+		3142B46C2525B6DD006D238A /* CellThreeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B46B2525B6DD006D238A /* CellThreeCellModel.swift */; };
+		3142B4702526C2DB006D238A /* CellFourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B46E2526C2DB006D238A /* CellFourTableViewCell.swift */; };
+		3142B4712526C2DB006D238A /* CellFourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3142B46F2526C2DB006D238A /* CellFourTableViewCell.xib */; };
+		3142B4732526C3F5006D238A /* CellFourCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B4722526C3F5006D238A /* CellFourCellModel.swift */; };
 		3143526E2513178E000CBA59 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526D2513178E000CBA59 /* Country.swift */; };
 		3143527025131B94000CBA59 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143526F25131B94000CBA59 /* Covid.swift */; };
 		3143527225131DDA000CBA59 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143527125131DDA000CBA59 /* Global.swift */; };
@@ -124,6 +128,10 @@
 		3142B46225256F25006D238A /* VNChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNChartTableViewCell.swift; sourceTree = "<group>"; };
 		3142B46325256F25006D238A /* VNChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VNChartTableViewCell.xib; sourceTree = "<group>"; };
 		3142B4662525876C006D238A /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
+		3142B46B2525B6DD006D238A /* CellThreeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellThreeCellModel.swift; sourceTree = "<group>"; };
+		3142B46E2526C2DB006D238A /* CellFourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFourTableViewCell.swift; sourceTree = "<group>"; };
+		3142B46F2526C2DB006D238A /* CellFourTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellFourTableViewCell.xib; sourceTree = "<group>"; };
+		3142B4722526C3F5006D238A /* CellFourCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFourCellModel.swift; sourceTree = "<group>"; };
 		3143526D2513178E000CBA59 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		3143526F25131B94000CBA59 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		3143527125131DDA000CBA59 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -247,14 +255,10 @@
 		31174423251995DB006D2516 /* DetailCell */ = {
 			isa = PBXGroup;
 			children = (
-				31174424251995FB006D2516 /* DetailTableViewCell.swift */,
-				311744282519AD32006D2516 /* DetailCellModel.swift */,
-				31174425251995FB006D2516 /* DetailTableViewCell.xib */,
-				314489FA251AE4B6006F5230 /* CellOneTableViewCell.swift */,
-				314489FB251AE4B6006F5230 /* CellOneTableViewCell.xib */,
-				314489FE251AF8BB006F5230 /* CellOneCellModel.swift */,
-				31448A00251B4D44006F5230 /* CellThreeTableViewCell.swift */,
-				31448A01251B4D44006F5230 /* CellThreeTableViewCell.xib */,
+				3142B46D2526C279006D238A /* CellFour */,
+				3142B46A2525B6C3006D238A /* CellThree */,
+				3142B4692525B6B2006D238A /* CellTwo */,
+				3142B4682525B691006D238A /* CellOne */,
 			);
 			path = DetailCell;
 			sourceTree = "<group>";
@@ -266,6 +270,46 @@
 				3142B46325256F25006D238A /* VNChartTableViewCell.xib */,
 			);
 			path = CelllFour;
+			sourceTree = "<group>";
+		};
+		3142B4682525B691006D238A /* CellOne */ = {
+			isa = PBXGroup;
+			children = (
+				314489FA251AE4B6006F5230 /* CellOneTableViewCell.swift */,
+				314489FB251AE4B6006F5230 /* CellOneTableViewCell.xib */,
+				314489FE251AF8BB006F5230 /* CellOneCellModel.swift */,
+			);
+			path = CellOne;
+			sourceTree = "<group>";
+		};
+		3142B4692525B6B2006D238A /* CellTwo */ = {
+			isa = PBXGroup;
+			children = (
+				31174425251995FB006D2516 /* DetailTableViewCell.xib */,
+				311744282519AD32006D2516 /* DetailCellModel.swift */,
+				31174424251995FB006D2516 /* DetailTableViewCell.swift */,
+			);
+			path = CellTwo;
+			sourceTree = "<group>";
+		};
+		3142B46A2525B6C3006D238A /* CellThree */ = {
+			isa = PBXGroup;
+			children = (
+				31448A01251B4D44006F5230 /* CellThreeTableViewCell.xib */,
+				31448A00251B4D44006F5230 /* CellThreeTableViewCell.swift */,
+				3142B46B2525B6DD006D238A /* CellThreeCellModel.swift */,
+			);
+			path = CellThree;
+			sourceTree = "<group>";
+		};
+		3142B46D2526C279006D238A /* CellFour */ = {
+			isa = PBXGroup;
+			children = (
+				3142B46E2526C2DB006D238A /* CellFourTableViewCell.swift */,
+				3142B46F2526C2DB006D238A /* CellFourTableViewCell.xib */,
+				3142B4722526C3F5006D238A /* CellFourCellModel.swift */,
+			);
+			path = CellFour;
 			sourceTree = "<group>";
 		};
 		3144D2AB251C7A9D000F6E3F /* Stats Cell */ = {
@@ -724,6 +768,7 @@
 				3145406525108C5800696E49 /* LoginViewController.xib in Resources */,
 				31174427251995FB006D2516 /* DetailTableViewCell.xib in Resources */,
 				3144D2AF251C7AD0000F6E3F /* WorldStatsTableViewCell.xib in Resources */,
+				3142B4712526C2DB006D238A /* CellFourTableViewCell.xib in Resources */,
 				D14016E4250A335300110A13 /* Preview Assets.xcassets in Resources */,
 				3145405E25108C5800696E49 /* FollowViewController.xib in Resources */,
 				3145406125108C5800696E49 /* SearchViewController.xib in Resources */,
@@ -892,6 +937,7 @@
 				31FE1D022511E8EF007F8F8D /* TableCell.swift in Sources */,
 				D14016E2250A335300110A13 /* MapperExt.swift in Sources */,
 				31C3A7D2252373DF0001E53B /* WorldChartTableViewCell.swift in Sources */,
+				3142B46C2525B6DD006D238A /* CellThreeCellModel.swift in Sources */,
 				3144D2D0251F8735000F6E3F /* BarEntry.swift in Sources */,
 				D14016EB250A335300110A13 /* Color.swift in Sources */,
 				3143527025131B94000CBA59 /* Covid.swift in Sources */,
@@ -899,6 +945,7 @@
 				3117441D25185EB7006D2516 /* SearchViewModel.swift in Sources */,
 				314489FC251AE4B6006F5230 /* CellOneTableViewCell.swift in Sources */,
 				D14016D5250A335300110A13 /* ResponseSerializer.swift in Sources */,
+				3142B4702526C2DB006D238A /* CellFourTableViewCell.swift in Sources */,
 				31C3A7DA2523775E0001E53B /* VNStatsCellModel.swift in Sources */,
 				3145406625108C5800696E49 /* LoginViewController.swift in Sources */,
 				31FE1D032511E8EF007F8F8D /* Button.swift in Sources */,
@@ -929,6 +976,7 @@
 				3144D2CE251F85E3000F6E3F /* CustomChart.swift in Sources */,
 				3144D2AE251C7AD0000F6E3F /* WorldStatsTableViewCell.swift in Sources */,
 				314489FF251AF8BB006F5230 /* CellOneCellModel.swift in Sources */,
+				3142B4732526C3F5006D238A /* CellFourCellModel.swift in Sources */,
 				3145406C251091E700696E49 /* DeviceType.swift in Sources */,
 				D14016D4250A335300110A13 /* ApiManager.swift in Sources */,
 				D14016D6250A335300110A13 /* Api.swift in Sources */,

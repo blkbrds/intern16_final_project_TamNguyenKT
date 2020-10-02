@@ -28,35 +28,26 @@ final class DetailCellModel {
     var active: Int {
         return confirmed - deadth - recovered
     }
-
     var date: String {
         return country.date
     }
-
-    var deadthRate: Double {
-        return (Double(deadth) / Double(confirmed)) * 100
+    var deadRate: Float {
+        if confirmed == 0 {
+            return 0
+        } else {
+            return Float(Float(deadth) / Float(confirmed)) * 100
+        }
     }
-
-    var recoverRate: Double {
-        return (Double(recovered) / Double(confirmed)) * 100
+    var recoverRate: Float {
+        if confirmed == 0 {
+            return 0
+        } else {
+            return Float(Float(recovered) / Float(confirmed)) * 100
+        }
     }
-
-    var activeRate: Double {
-        return 100.0 - deadthRate - recoverRate
+    var activeRate: Float {
+        return 100 - deadRate - recoverRate
     }
-
-    var activeRateString: String {
-        return String(activeRate) + "%"
-    }
-
-    var deadthRateString: String {
-        return String(deadthRate) + "%"
-    }
-
-    var recoverRateString: String {
-        return String(recoverRate) + "%"
-    }
-
     // MARK: - Initial
     init(country: Country = Country()) {
         self.country = country

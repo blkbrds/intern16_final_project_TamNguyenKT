@@ -29,6 +29,7 @@ final class DetailViewController: ViewController {
         tableView.register(nibWithCellClass: CellOneTableViewCell.self)
         tableView.register(nibWithCellClass: DetailTableViewCell.self)
         tableView.register(nibWithCellClass: CellThreeTableViewCell.self)
+        tableView.register(nibWithCellClass: CellFourTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         title = viewModel.title
@@ -40,12 +41,17 @@ final class DetailViewController: ViewController {
             guard let this = self else { return }
             switch result {
             case .success:
-                    DispatchQueue.main.async {
-                        this.tableView.reloadData()
-                    }
+                this.updateUI()
             case .failure(let error):
                     this.alert(error: error)
             }
+        }
+    }
+
+    // MARK: - Public methods
+    func updateUI() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }
@@ -65,11 +71,16 @@ extension DetailViewController: UITableViewDataSource {
             return cellOne
         case 1:
             let cellTwo = tableView.dequeueReusableCell(withClass: DetailTableViewCell.self, for: indexPath)
-            //cellTwo.viewModel = viewModel.viewModelForCellTwo(at: indexPath)
+            cellTwo.viewModel = viewModel.viewModelForCirceChart(at: indexPath)
             return cellTwo
         case 2:
             let cellThree = tableView.dequeueReusableCell(withClass: CellThreeTableViewCell.self, for: indexPath)
+            cellThree.viewModel = viewModel.viewModelForConfirmedChart(at: indexPath)
             return cellThree
+        case 3:
+            let cellFour = tableView.dequeueReusableCell(withClass: CellFourTableViewCell.self, for: indexPath)
+            cellFour.viewModel = viewModel.viewModelForDeadthChart(at: indexPath)
+            return cellFour
         default:
             return UITableViewCell()
         }
@@ -80,10 +91,14 @@ extension DetailViewController: UITableViewDataSource {
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
+        case 0:
+            return 190
         case 1:
-            return 200
+            return 160
         case 2:
-            return 450
+            return 300
+        case 3:
+            return 300
         default:
             return UITableView.automaticDimension
         }
