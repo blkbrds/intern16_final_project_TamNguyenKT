@@ -15,18 +15,26 @@ final class StatsViewController: ViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-    var viewModel: StatsViewModel = StatsViewModel()
+    var viewModel: StatsViewModel = StatsViewModel() {
+        didSet {
+            updateView()
+        }
+    }
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDataCellOne()
-        loadDataCellThree()
-        loadDataCellRank()
+        title = App.TitleInNavigation.stats
+    }
+
+    override func setUpData() {
+        super.setUpData()
+        handleCallApi()
     }
 
     // MARK: - Override methods
     override func setUpUI() {
+        super.setUpUI()
         tableView.register(nibWithCellClass: WorldStatsTableViewCell.self)
         tableView.register(nibWithCellClass: WorldChartTableViewCell.self)
         tableView.register(nibWithCellClass: VNStatsTableViewCell.self)
@@ -35,62 +43,58 @@ final class StatsViewController: ViewController {
         tableView.register(nibWithCellClass: CellRankTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        title = App.TitleInNavigation.stats
     }
 
     // MARK: - Private methods
-    private func loadDataCellOne() {
-        SVProgressHUD.show()
-        SVProgressHUD.setDefaultStyle(.light)
+    private func handleCallApi() {
+        HUD.show()
+        let dispatchGroup = DispatchGroup()
+
+        /// getDataCellOne
+        dispatchGroup.enter()
         viewModel.getDataCellOne { [weak self] result in
+            dispatchGroup.leave()
             guard let this = self else { return }
             switch result {
-            case .success:
-                this.updateUI()
-                SVProgressHUD.dismiss()
+            case .success: break
             case .failure(let error):
-                SVProgressHUD.dismiss()
-                SVProgressHUD.setMinimumDismissTimeInterval(1)
                 this.alert(error: error)
             }
         }
-    }
 
-    private func loadDataCellThree() {
+        /// getDataCellThree
+        dispatchGroup.enter()
         viewModel.getDataCellThree { [weak self] result in
+            dispatchGroup.leave()
             guard let this = self else { return }
             switch result {
-            case .success:
-                this.updateUI()
-                SVProgressHUD.dismiss()
+            case .success: break
             case .failure(let error):
-                SVProgressHUD.dismiss()
-                SVProgressHUD.setMinimumDismissTimeInterval(1)
                 this.alert(error: error)
             }
         }
-    }
 
-    private func loadDataCellRank() {
+        /// getDataCellRank
+        dispatchGroup.enter()
         viewModel.getDataCellRank { [weak self] result in
+            dispatchGroup.leave()
             guard let this = self else { return }
             switch result {
-            case .success:
-                this.updateUI()
-                SVProgressHUD.dismiss()
+            case .success: break
             case .failure(let error):
-                SVProgressHUD.dismiss()
-                SVProgressHUD.setMinimumDismissTimeInterval(1)
                 this.alert(error: error)
             }
+        }
+
+        dispatchGroup.notify(queue: .main) {
+            HUD.popActivity()
         }
     }
 
     // MARK: - Public methods
-    func updateUI() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+    private func updateView() {
+        guard isViewLoaded else { return }
+        tableView.reloadData()
     }
 }
 
@@ -137,7 +141,7 @@ extension StatsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 100
+            return 110
         case 1:
             return 180
         case 2:
