@@ -39,7 +39,6 @@ final class CellFourTableViewCell: UITableViewCell {
         }
         return result
     }
-
     private func updateView() {
         guard let viewModel = viewModel else { return }
         for item in viewModel.dayOneCountries {
