@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 final class StatsViewController: ViewController {
 
@@ -15,14 +14,21 @@ final class StatsViewController: ViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-    var viewModel: StatsViewModel = StatsViewModel()
+    var viewModel: StatsViewModel = StatsViewModel() {
+        didSet {
+            updateView()
+        }
+    }
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDataCellOne()
-        loadDataCellThree()
-        loadDataCellRank()
+        title = App.TitleInNavigation.stats
+    }
+
+    override func setUpData() {
+        super.setUpData()
+        handleCallApi()
     }
 
     // MARK: - Override methods
@@ -39,58 +45,55 @@ final class StatsViewController: ViewController {
     }
 
     // MARK: - Private methods
-    private func loadDataCellOne() {
-        SVProgressHUD.show()
-        SVProgressHUD.setDefaultStyle(.light)
+    private func handleCallApi() {
+        HUD.show()
+        let dispatchGroup = DispatchGroup()
+
+        /// getDataCellOne
+        dispatchGroup.enter()
         viewModel.getDataCellOne { [weak self] result in
+            dispatchGroup.leave()
             guard let this = self else { return }
             switch result {
-            case .success:
-                this.updateUI()
-                SVProgressHUD.dismiss()
+            case .success: break
             case .failure(let error):
-                SVProgressHUD.dismiss()
-                SVProgressHUD.setMinimumDismissTimeInterval(1)
                 this.alert(error: error)
             }
         }
-    }
 
-    private func loadDataCellThree() {
+        /// getDataCellThree
+        dispatchGroup.enter()
         viewModel.getDataCellThree { [weak self] result in
+            dispatchGroup.leave()
             guard let this = self else { return }
             switch result {
-            case .success:
-                this.updateUI()
-                SVProgressHUD.dismiss()
+            case .success: break
             case .failure(let error):
-                SVProgressHUD.dismiss()
-                SVProgressHUD.setMinimumDismissTimeInterval(1)
                 this.alert(error: error)
             }
         }
-    }
 
-    private func loadDataCellRank() {
+        /// getDataCellRank
+        dispatchGroup.enter()
         viewModel.getDataCellRank { [weak self] result in
+            dispatchGroup.leave()
             guard let this = self else { return }
             switch result {
-            case .success:
-                this.updateUI()
-                SVProgressHUD.dismiss()
+            case .success: break
             case .failure(let error):
-                SVProgressHUD.dismiss()
-                SVProgressHUD.setMinimumDismissTimeInterval(1)
                 this.alert(error: error)
             }
         }
-    }
 
-    // MARK: - Public methods
-    func updateUI() {
-        DispatchQueue.main.async {
+        dispatchGroup.notify(queue: .main) {
+            HUD.popActivity()
             self.tableView.reloadData()
         }
+    }
+
+    private func updateView() {
+        guard isViewLoaded else { return }
+        tableView.reloadData()
     }
 }
 
@@ -122,7 +125,7 @@ extension StatsViewController: UITableViewDataSource {
         case 4:
             let cellFive = tableView.dequeueReusableCell(withClass: StatsTableViewCell.self, for: indexPath)
             return cellFive
-        case 5 ... 20:
+        case 5 ... 15:
             let cellRank = tableView.dequeueReusableCell(withClass: CellRankTableViewCell.self, for: indexPath)
             cellRank.viewModel = viewModel.viewModelForCellRank(at: indexPath)
             return cellRank
@@ -137,17 +140,17 @@ extension StatsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 100
+            return CGFloat(Cell.statsWorld.size)
         case 1:
-            return 180
+            return CGFloat(Cell.chartWorld.size)
         case 2:
-            return 120
+            return CGFloat(Cell.statsVN.size)
         case 3:
-            return 180
+            return CGFloat(Cell.chartVN.size)
         case 4:
-            return 50
+            return CGFloat(Cell.rank.size)
         default:
-            return UITableView.automaticDimension
+            return 200
         }
     }
 }

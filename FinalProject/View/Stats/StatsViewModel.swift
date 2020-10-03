@@ -8,6 +8,28 @@
 
 import Foundation
 
+enum Cell: Int {
+    case statsWorld
+    case chartWorld
+    case statsVN
+    case chartVN
+    case rank
+    var size: Int {
+        switch self {
+        case .statsWorld:
+            return 100
+        case .chartWorld:
+            return 180
+        case .statsVN:
+            return 120
+        case .chartVN:
+            return 180
+        case .rank:
+            return 50
+        }
+    }
+}
+
 final class StatsViewModel {
 
     // MARK: - Properties
@@ -61,13 +83,13 @@ final class StatsViewModel {
 
     func getItemVN() -> Country {
         for index in 0 ..< countries.count where countries[index].countryName == "Viet Nam" {
-                return countries[index]
-            }
+            return countries[index]
+        }
         return Country()
     }
 
     func numberOfRowInsection() -> Int {
-        return 20
+        return 15
     }
 
     func viewModelForCellOne(at indexPath: IndexPath) -> WorldStatsCellModel {
