@@ -85,4 +85,16 @@ final class StatsViewModel {
         let viewModel = RankCellModel(rankItem: item, index: indexPath.row - 4)
         return viewModel
     }
+
+    func getRankCountry(at indexPath: IndexPath) -> DetailViewModel {
+        let item = rankCountries[indexPath.row]
+        let detail = DetailViewModel(title: item.countryName,
+                                     codeCountry: item.countryCode,
+                                     totalCase: item.totalconfirmed,
+                                     totalRecovered: item.totalRecovered,
+                                     totalDeath: item.totalDeaths,
+                                     cellOne: item,
+                                     date: item.date)
+        return detail
+    }
 }
