@@ -24,6 +24,7 @@ final class WorldChartTableViewCell: UITableViewCell {
              item.removeFromSuperview()
         }
     }
+
     // MARK: - Private methods
     private func updateView() {
         if let active = viewModel?.activeRate {
