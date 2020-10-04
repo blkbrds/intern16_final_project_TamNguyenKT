@@ -39,7 +39,7 @@ class CircleGraphic: UIView {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.gray.cgColor
+        shapeLayer.strokeColor = #colorLiteral(red: 0.9175471663, green: 0.9177045822, blue: 0.917537272, alpha: 1)
         shapeLayer.strokeStart = 0.0
         shapeLayer.strokeEnd = 1
         shapeLayer.lineWidth = 20
