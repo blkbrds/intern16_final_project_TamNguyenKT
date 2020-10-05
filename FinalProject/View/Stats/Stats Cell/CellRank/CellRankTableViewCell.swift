@@ -26,7 +26,7 @@ class CellRankTableViewCell: UITableViewCell {
     // MARK: - Override methods
     override func prepareForReuse() {
         super.prepareForReuse()
-        subviews.forEach { (item) in
+        subviews.forEach { item in
             if item.tag == 1 {
                 item.removeFromSuperview()
             }

@@ -21,7 +21,7 @@ final class VNChartTableViewCell: UITableViewCell {
     // MARK: - Override methods
     override func prepareForReuse() {
         super.prepareForReuse()
-        subviews.forEach { (item) in
+        subviews.forEach { item in
             item.removeFromSuperview()
         }
     }
