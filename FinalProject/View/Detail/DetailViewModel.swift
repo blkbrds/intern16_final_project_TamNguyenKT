@@ -38,7 +38,6 @@ final class DetailViewModel {
         self.totalDeath = totalDeath
         self.totalRecovered = totalRecovered
         self.cellOne = cellOne
-        self.date = date
     }
 
     // MARK: - Function

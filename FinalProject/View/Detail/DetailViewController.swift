@@ -32,7 +32,7 @@ final class DetailViewController: ViewController {
         tableView.register(nibWithCellClass: CellFourTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        title = viewModel.title
+        title = viewModel.cellOne.countryName
     }
 
     // MARK: - Private methods

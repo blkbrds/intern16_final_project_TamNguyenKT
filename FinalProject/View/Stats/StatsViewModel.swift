@@ -83,13 +83,13 @@ final class StatsViewModel {
 
     func getItemVN() -> Country {
         for index in 0 ..< countries.count where countries[index].countryName == "Viet Nam" {
-                return countries[index]
-            }
+            return countries[index]
+        }
         return Country()
     }
 
     func numberOfRowInsection() -> Int {
-        return 20
+        return 15
     }
 
     func viewModelForCellOne(at indexPath: IndexPath) -> WorldStatsCellModel {

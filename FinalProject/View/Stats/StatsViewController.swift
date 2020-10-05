@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 final class StatsViewController: ViewController {
 
@@ -21,6 +20,7 @@ final class StatsViewController: ViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configRefreshControl()
         title = App.TitleInNavigation.stats
     }
 
@@ -43,6 +43,16 @@ final class StatsViewController: ViewController {
     }
 
     // MARK: - Private methods
+    private func configRefreshControl() {
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.tintColor = #colorLiteral(red: 0.7248262763, green: 0.2954983413, blue: 0.2409256697, alpha: 1)
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+    }
+
     private func getDataTheFirst(completion: @escaping () -> Void) {
         viewModel.getDataCellOne { [weak self] result in
             guard let this = self else { return }
@@ -53,6 +63,7 @@ final class StatsViewController: ViewController {
             }
         }
     }
+
     private func getDataTheSecond(completion: @escaping () -> Void) {
         viewModel.getDataCellThree { [weak self] result in
             guard let this = self else { return }
@@ -63,6 +74,7 @@ final class StatsViewController: ViewController {
             }
         }
     }
+
     private func getDataCellRank(completion: @escaping () -> Void) {
         viewModel.getDataCellRank { [weak self] result in
             guard let this = self else { return }
@@ -73,6 +85,7 @@ final class StatsViewController: ViewController {
             }
         }
     }
+
     private func handleCallApi() {
         HUD.show()
         let dispatchGroup = DispatchGroup()
@@ -133,7 +146,7 @@ extension StatsViewController: UITableViewDataSource {
         case 4:
             let cellFive = tableView.dequeueReusableCell(withClass: StatsTableViewCell.self, for: indexPath)
             return cellFive
-        case 5 ... 20:
+        case 5 ... 15:
             let cellRank = tableView.dequeueReusableCell(withClass: CellRankTableViewCell.self, for: indexPath)
             cellRank.viewModel = viewModel.viewModelForCellRank(at: indexPath)
             return cellRank
