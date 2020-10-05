@@ -15,11 +15,7 @@ final class StatsViewController: ViewController {
 
     // MARK: - Properties
     private var refreshControl = UIRefreshControl()
-    var viewModel: StatsViewModel = StatsViewModel() {
-        didSet {
-            updateView()
-        }
-    }
+    var viewModel: StatsViewModel = StatsViewModel()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -48,71 +44,77 @@ final class StatsViewController: ViewController {
 
     // MARK: - Private methods
     private func configRefreshControl() {
-      if #available(iOS 10.0, *) {
-        tableView.refreshControl = refreshControl
-      } else {
-        tableView.addSubview(refreshControl)
-      }
-      refreshControl.tintColor = #colorLiteral(red: 0.7248262763, green: 0.2954983413, blue: 0.2409256697, alpha: 1)
-      refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.tintColor = #colorLiteral(red: 0.7248262763, green: 0.2954983413, blue: 0.2409256697, alpha: 1)
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+    }
+
+    private func getDataTheFirst(completion: @escaping () -> Void) {
+        viewModel.getDataCellOne { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success: completion()
+            case .failure(let error):
+                this.alert(error: error)
+            }
+        }
+    }
+
+    private func getDataTheSecond(completion: @escaping () -> Void) {
+        viewModel.getDataCellThree { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success: completion()
+            case .failure(let error):
+                this.alert(error: error)
+            }
+        }
+    }
+
+    private func getDataCellRank(completion: @escaping () -> Void) {
+        viewModel.getDataCellRank { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success: completion()
+            case .failure(let error):
+                this.alert(error: error)
+            }
+        }
     }
 
     private func handleCallApi() {
         HUD.show()
         let dispatchGroup = DispatchGroup()
-
-        /// getDataCellOne
+        // getDataCellOne
         dispatchGroup.enter()
-        viewModel.getDataCellOne { [weak self] result in
+        getDataTheFirst {
             dispatchGroup.leave()
-            guard let this = self else { return }
-            switch result {
-            case .success: break
-            case .failure(let error):
-                this.alert(error: error)
-            }
         }
-
-        /// getDataCellThree
+        // getDataCellThree
         dispatchGroup.enter()
-        viewModel.getDataCellThree { [weak self] result in
+        getDataTheSecond {
             dispatchGroup.leave()
-            guard let this = self else { return }
-            switch result {
-            case .success: break
-            case .failure(let error):
-                this.alert(error: error)
-            }
         }
-
-        /// getDataCellRank
+        // getDataCellRank
         dispatchGroup.enter()
-        viewModel.getDataCellRank { [weak self] result in
+        getDataCellRank {
             dispatchGroup.leave()
-            guard let this = self else { return }
-            switch result {
-            case .success: break
-            case .failure(let error):
-                this.alert(error: error)
-            }
         }
-
         dispatchGroup.notify(queue: .main) {
             HUD.popActivity()
             self.tableView.reloadData()
         }
     }
 
-    private func updateView() {
-        guard isViewLoaded else { return }
-        tableView.reloadData()
-    }
-
     @objc private func refreshData(_ sender: Any) {
-      handleCallApi()
-      refreshControl.endRefreshing()
-      let activityIndicatorView = UIActivityIndicatorView()
-      activityIndicatorView.stopAnimating()
+        handleCallApi()
+        refreshControl.endRefreshing()
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.stopAnimating()
     }
 }
 
