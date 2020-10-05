@@ -15,11 +15,8 @@ final class StatsViewController: ViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-    var viewModel: StatsViewModel = StatsViewModel() {
-        didSet {
-            updateView()
-        }
-    }
+    private var refreshControl = UIRefreshControl()
+    var viewModel: StatsViewModel = StatsViewModel()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -46,56 +43,65 @@ final class StatsViewController: ViewController {
     }
 
     // MARK: - Private methods
+    private func getDataTheFirst(completion: @escaping () -> Void) {
+        viewModel.getDataCellOne { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success: completion()
+            case .failure(let error):
+                this.alert(error: error)
+            }
+        }
+    }
+    private func getDataTheSecond(completion: @escaping () -> Void) {
+        viewModel.getDataCellThree { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success: completion()
+            case .failure(let error):
+                this.alert(error: error)
+            }
+        }
+    }
+    private func getDataCellRank(completion: @escaping () -> Void) {
+        viewModel.getDataCellRank { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success: completion()
+            case .failure(let error):
+                this.alert(error: error)
+            }
+        }
+    }
     private func handleCallApi() {
         HUD.show()
         let dispatchGroup = DispatchGroup()
-
-        /// getDataCellOne
+        // getDataCellOne
         dispatchGroup.enter()
-        viewModel.getDataCellOne { [weak self] result in
+        getDataTheFirst {
             dispatchGroup.leave()
-            guard let this = self else { return }
-            switch result {
-            case .success: break
-            case .failure(let error):
-                this.alert(error: error)
-            }
         }
-
-        /// getDataCellThree
+        // getDataCellThree
         dispatchGroup.enter()
-        viewModel.getDataCellThree { [weak self] result in
+        getDataTheSecond {
             dispatchGroup.leave()
-            guard let this = self else { return }
-            switch result {
-            case .success: break
-            case .failure(let error):
-                this.alert(error: error)
-            }
         }
-
-        /// getDataCellRank
+        // getDataCellRank
         dispatchGroup.enter()
-        viewModel.getDataCellRank { [weak self] result in
+        getDataCellRank {
             dispatchGroup.leave()
-            guard let this = self else { return }
-            switch result {
-            case .success: break
-            case .failure(let error):
-                this.alert(error: error)
-            }
         }
-
         dispatchGroup.notify(queue: .main) {
             HUD.popActivity()
-            self.updateView()
+            self.tableView.reloadData()
         }
     }
 
-    // MARK: - Public methods
-    private func updateView() {
-        guard isViewLoaded else { return }
-        tableView.reloadData()
+    @objc private func refreshData(_ sender: Any) {
+        handleCallApi()
+        refreshControl.endRefreshing()
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.stopAnimating()
     }
 }
 
