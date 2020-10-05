@@ -61,7 +61,7 @@
 		31C3A7DA2523775E0001E53B /* VNStatsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7D92523775E0001E53B /* VNStatsCellModel.swift */; };
 		31C3A7DE252428630001E53B /* CellRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7DC252428630001E53B /* CellRankTableViewCell.swift */; };
 		31C3A7DF252428630001E53B /* CellRankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7DD252428630001E53B /* CellRankTableViewCell.xib */; };
-		31C3A7E12524287A0001E53B /* CellRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7E02524287A0001E53B /* CellRankModel.swift */; };
+		31C3A7E12524287A0001E53B /* RankCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7E02524287A0001E53B /* RankCellModel.swift */; };
 		31C3A7E5252447D60001E53B /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7E3252447D60001E53B /* StatsTableViewCell.swift */; };
 		31C3A7E6252447D60001E53B /* StatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7E4252447D60001E53B /* StatsTableViewCell.xib */; };
 		31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */; };
@@ -171,7 +171,7 @@
 		31C3A7D92523775E0001E53B /* VNStatsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNStatsCellModel.swift; sourceTree = "<group>"; };
 		31C3A7DC252428630001E53B /* CellRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRankTableViewCell.swift; sourceTree = "<group>"; };
 		31C3A7DD252428630001E53B /* CellRankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellRankTableViewCell.xib; sourceTree = "<group>"; };
-		31C3A7E02524287A0001E53B /* CellRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRankModel.swift; sourceTree = "<group>"; };
+		31C3A7E02524287A0001E53B /* RankCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCellModel.swift; sourceTree = "<group>"; };
 		31C3A7E3252447D60001E53B /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 		31C3A7E4252447D60001E53B /* StatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsTableViewCell.xib; sourceTree = "<group>"; };
 		31FE1CFC2511E8EF007F8F8D /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
@@ -434,7 +434,7 @@
 			children = (
 				31C3A7DC252428630001E53B /* CellRankTableViewCell.swift */,
 				31C3A7DD252428630001E53B /* CellRankTableViewCell.xib */,
-				31C3A7E02524287A0001E53B /* CellRankModel.swift */,
+				31C3A7E02524287A0001E53B /* RankCellModel.swift */,
 			);
 			path = CellRank;
 			sourceTree = "<group>";
@@ -950,7 +950,7 @@
 				3145406625108C5800696E49 /* LoginViewController.swift in Sources */,
 				31FE1D032511E8EF007F8F8D /* Button.swift in Sources */,
 				D1BB1301250A5ECC00FA0B80 /* DictionaryExt.swift in Sources */,
-				31C3A7E12524287A0001E53B /* CellRankModel.swift in Sources */,
+				31C3A7E12524287A0001E53B /* RankCellModel.swift in Sources */,
 				3143526E2513178E000CBA59 /* Country.swift in Sources */,
 				314540832511B8B200696E49 /* Enum.swift in Sources */,
 				3142B46425256F25006D238A /* VNChartTableViewCell.swift in Sources */,

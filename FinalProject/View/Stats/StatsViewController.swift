@@ -142,17 +142,17 @@ extension StatsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 110
+            return CGFloat(RowType.statsWorld.size)
         case 1:
-            return 180
+            return CGFloat(RowType.chartWorld.size)
         case 2:
-            return 120
+            return CGFloat(RowType.statsVN.size)
         case 3:
-            return 180
+            return CGFloat(RowType.chartVN.size)
         case 4:
-            return 50
+            return CGFloat(RowType.rank.size)
         default:
-            return UITableView.automaticDimension
+            return 200
         }
     }
 

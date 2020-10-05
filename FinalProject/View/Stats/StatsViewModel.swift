@@ -8,6 +8,28 @@
 
 import Foundation
 
+enum RowType: Int {
+    case statsWorld
+    case chartWorld
+    case statsVN
+    case chartVN
+    case rank
+    var size: Int {
+        switch self {
+        case .statsWorld:
+            return 100
+        case .chartWorld:
+            return 170
+        case .statsVN:
+            return 120
+        case .chartVN:
+            return 170
+        case .rank:
+            return 50
+        }
+    }
+}
+
 final class StatsViewModel {
 
     // MARK: - Properties

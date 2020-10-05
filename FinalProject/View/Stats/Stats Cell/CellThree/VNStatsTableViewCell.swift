@@ -19,20 +19,20 @@ final class VNStatsTableViewCell: UITableViewCell {
     @IBOutlet private weak var newDeadth: UILabel!
 
     // MARK: - Properties
-    var viewModel: VNStatsCellModel? {
-        didSet {
-            updateView()
+        var viewModel: VNStatsCellModel? {
+            didSet {
+                updateView()
+            }
+        }
+
+        // MARK: - Private methods
+        private func updateView() {
+            guard let viewModel = viewModel else { return }
+            totalCases.text = "\(viewModel.cases)"
+            totalRecovered.text = "\(viewModel.recovered)"
+            totalDeadth.text = "\(viewModel.deadth)"
+            newCases.text = "\(viewModel.newCase)"
+            newRecovered.text = "\(viewModel.newRecovered)"
+            newDeadth.text = "\(viewModel.newDeadth)"
         }
     }
-
-    // MARK: - Private methods
-    private func updateView() {
-        guard let viewModel = viewModel else { return }
-        totalCases.text = String(viewModel.cases)
-        totalRecovered.text = String(viewModel.recovered)
-        totalDeadth.text = String(viewModel.deadth)
-        newCases.text = String(viewModel.newCase)
-        newRecovered.text = String(viewModel.newRecovered)
-        newDeadth.text = String(viewModel.newDeadth)
-    }
-}
