@@ -20,6 +20,7 @@ final class CellThreeCellModel {
     }
     var dayOneCountries: [DayOneCountry] = []
     var confirmedDayOneCountries: [Int] = []
+    var dateInConfirmChart: Date = Date()
 
     // MARK: - Initial
     init(cellThree: DayOneCountry = DayOneCountry(), dayOneCountries: [DayOneCountry] = []) {

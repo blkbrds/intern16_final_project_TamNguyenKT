@@ -11,38 +11,20 @@ import Foundation
 final class DetailViewModel {
 
     // MARK: - Properties
-    var title: String = ""
-    var codeCountry: String = ""
     var dayOneCountries: [DayOneCountry] = []
     var confirmedInCharts: [DayOneCountry] = []
     var deadthInCharts: [DayOneCountry] = []
-    var totalCase: Int = 0
-    var totalRecovered: Int = 0
-    var totalDeath: Int = 0
     var cellOne: Country
-    var date: String = ""
 
     // MARK: - Initial
-    init(title: String = "",
-         codeCountry: String = "",
-         dayOneCountries: [DayOneCountry] = [],
-         totalCase: Int = 0,
-         totalRecovered: Int = 0,
-         totalDeath: Int = 0,
-         cellOne: Country = Country(),
-         date: String = "") {
-        self.title = title
-        self.codeCountry = codeCountry
+    init(dayOneCountries: [DayOneCountry] = [], cellOne: Country = Country()) {
         self.dayOneCountries = dayOneCountries
-        self.totalCase = totalCase
-        self.totalDeath = totalDeath
-        self.totalRecovered = totalRecovered
         self.cellOne = cellOne
     }
 
     // MARK: - Function
     func getDataInDetail(completion: @escaping APICompletion) {
-        let urlString = Api.Path.Detail.path + codeCountry
+        let urlString = Api.Path.Detail.path + cellOne.countryCode
         Api.Path.Detail.getDataInDetail(urlString: urlString) { [weak self] result in
             guard let this = self else { return }
             switch result {

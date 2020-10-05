@@ -26,8 +26,8 @@ final class CellOneTableViewCell: UITableViewCell {
         guard let cases = viewModel?.cases else { return }
         guard let recover = viewModel?.recover else { return }
         guard let deadth = viewModel?.deadth else { return }
-        numberCaseLabel.text = String(cases)
-        numberDeadthLabel.text = String(deadth)
-        numberRecoverLabel.text = String(recover)
+        numberCaseLabel.text = "\(cases)"
+        numberDeadthLabel.text = "\(deadth)"
+        numberRecoverLabel.text = "\(recover)"
     }
 }

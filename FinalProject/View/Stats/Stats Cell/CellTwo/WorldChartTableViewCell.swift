@@ -16,7 +16,6 @@ final class WorldChartTableViewCell: UITableViewCell {
             updateView()
         }
     }
-
     private var xStart: CGFloat = 20
 
     // MARK: - Override methods

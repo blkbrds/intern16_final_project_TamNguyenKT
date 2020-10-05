@@ -20,6 +20,8 @@ final class CellFourCellModel {
     }
     var dayOneCountries: [DayOneCountry] = []
     var deadthDayOneCountries: [Int] = []
+    var dateCountries: [String] = []
+    var dateInDeadthChart: Date = Date()
 
     // MARK: - Initial
     init(cellFour: DayOneCountry = DayOneCountry(), dayOneCountries: [DayOneCountry] = []) {
