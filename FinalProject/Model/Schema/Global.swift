@@ -23,7 +23,7 @@ final class Global: Mappable {
 
     // MARK: - Functions
     func mapping(map: Map) {
-        totalConfirmed <- map["Totalconfirmed"]
+        totalConfirmed <- map["TotalConfirmed"]
         totalDeaths <- map["TotalDeaths"]
         totalRecovered <- map["TotalRecovered"]
     }

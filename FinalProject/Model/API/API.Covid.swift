@@ -36,15 +36,14 @@ extension Api.Path.Search {
 
 extension Api.Path.Detail {
 
-    static func getDataCellOne(urlString: String, completion: @escaping CompletionResult<DayOneCountry>) {
+    static func getDataInDetail(urlString: String, completion: @escaping CompletionResult<[DayOneCountry]>) {
         api.request(method: .get, urlString: urlString) { result in
             switch result {
             case .success(let data):
                 if let data = data as? JSArray {
                     let item: [DayOneCountry] = Mapper<DayOneCountry>().mapArray(JSONArray: data)
-                    let lastItem = item.last
-                    if lastItem != nil {
-                        completion( .success(lastItem ?? DayOneCountry()))
+                    if !item.isEmpty {
+                        completion( .success(item))
                     } else {
                         completion( .failure(Api.Error.emptyData))
                     }
@@ -61,8 +60,7 @@ extension Api.Path.Detail {
 extension Api.Path.Stats {
 
     static func getDataCellOne(completion: @escaping CompletionResult<Global>) {
-        let urlString = pathWorld
-        api.request(method: .get, urlString: urlString) { result in
+        api.request(method: .get, urlString: pathWorld) { result in
             switch result {
             case . success(let data):
                 if let data = data as? JSObject {
@@ -71,6 +69,47 @@ extension Api.Path.Stats {
                     } else {
                         completion( .failure(Api.Error.emptyData))
                     }
+                }
+            case .failure(let error):
+                completion( .failure(error))
+            }
+        }
+    }
+
+    static func getDataCellThree(completion: @escaping CompletionResult<[Country]>) {
+        api.request(method: .get, urlString: pathVN) { result in
+            switch result {
+            case .success(let data):
+                if let data = data as? JSObject, let countries = data["Countries"] as? JSArray {
+                    let array: [Country] = Mapper<Country>().mapArray(JSONArray: countries)
+                    if !array.isEmpty {
+                        completion( .success(array))
+                    } else {
+                        completion( .failure(Api.Error.emptyData))
+                    }
+                } else {
+                    completion( .failure(Api.Error.emptyData))
+                }
+            case .failure(let error):
+                completion( .failure(error))
+            }
+        }
+    }
+
+    static func getDataCellRank(completion: @escaping CompletionResult<[Country]>) {
+        let urlString = pathVN
+        api.request(method: .get, urlString: urlString) { result in
+            switch result {
+            case .success(let data):
+                if let data = data as? JSObject, let countries = data["Countries"] as? JSArray {
+                    let array: [Country] = Mapper<Country>().mapArray(JSONArray: countries)
+                    if !array.isEmpty {
+                        completion( .success(array))
+                    } else {
+                        completion( .failure(Api.Error.emptyData))
+                    }
+                } else {
+                    completion( .failure(Api.Error.emptyData))
                 }
             case .failure(let error):
                 completion( .failure(error))

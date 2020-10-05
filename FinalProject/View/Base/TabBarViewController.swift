@@ -19,8 +19,7 @@ final class TabBarViewController: UITabBarController {
     enum TabBar: Int {
         case stats = 0
         case search = 1
-        case map = 2
-        case follow = 3
+        case follow = 2
 
         var title: String {
             switch self {
@@ -28,8 +27,6 @@ final class TabBarViewController: UITabBarController {
                 return "Stats"
             case .search:
                 return "Search"
-            case .map:
-                return "Map"
             case .follow:
                 return "Follow"
             }
@@ -40,8 +37,6 @@ final class TabBarViewController: UITabBarController {
                 return "icon1"
             case .search:
                 return "icon2"
-            case .map:
-                return "icon3"
             case .follow:
                 return "icon4"
             }
@@ -59,14 +54,14 @@ final class TabBarViewController: UITabBarController {
     private func configViewController() {
         statsNavi.tabBarItem = UITabBarItem(title: TabBar.stats.title, image: UIImage(named: TabBar.stats.image), tag: TabBar.stats.rawValue)
         searchNavi.tabBarItem = UITabBarItem(title: TabBar.search.title, image: UIImage(named: TabBar.search.image), tag: TabBar.search.rawValue)
-        mapNavi.tabBarItem = UITabBarItem(title: TabBar.map.title, image: UIImage(named: TabBar.map.image), tag: TabBar.map.rawValue)
         followNavi.tabBarItem = UITabBarItem(title: TabBar.follow.title, image: UIImage(named: TabBar.follow.image), tag: TabBar.follow.rawValue)
 
-        setViewControllers([statsNavi, searchNavi, mapNavi, followNavi], animated: false)
+        setViewControllers([statsNavi, searchNavi, followNavi], animated: false)
     }
 
     private func configTabBar() {
         tabBar.tintColor = .black
-        tabBar.backgroundColor = App.Color.tabBarBackgroundColor
+        tabBar.isTranslucent = false
+        tabBar.clipsToBounds = true
     }
 }

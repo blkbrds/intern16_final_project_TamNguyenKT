@@ -21,6 +21,7 @@ final class DetailViewController: ViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataInDetail()
     }
 
     // MARK: - Override methods
@@ -30,10 +31,23 @@ final class DetailViewController: ViewController {
         tableView.register(nibWithCellClass: CellThreeTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        title = viewModel.title
+        title = viewModel.cellOne.countryName
     }
 
     // MARK: - Private methods
+    private func loadDataInDetail() {
+        viewModel.getDataInDetail { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                    DispatchQueue.main.async {
+                        this.tableView.reloadData()
+                    }
+            case .failure(let error):
+                    this.alert(error: error)
+            }
+        }
+    }
 }
 
 // MARK: - Extension UITableViewDataSource
@@ -51,7 +65,6 @@ extension DetailViewController: UITableViewDataSource {
             return cellOne
         case 1:
             let cellTwo = tableView.dequeueReusableCell(withClass: DetailTableViewCell.self, for: indexPath)
-            cellTwo.viewModel = viewModel.viewModelForCellTwo(at: indexPath)
             return cellTwo
         case 2:
             let cellThree = tableView.dequeueReusableCell(withClass: CellThreeTableViewCell.self, for: indexPath)
@@ -67,7 +80,7 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 1:
-            return 250
+            return 200
         case 2:
             return 450
         default:
