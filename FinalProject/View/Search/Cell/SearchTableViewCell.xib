@@ -62,7 +62,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.85882352941176465" green="0.81960784313725488" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="1sV-d1-w0O" firstAttribute="top" secondItem="mVA-sp-BDd" secondAttribute="bottom" constant="8" id="3Av-z3-Sho"/>
                                     <constraint firstItem="1RL-X3-geL" firstAttribute="trailing" secondItem="e4y-qf-1iv" secondAttribute="trailing" id="4ne-mx-Bok"/>
@@ -112,11 +112,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdJ-Jc-3bA">
                                         <rect key="frame" x="81.5" y="43" width="63" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="textColor" red="0.06033852696" green="0.1071578935" blue="0.2150699496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.89215046170000001" green="0.07215660065" blue="0.4564592838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.85882352941176465" green="0.81960784313725488" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="hdJ-Jc-3bA" firstAttribute="leading" secondItem="UFs-b4-AVy" secondAttribute="leading" id="1Kf-h2-Ihw"/>
                                     <constraint firstAttribute="trailing" secondItem="J0a-Nk-2X0" secondAttribute="trailing" constant="8" id="7ik-wf-x4A"/>
@@ -162,11 +162,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyS-hc-Uq7">
                                         <rect key="frame" x="63" y="42.5" width="81.5" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="textColor" red="0.06033852696" green="0.1071578935" blue="0.2150699496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.01177123282" green="0.78680664300000003" blue="0.93369501830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.85882352941176465" green="0.81960784313725488" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Yxi-Yo-vts" firstAttribute="top" secondItem="jR1-re-wRD" secondAttribute="bottom" constant="8" id="4g5-jw-ZP8"/>
                                     <constraint firstAttribute="bottom" secondItem="Yxi-Yo-vts" secondAttribute="bottom" constant="8" id="8w8-kM-rMH"/>
@@ -191,7 +191,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ump-23-hgU">
                                 <rect key="frame" x="244.5" y="147.5" width="90" height="33"/>
-                                <color key="backgroundColor" red="0.85882352941176465" green="0.81960784313725488" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="bDw-uX-bXU"/>
                                 </constraints>

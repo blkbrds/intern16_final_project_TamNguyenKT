@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Cell: Int {
+enum RowType: Int {
     case statsWorld
     case chartWorld
     case statsVN
@@ -19,11 +19,11 @@ enum Cell: Int {
         case .statsWorld:
             return 100
         case .chartWorld:
-            return 180
+            return 170
         case .statsVN:
             return 120
         case .chartVN:
-            return 180
+            return 170
         case .rank:
             return 50
         }

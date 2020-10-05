@@ -27,13 +27,13 @@ final class WorldStatsTableViewCell: UITableViewCell {
     // MARK: - Private methods
     private func updateView() {
         if let confirm = viewModel?.confirmed {
-            numberConfirmed.text = String(confirm)
+            numberConfirmed.text = "\(confirm)"
         }
         if let deadth = viewModel?.deadth {
-            numberDeadth.text = String(deadth)
+            numberDeadth.text = "\(deadth)"
         }
         if let recover = viewModel?.recovered {
-            numberRecovered.text = String(recover)
+            numberRecovered.text = "\(recover)"
         }
         dateLabel.text = DateFormatter.dateFormatter().string(from: currentDate)
     }

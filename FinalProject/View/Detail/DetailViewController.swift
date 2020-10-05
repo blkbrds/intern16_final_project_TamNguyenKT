@@ -31,7 +31,7 @@ final class DetailViewController: ViewController {
         tableView.register(nibWithCellClass: CellThreeTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        title = viewModel.title
+        title = viewModel.cellOne.countryName
     }
 
     // MARK: - Private methods
@@ -65,7 +65,6 @@ extension DetailViewController: UITableViewDataSource {
             return cellOne
         case 1:
             let cellTwo = tableView.dequeueReusableCell(withClass: DetailTableViewCell.self, for: indexPath)
-            //cellTwo.viewModel = viewModel.viewModelForCellTwo(at: indexPath)
             return cellTwo
         case 2:
             let cellThree = tableView.dequeueReusableCell(withClass: CellThreeTableViewCell.self, for: indexPath)
