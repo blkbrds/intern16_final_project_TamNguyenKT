@@ -8,15 +8,17 @@
 
 import UIKit
 
-final class StatsCellOneTableViewCell: UITableViewCell {
+final class WorldStatsTableViewCell: UITableViewCell {
 
     // MARK: - IBOulets
     @IBOutlet private weak var numberConfirmed: UILabel!
     @IBOutlet private weak var numberDeadth: UILabel!
     @IBOutlet private weak var numberRecovered: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
 
     // MARK: - Properties
-    var viewModel: StatsCellOneModel? {
+    let currentDate = Date()
+    var viewModel: WorldStatsCellModel? {
         didSet {
             updateView()
         }
@@ -25,13 +27,14 @@ final class StatsCellOneTableViewCell: UITableViewCell {
     // MARK: - Private methods
     private func updateView() {
         if let confirm = viewModel?.confirmed {
-            numberConfirmed.text = String(confirm)
+            numberConfirmed.text = "\(confirm)"
         }
         if let deadth = viewModel?.deadth {
-            numberDeadth.text = String(deadth)
+            numberDeadth.text = "\(deadth)"
         }
         if let recover = viewModel?.recovered {
-            numberRecovered.text = String(recover)
+            numberRecovered.text = "\(recover)"
         }
+        dateLabel.text = DateFormatter.dateFormatter().string(from: currentDate)
     }
 }

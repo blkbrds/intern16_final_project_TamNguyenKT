@@ -27,4 +27,13 @@ extension App {
         static let notHandled = "NotHandled"
         static let failed = "Failed"
     }
+
+    struct TitleInChart {
+        static let deadth = "Deadth"
+        static let recovered = "Recovered"
+        static let active = "Active"
+    }
+    struct TitleInNavigation {
+        static let stats = "Statistics"
+    }
 }

@@ -87,7 +87,7 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 210
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

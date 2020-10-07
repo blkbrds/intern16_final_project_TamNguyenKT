@@ -13,7 +13,7 @@ class CircleGraphic: UIView {
 
     // MARK: - Properties
     private var path = UIBezierPath()
-    private let shapeLayer1 = CAShapeLayer()
+    private let OutsideShapeLayer = CAShapeLayer()
 
     // MARK: - Initialize
     override init(frame: CGRect) {
@@ -39,34 +39,35 @@ class CircleGraphic: UIView {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.gray.cgColor
+
+        shapeLayer.strokeColor = #colorLiteral(red: 0.9175471663, green: 0.9177045822, blue: 0.917537272, alpha: 1)
         shapeLayer.strokeStart = 0.0
         shapeLayer.strokeEnd = 1
         shapeLayer.lineWidth = 20
-        self.layer.addSublayer(shapeLayer)
-        //ADD LAYER
+        layer.addSublayer(shapeLayer)
+        // ADD LAYER
         let center = CGPoint(x: bounds.height / 2, y: bounds.width / 2)
         let path1 = UIBezierPath(arcCenter: center, radius: frameWidth / 2, startAngle: -.pi / 2, endAngle: 3 * .pi / 2, clockwise: true)
-        shapeLayer1.path = path1.cgPath
-        shapeLayer1.fillColor = UIColor.clear.cgColor
-        shapeLayer1.strokeColor = color.cgColor
-        shapeLayer1.strokeStart = 0.0
-        shapeLayer1.strokeEnd = CGFloat(value) / 100
-        shapeLayer1.lineCap = .round
-        shapeLayer1.lineWidth = 20
-        self.layer.addSublayer(shapeLayer1)
+        OutsideShapeLayer.path = path1.cgPath
+        OutsideShapeLayer.fillColor = UIColor.clear.cgColor
+        OutsideShapeLayer.strokeColor = color.cgColor
+        OutsideShapeLayer.strokeStart = 0.0
+        OutsideShapeLayer.strokeEnd = CGFloat(value) / 100
+        OutsideShapeLayer.lineCap = .round
+        OutsideShapeLayer.lineWidth = 20
+        layer.addSublayer(OutsideShapeLayer)
     }
 
     private func createLabel(with num: Int, with title: String) {
         let numberLabel = UILabel()
-        numberLabel.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.width)
+        numberLabel.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.width)
         numberLabel.textAlignment = .center
         numberLabel.text = String(num) + " %"
-        self.addSubview(numberLabel)
+        addSubview(numberLabel)
         let titleLabel = UILabel()
-        titleLabel.frame = CGRect(x: 0, y: 70, width: self.bounds.width, height: self.bounds.width)
+        titleLabel.frame = CGRect(x: 0, y: 70, width: bounds.width, height: bounds.width)
         titleLabel.textAlignment = .center
         titleLabel.text = title
-        self.addSubview(titleLabel)
+        addSubview(titleLabel)
     }
 }
