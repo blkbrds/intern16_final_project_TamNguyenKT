@@ -22,7 +22,6 @@ typealias HUD = SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-
     var window: UIWindow?
     static let shared: AppDelegate = {
         guard let shared = UIApplication.shared.delegate as? AppDelegate else { fatalError("cant cast UIAPP") }
