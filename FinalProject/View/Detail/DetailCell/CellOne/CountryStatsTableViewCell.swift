@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CellOneTableViewCell: UITableViewCell {
+final class CountryStatsTableViewCell: UITableViewCell {
 
     // MARK: - IBOulets
     @IBOutlet private weak var numberCaseLabel: UILabel!
@@ -16,7 +16,7 @@ final class CellOneTableViewCell: UITableViewCell {
     @IBOutlet private weak var numberDeadthLabel: UILabel!
 
     // MARK: - Properties
-    var viewModel: CellOneCellModel? {
+    var viewModel: StatsCellModel? {
         didSet {
             updateView()
         }

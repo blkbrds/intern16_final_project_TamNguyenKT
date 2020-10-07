@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class CellThreeCellModel {
+final class ConfirmChartCellModel {
 
     // MARK: Properties
     var cellThree: DayOneCountry

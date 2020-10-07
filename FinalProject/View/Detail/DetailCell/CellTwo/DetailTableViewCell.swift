@@ -21,7 +21,7 @@ final class DetailTableViewCell: UITableViewCell {
     // MARK: - Override methods
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.subviews.forEach { (item) in
+        subviews.forEach { (item) in
             item.removeFromSuperview()
         }
     }

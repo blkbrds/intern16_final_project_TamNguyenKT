@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class CellOneCellModel {
+final class StatsCellModel {
 
     // MARK: - Properties
     var cellOne: Country

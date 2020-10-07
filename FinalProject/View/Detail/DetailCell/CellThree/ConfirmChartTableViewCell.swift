@@ -8,14 +8,14 @@
 
 import UIKit
 
-final class CellThreeTableViewCell: UITableViewCell {
+final class ConfirmChartTableViewCell: UITableViewCell {
 
     // MARK: - IBOulets
     @IBOutlet private weak var barChart: CustomChart!
 
     // MARK: - Properties
     private var numberDays: Int = 99
-    var viewModel: CellThreeCellModel? {
+    var viewModel: ConfirmChartCellModel? {
         didSet {
             updateView()
         }

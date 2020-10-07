@@ -8,14 +8,14 @@
 
 import UIKit
 
-final class CellFourTableViewCell: UITableViewCell {
+final class DeadthChartTableViewCell: UITableViewCell {
 
     // MARK: - IBOulets
     @IBOutlet private weak var barChart: CustomChart!
 
     // MARK: - Properties
     private var numberDays: Int = 99
-    var viewModel: CellFourCellModel? {
+    var viewModel: DeadthChartCellModel? {
         didSet {
             updateView()
         }

@@ -8,6 +8,25 @@
 
 import Foundation
 
+enum RowTypeInDetail: Int {
+    case statsCountry
+    case circleChart
+    case caseChart
+    case deadthChart
+    var size: Int {
+        switch self {
+        case .statsCountry:
+            return 190
+        case .circleChart:
+            return 160
+        case .caseChart:
+            return 300
+        case .deadthChart:
+            return 300
+        }
+    }
+}
+
 final class DetailViewModel {
 
     // MARK: - Properties
@@ -56,8 +75,8 @@ final class DetailViewModel {
         return viewModel
     }
 
-    func viewModelForCellOne(at indexPath: IndexPath) -> CellOneCellModel {
-        let viewModel = CellOneCellModel(cellOne: cellOne)
+    func viewModelForCellOne(at indexPath: IndexPath) -> StatsCellModel {
+        let viewModel = StatsCellModel(cellOne: cellOne)
         return viewModel
     }
 
@@ -66,13 +85,13 @@ final class DetailViewModel {
         return viewModel
     }
 
-    func viewModelForConfirmedChart(at indexPath: IndexPath) -> CellThreeCellModel {
-        let viewModel = CellThreeCellModel(dayOneCountries: confirmedInCharts)
+    func viewModelForConfirmedChart(at indexPath: IndexPath) -> ConfirmChartCellModel {
+        let viewModel = ConfirmChartCellModel(dayOneCountries: confirmedInCharts)
         return viewModel
     }
 
-    func viewModelForDeadthChart(at indexPath: IndexPath) -> CellFourCellModel {
-        let viewModel = CellFourCellModel(dayOneCountries: deadthInCharts)
+    func viewModelForDeadthChart(at indexPath: IndexPath) -> DeadthChartCellModel {
+        let viewModel = DeadthChartCellModel(dayOneCountries: deadthInCharts)
         return viewModel
     }
 }

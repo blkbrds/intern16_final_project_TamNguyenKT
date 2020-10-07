@@ -14,8 +14,6 @@ final class DetailViewController: ViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-    private var cellIdentifierCellOne: String = "CellOne"
-    private var cellIdentifierCellTwo: String = "DetailCell"
     var viewModel: DetailViewModel = DetailViewModel()
 
     // MARK: - Life cycle
@@ -26,10 +24,10 @@ final class DetailViewController: ViewController {
 
     // MARK: - Override methods
     override func setUpUI() {
-        tableView.register(nibWithCellClass: CellOneTableViewCell.self)
+        tableView.register(nibWithCellClass: CountryStatsTableViewCell.self)
         tableView.register(nibWithCellClass: DetailTableViewCell.self)
-        tableView.register(nibWithCellClass: CellThreeTableViewCell.self)
-        tableView.register(nibWithCellClass: CellFourTableViewCell.self)
+        tableView.register(nibWithCellClass: ConfirmChartTableViewCell.self)
+        tableView.register(nibWithCellClass: DeadthChartTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         title = viewModel.cellOne.countryName
@@ -48,8 +46,7 @@ final class DetailViewController: ViewController {
         }
     }
 
-    // MARK: - Public methods
-    func updateUI() {
+    private func updateUI() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -66,7 +63,7 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cellOne = tableView.dequeueReusableCell(withClass: CellOneTableViewCell.self, for: indexPath)
+            let cellOne = tableView.dequeueReusableCell(withClass: CountryStatsTableViewCell.self, for: indexPath)
             cellOne.viewModel = viewModel.viewModelForCellOne(at: indexPath)
             return cellOne
         case 1:
@@ -74,11 +71,11 @@ extension DetailViewController: UITableViewDataSource {
             cellTwo.viewModel = viewModel.viewModelForCirceChart(at: indexPath)
             return cellTwo
         case 2:
-            let cellThree = tableView.dequeueReusableCell(withClass: CellThreeTableViewCell.self, for: indexPath)
+            let cellThree = tableView.dequeueReusableCell(withClass: ConfirmChartTableViewCell.self, for: indexPath)
             cellThree.viewModel = viewModel.viewModelForConfirmedChart(at: indexPath)
             return cellThree
         case 3:
-            let cellFour = tableView.dequeueReusableCell(withClass: CellFourTableViewCell.self, for: indexPath)
+            let cellFour = tableView.dequeueReusableCell(withClass: DeadthChartTableViewCell.self, for: indexPath)
             cellFour.viewModel = viewModel.viewModelForDeadthChart(at: indexPath)
             return cellFour
         default:
@@ -92,13 +89,13 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 190
+            return CGFloat(RowTypeInDetail.statsCountry.size)
         case 1:
-            return 160
+            return CGFloat(RowTypeInDetail.circleChart.size)
         case 2:
-            return 300
+            return CGFloat(RowTypeInDetail.caseChart.size)
         case 3:
-            return 300
+            return CGFloat(RowTypeInDetail.deadthChart.size)
         default:
             return UITableView.automaticDimension
         }

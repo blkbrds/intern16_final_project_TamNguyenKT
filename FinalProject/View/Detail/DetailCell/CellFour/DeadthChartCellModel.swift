@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class CellFourCellModel {
+final class DeadthChartCellModel {
 
     // MARK: Properties
     var cellFour: DayOneCountry
