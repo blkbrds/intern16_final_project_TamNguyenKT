@@ -14,8 +14,6 @@ final class DetailViewController: ViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-    private var cellIdentifierCellOne: String = "CellOne"
-    private var cellIdentifierCellTwo: String = "DetailCell"
     var viewModel: DetailViewModel = DetailViewModel()
 
     // MARK: - Life cycle
