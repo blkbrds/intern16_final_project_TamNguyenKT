@@ -47,7 +47,14 @@ final class SearchViewModel {
         do {
             let realm = try Realm()
             let countriesInRealm = filter[index]
-            let tempCountries = Country(countryName: countriesInRealm.countryName, countryCode: countriesInRealm.countryCode, confirmNew: countriesInRealm.confirmNew, totalconfirmed: countriesInRealm.totalconfirmed, deadthNew: countriesInRealm.deadthNew, totalDeadths: countriesInRealm.totalDeaths, recoverNew: countriesInRealm.recoverNew, totalRecovered: countriesInRealm.totalRecovered)
+            let tempCountries = Country(countryName: countriesInRealm.countryName,
+                                        countryCode: countriesInRealm.countryCode,
+                                        confirmNew: countriesInRealm.confirmNew,
+                                        totalconfirmed: countriesInRealm.totalconfirmed,
+                                        deadthNew: countriesInRealm.deadthNew,
+                                        totalDeadths: countriesInRealm.totalDeaths,
+                                        recoverNew: countriesInRealm.recoverNew,
+                                        totalRecovered: countriesInRealm.totalRecovered)
             try realm.write {
                 realm.create(Country.self, value: tempCountries, update: .all)
             }
