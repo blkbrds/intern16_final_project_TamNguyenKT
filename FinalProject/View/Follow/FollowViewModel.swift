@@ -88,4 +88,10 @@ final class FollowViewModel {
         let viewModel = CellModel(item: item)
         return viewModel
     }
+
+    func getCountryInFollow(at indexPath: IndexPath) -> DetailViewModel {
+        let item = countriesInFollow[indexPath.row]
+        let viewModel = DetailViewModel(cellOne: item)
+        return viewModel
+    }
 }
