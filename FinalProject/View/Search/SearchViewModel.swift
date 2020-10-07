@@ -112,7 +112,7 @@ final class SearchViewModel {
                 guard let this = self else { return }
                 this.countries.append(contentsOf: result)
                 this.filter = this.countries
-                completion( .success)
+                this.fetchRealmData(completion: completion)
             }
         }
     }
