@@ -13,13 +13,13 @@ final class CellOneCellModel {
     // MARK: - Properties
     var cellOne: Country
     var cases: Int? {
-        return cellOne.newConfirmed
+        return cellOne.confirmNew
     }
     var deadth: Int? {
-        return cellOne.newDeaths
+        return cellOne.deadthNew
     }
     var recover: Int? {
-        return cellOne.newRecovered
+        return cellOne.recoverNew
     }
 
     // MARK: - Initial

@@ -22,6 +22,7 @@ final class StatsViewController: ViewController {
         super.viewDidLoad()
         configRefreshControl()
         title = App.TitleInNavigation.stats
+        
     }
 
     override func setUpData() {

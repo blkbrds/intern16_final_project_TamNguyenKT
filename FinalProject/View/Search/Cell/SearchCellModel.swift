@@ -12,20 +12,23 @@ final class SearchCellModel {
 
     // MARK: - Properties
     var country: Country
-    var countryName: String? {
+    var countryName: String {
         return country.countryName
     }
-    var totalConfirmed: Int? {
+    var totalConfirmed: Int {
         return country.totalconfirmed
     }
-    var totalDeadth: Int? {
+    var totalDeadth: Int {
         return country.totalDeaths
     }
-    var totalRecovered: Int? {
+    var totalRecovered: Int {
         return country.totalRecovered
     }
-    var countryCode: String? {
+    var countryCode: String {
         return country.countryCode
+    }
+    var isFollow: Bool {
+        return country.isFollow
     }
 
     // MARK: - Initial

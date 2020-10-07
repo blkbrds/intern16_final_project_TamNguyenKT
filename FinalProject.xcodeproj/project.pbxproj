@@ -16,6 +16,10 @@
 		311744292519AD32006D2516 /* DetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311744282519AD32006D2516 /* DetailCellModel.swift */; };
 		3117442B2519AF2C006D2516 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117442A2519AF2C006D2516 /* DetailViewModel.swift */; };
 		3117442D2519E7AF006D2516 /* DayOneCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3117442C2519E7AF006D2516 /* DayOneCountry.swift */; };
+		314162CB252C25FA008EEB48 /* FollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314162CA252C25FA008EEB48 /* FollowViewModel.swift */; };
+		3141EF55252C842700FE9548 /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141EF53252C842700FE9548 /* FollowCell.swift */; };
+		3141EF56252C842700FE9548 /* FollowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3141EF54252C842700FE9548 /* FollowCell.xib */; };
+		3141EF58252C847100FE9548 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141EF57252C847100FE9548 /* CellModel.swift */; };
 		3142B46425256F25006D238A /* VNChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B46225256F25006D238A /* VNChartTableViewCell.swift */; };
 		3142B46525256F25006D238A /* VNChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3142B46325256F25006D238A /* VNChartTableViewCell.xib */; };
 		3142B4672525876C006D238A /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B4662525876C006D238A /* DateExt.swift */; };
@@ -121,6 +125,10 @@
 		311744282519AD32006D2516 /* DetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellModel.swift; sourceTree = "<group>"; };
 		3117442A2519AF2C006D2516 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		3117442C2519E7AF006D2516 /* DayOneCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOneCountry.swift; sourceTree = "<group>"; };
+		314162CA252C25FA008EEB48 /* FollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModel.swift; sourceTree = "<group>"; };
+		3141EF53252C842700FE9548 /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
+		3141EF54252C842700FE9548 /* FollowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowCell.xib; sourceTree = "<group>"; };
+		3141EF57252C847100FE9548 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		3142B46225256F25006D238A /* VNChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNChartTableViewCell.swift; sourceTree = "<group>"; };
 		3142B46325256F25006D238A /* VNChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VNChartTableViewCell.xib; sourceTree = "<group>"; };
 		3142B4662525876C006D238A /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
@@ -259,6 +267,16 @@
 			path = DetailCell;
 			sourceTree = "<group>";
 		};
+		3141EF52252C841500FE9548 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3141EF53252C842700FE9548 /* FollowCell.swift */,
+				3141EF54252C842700FE9548 /* FollowCell.xib */,
+				3141EF57252C847100FE9548 /* CellModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		3142B46125256EFC006D238A /* CelllFour */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,8 +328,10 @@
 		3145404D25108C5800696E49 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				3141EF52252C841500FE9548 /* Cell */,
 				3145404E25108C5800696E49 /* FollowViewController.xib */,
 				3145404F25108C5800696E49 /* FollowViewController.swift */,
+				314162CA252C25FA008EEB48 /* FollowViewModel.swift */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -723,6 +743,7 @@
 			files = (
 				3145406525108C5800696E49 /* LoginViewController.xib in Resources */,
 				31174427251995FB006D2516 /* DetailTableViewCell.xib in Resources */,
+				3141EF56252C842700FE9548 /* FollowCell.xib in Resources */,
 				3144D2AF251C7AD0000F6E3F /* WorldStatsTableViewCell.xib in Resources */,
 				D14016E4250A335300110A13 /* Preview Assets.xcassets in Resources */,
 				3145405E25108C5800696E49 /* FollowViewController.xib in Resources */,
@@ -908,8 +929,10 @@
 				314540832511B8B200696E49 /* Enum.swift in Sources */,
 				3142B46425256F25006D238A /* VNChartTableViewCell.swift in Sources */,
 				D14016E9250A335300110A13 /* Font.swift in Sources */,
+				314162CB252C25FA008EEB48 /* FollowViewModel.swift in Sources */,
 				D14016E3250A335300110A13 /* DefaultsExt.swift in Sources */,
 				D14016E1250A335300110A13 /* UIViewControllerExt.swift in Sources */,
+				3141EF55252C842700FE9548 /* FollowCell.swift in Sources */,
 				31C3A7DE252428630001E53B /* CellRankTableViewCell.swift in Sources */,
 				3143527225131DDA000CBA59 /* Global.swift in Sources */,
 				3145406425108C5800696E49 /* TabBarViewController.swift in Sources */,
@@ -917,6 +940,7 @@
 				311744292519AD32006D2516 /* DetailCellModel.swift in Sources */,
 				31C3A7D7252377260001E53B /* VNStatsTableViewCell.swift in Sources */,
 				3117442D2519E7AF006D2516 /* DayOneCountry.swift in Sources */,
+				3141EF58252C847100FE9548 /* CellModel.swift in Sources */,
 				31174426251995FB006D2516 /* DetailTableViewCell.swift in Sources */,
 				31FE1D072512FFB2007F8F8D /* SearchTableViewCell.swift in Sources */,
 				31FE1D002511E8EF007F8F8D /* CollectionCell.swift in Sources */,

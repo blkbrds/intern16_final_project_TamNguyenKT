@@ -39,7 +39,6 @@ final class StatsViewModel {
     var itemVN: Country = Country()
 
     // MARK: - Function
-
     func getDataCellOne(completion: @escaping APICompletion) {
         Api.Path.Stats.getDataCellOne { [weak self] result in
             guard let this = self else { return }

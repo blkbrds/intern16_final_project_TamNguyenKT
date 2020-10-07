@@ -24,6 +24,7 @@ final class SearchViewController: ViewController {
         super.viewDidLoad()
         loadData()
         configSearchController()
+        observeData()
     }
 
     // MARK: - Override methods
@@ -34,6 +35,10 @@ final class SearchViewController: ViewController {
     }
 
     // MARK: - Private methods
+    private func observeData() {
+        viewModel.delegate = self
+        viewModel.setupObserver()
+    }
     private func configSearchController() {
         title = titleSearch
         navigationItem.searchController = searchController
@@ -78,6 +83,7 @@ extension SearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: SearchTableViewCell.self, for: indexPath)
+        cell.delegate = self
         cell.viewModel = viewModel.viewModelForCell(at: indexPath)
         return cell
     }
@@ -104,5 +110,50 @@ extension SearchViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
         filterCountry(for: searchController.searchBar.text ?? "")
+    }
+}
+
+// MARK: - Extension SearchViewModelDelegate
+extension SearchViewController: SearchViewModelDelegate {
+
+    func syncFollow(view: SearchViewModel, needPerform action: SearchViewModel.Action) {
+        switch action {
+        case .reloadData:
+            tableView.reloadData()
+        case .fail(let error):
+            alert(error: error)
+        }
+    }
+}
+
+// MARK: - Extension SearchTableVieCellDelegate
+extension SearchViewController: SearchTableViewCellDelegate {
+
+    func view(view: SearchTableViewCell, needPerform action: SearchTableViewCell.Action) {
+        guard let indexPath = tableView.indexPath(for: view) else { return }
+        switch action {
+        case .follow(isFollow: let isFollow):
+            if isFollow {
+                viewModel.unFollowItem(index: indexPath.row) { [weak self] result in
+                    guard let this = self else { return }
+                    switch result {
+                    case .success:
+                        this.tableView.reloadData()
+                    case .failure(let error):
+                        this.alert(error: error)
+                    }
+                }
+            } else {
+                viewModel.addFollowIntem(index: indexPath.row) { [weak self]result in
+                    guard let this = self else { return }
+                    switch result {
+                    case .success:
+                        this.tableView.reloadData()
+                    case .failure(let error):
+                        this.alert(error: error)
+                    }
+                }
+            }
+        }
     }
 }

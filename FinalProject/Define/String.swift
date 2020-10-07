@@ -36,4 +36,10 @@ extension App {
     struct TitleInNavigation {
         static let stats = "Statistics"
     }
+
+    struct TitleAlert {
+        static let message = "Do you want to delete all follow ??"
+        static let title = "DELETE ALL"
+        static let confirm = "OK"
+    }
 }
