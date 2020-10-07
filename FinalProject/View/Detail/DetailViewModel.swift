@@ -20,9 +20,9 @@ enum RowTypeInDetail: Int {
         case .circleChart:
             return 160
         case .caseChart:
-            return 300
+            return 280
         case .deadthChart:
-            return 300
+            return 280
         }
     }
 }
