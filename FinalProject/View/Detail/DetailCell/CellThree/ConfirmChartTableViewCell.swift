@@ -42,7 +42,7 @@ final class ConfirmChartTableViewCell: UITableViewCell {
         for item in viewModel.dayOneCountries {
             viewModel.confirmedDayOneCountries.append(item.confirmed)
         }
-        viewModel.dateInConfirmChart.addTimeInterval(TimeInterval(-24 * 60 * 60 * 99))
+        viewModel.dateInConfirmChart.addTimeInterval(TimeInterval(-24 * 60 * 60 * numberDays))
         let dataEntries = generateDataEntries(valueArray: viewModel.confirmedDayOneCountries, valueConfirmed: viewModel.confirmedDayOneCountries.last ?? 0)
         barChart.dataEntries = dataEntries
     }
