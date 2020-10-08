@@ -32,7 +32,6 @@ final class CustomChart: UIView {
     var dataEntries: [BarEntry]? = nil {
         didSet {
             mainLayer.sublayers?.forEach({ $0.removeFromSuperlayer() })
-
             if let dataEntries = dataEntries {
                 scrollView.contentSize = CGSize(width: (barWidth + space) * CGFloat(dataEntries.count), height: self.frame.size.height)
                 mainLayer.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)

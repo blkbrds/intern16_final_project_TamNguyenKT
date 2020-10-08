@@ -176,9 +176,7 @@ extension StatsViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row < 5 {
-            return
-        }
+        guard indexPath.row > 5 else { return }
         let vc = DetailViewController()
         vc.viewModel = viewModel.getRankCountry(at: indexPath)
         navigationController?.pushViewController(vc, animated: true)

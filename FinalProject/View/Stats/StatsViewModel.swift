@@ -14,18 +14,14 @@ enum RowType: Int {
     case statsVN
     case chartVN
     case rank
+
     var size: Int {
         switch self {
-        case .statsWorld:
-            return 100
-        case .chartWorld:
-            return 170
-        case .statsVN:
-            return 120
-        case .chartVN:
-            return 170
-        case .rank:
-            return 50
+        case .statsWorld:return 100
+        case .chartWorld:return 170
+        case .statsVN:return 120
+        case .chartVN:return 170
+        case .rank:return 50
         }
     }
 }

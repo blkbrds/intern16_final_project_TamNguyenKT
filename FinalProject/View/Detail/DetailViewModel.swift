@@ -13,16 +13,13 @@ enum RowTypeInDetail: Int {
     case circleChart
     case caseChart
     case deadthChart
+
     var size: Int {
         switch self {
-        case .statsCountry:
-            return 190
-        case .circleChart:
-            return 160
-        case .caseChart:
-            return 280
-        case .deadthChart:
-            return 280
+        case .statsCountry:return 190
+        case .circleChart:return 160
+        case .caseChart:return 280
+        case .deadthChart:return 280
         }
     }
 }
