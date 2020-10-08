@@ -22,7 +22,7 @@ final class DeadthChartTableViewCell: UITableViewCell {
     }
 
     // MARK: - Private methods
-    func generateDataEntries(valueArray: [Int], valueDeadth: Int) -> [BarEntry] {
+    private func generateDataEntries(valueArray: [Int], valueDeadth: Int) -> [BarEntry] {
         let valueTotal = valueArray
         let colors = [#colorLiteral(red: 0.01176470588, green: 0.7882352941, blue: 0.9333333333, alpha: 1)]
         var result: [BarEntry] = []

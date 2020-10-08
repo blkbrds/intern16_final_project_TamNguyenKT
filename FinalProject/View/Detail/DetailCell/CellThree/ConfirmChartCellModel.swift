@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
-final class ConfirmChartCellModel {
+import MVVM
+final class ConfirmChartCellModel: ViewModel {
 
     // MARK: Properties
     var cellThree: DayOneCountry

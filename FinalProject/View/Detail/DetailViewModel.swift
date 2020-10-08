@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MVVM
 
 enum RowTypeInDetail: Int {
     case statsCountry
@@ -24,7 +25,7 @@ enum RowTypeInDetail: Int {
     }
 }
 
-final class DetailViewModel {
+final class DetailViewModel: ViewModel {
 
     // MARK: - Properties
     var dayOneCountries: [DayOneCountry] = []
@@ -63,7 +64,7 @@ final class DetailViewModel {
         return items
     }
 
-    func numberOfRowInSection() -> Int {
+    func numberOfItems(inSection section: Int) -> Int {
         return 4
     }
 

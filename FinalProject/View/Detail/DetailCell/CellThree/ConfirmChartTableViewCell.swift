@@ -22,7 +22,7 @@ final class ConfirmChartTableViewCell: UITableViewCell {
     }
 
     // MARK: - Private methods
-    func generateDataEntries(valueArray: [Int], valueConfirmed: Int) -> [BarEntry] {
+    private func generateDataEntries(valueArray: [Int], valueConfirmed: Int) -> [BarEntry] {
         let valueTotal = valueArray
         let colors = [#colorLiteral(red: 0.05882352941, green: 0.1058823529, blue: 0.2156862745, alpha: 1)]
         var result: [BarEntry] = []

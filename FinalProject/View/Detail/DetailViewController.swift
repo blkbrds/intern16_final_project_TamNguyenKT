@@ -19,6 +19,7 @@ final class DetailViewController: ViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataInDetail()
     }
 
     // MARK: - Override methods
@@ -38,16 +39,10 @@ final class DetailViewController: ViewController {
             guard let this = self else { return }
             switch result {
             case .success:
-                this.updateUI()
+                this.tableView.reloadData()
             case .failure(let error):
-                    this.alert(error: error)
+                this.alert(error: error)
             }
-        }
-    }
-
-    private func updateUI() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
         }
     }
 }
@@ -56,7 +51,7 @@ final class DetailViewController: ViewController {
 extension DetailViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRowInSection()
+        return viewModel.numberOfItems(inSection: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

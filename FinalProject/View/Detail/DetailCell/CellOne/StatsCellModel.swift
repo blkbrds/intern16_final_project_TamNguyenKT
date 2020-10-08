@@ -7,19 +7,20 @@
 //
 
 import Foundation
+import MVVM
 
-final class StatsCellModel {
+final class StatsCellModel: ViewModel {
 
     // MARK: - Properties
-    var cellOne: Country
+    var cellCountry: Country
     var cases: Int {
-        return cellOne.newConfirmed
+        return cellCountry.newConfirmed
     }
     var deadth: Int {
-        return cellOne.newDeaths
+        return cellCountry.newDeaths
     }
     var recover: Int {
-        return cellOne.newRecovered
+        return cellCountry.newRecovered
     }
     var deadRate: Float {
         if cases == 0 {
@@ -41,6 +42,6 @@ final class StatsCellModel {
 
     // MARK: - Initial
     init(cellOne: Country) {
-        self.cellOne = cellOne
+        cellCountry = cellOne
     }
 }
