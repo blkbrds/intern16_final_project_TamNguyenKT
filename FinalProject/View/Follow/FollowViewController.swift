@@ -91,7 +91,7 @@ extension FollowViewController: UITableViewDataSource {
 extension FollowViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 230
+        return 250
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
