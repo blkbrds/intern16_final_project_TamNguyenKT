@@ -32,6 +32,7 @@ final class StatsViewController: ViewController {
 
     // MARK: - Override methods
     override func setUpUI() {
+        super.setUpUI()
         tableView.register(nibWithCellClass: WorldStatsTableViewCell.self)
         tableView.register(nibWithCellClass: WorldChartTableViewCell.self)
         tableView.register(nibWithCellClass: VNStatsTableViewCell.self)
@@ -40,7 +41,6 @@ final class StatsViewController: ViewController {
         tableView.register(nibWithCellClass: CellRankTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        title = App.TitleInNavigation.stats
     }
 
     // MARK: - Private methods
@@ -174,5 +174,12 @@ extension StatsViewController: UITableViewDelegate {
         default:
             return 200
         }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row > 5 else { return }
+        let vc = DetailViewController()
+        vc.viewModel = viewModel.getRankCountry(at: indexPath)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

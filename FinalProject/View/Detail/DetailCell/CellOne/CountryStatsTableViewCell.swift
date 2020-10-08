@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CellOneTableViewCell: UITableViewCell {
+final class CountryStatsTableViewCell: UITableViewCell {
 
     // MARK: - IBOulets
     @IBOutlet private weak var numberCaseLabel: UILabel!
@@ -16,7 +16,7 @@ final class CellOneTableViewCell: UITableViewCell {
     @IBOutlet private weak var numberDeadthLabel: UILabel!
 
     // MARK: - Properties
-    var viewModel: CellOneCellModel? {
+    var viewModel: StatsCellModel? {
         didSet {
             updateView()
         }
@@ -26,8 +26,8 @@ final class CellOneTableViewCell: UITableViewCell {
         guard let cases = viewModel?.cases else { return }
         guard let recover = viewModel?.recover else { return }
         guard let deadth = viewModel?.deadth else { return }
-        numberCaseLabel.text = String(cases)
-        numberDeadthLabel.text = String(deadth)
-        numberRecoverLabel.text = String(recover)
+        numberCaseLabel.text = "\(cases)"
+        numberDeadthLabel.text = "\(deadth)"
+        numberRecoverLabel.text = "\(recover)"
     }
 }

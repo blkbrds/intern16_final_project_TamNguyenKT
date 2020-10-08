@@ -14,18 +14,14 @@ enum RowType: Int {
     case statsVN
     case chartVN
     case rank
+
     var size: Int {
         switch self {
-        case .statsWorld:
-            return 100
-        case .chartWorld:
-            return 170
-        case .statsVN:
-            return 120
-        case .chartVN:
-            return 170
-        case .rank:
-            return 50
+        case .statsWorld:return 100
+        case .chartWorld:return 170
+        case .statsVN:return 120
+        case .chartVN:return 170
+        case .rank:return 50
         }
     }
 }
@@ -105,5 +101,11 @@ final class StatsViewModel {
         guard let item = rankCountries[safe: indexPath.row - 5] else { return RankCellModel() }
         let viewModel = RankCellModel(rankItem: item, index: indexPath.row - 4)
         return viewModel
+    }
+
+    func getRankCountry(at indexPath: IndexPath) -> DetailViewModel {
+        let item = rankCountries[indexPath.row - 5]
+        let detail = DetailViewModel(cellOne: item)
+        return detail
     }
 }

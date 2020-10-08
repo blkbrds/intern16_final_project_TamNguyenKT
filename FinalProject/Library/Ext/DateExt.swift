@@ -17,4 +17,10 @@ extension DateFormatter {
         dateFormatter.timeStyle = .medium
         return dateFormatter
     }
+
+    static func dateFormaterInChart() -> DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMM"
+        return dateFormatter
+    }
 }
