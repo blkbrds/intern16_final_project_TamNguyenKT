@@ -37,7 +37,9 @@ extension ApiManager {
                                         encoding: encoding,
                                         headers: _headers
         ).responseJSON(completion: { (response) in
-            completion?(response.result)
+            DispatchQueue.main.async {
+                completion?(response.result)
+            }
         })
 
         return request
