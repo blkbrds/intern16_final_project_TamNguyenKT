@@ -1,10 +1,11 @@
 //
 //  AppDelegate.swift
-//  LoginwthGoogleApplewihFirebase
+//  FinalProject
 //
-//  Created by PCI0001 on 9/7/20.
-//  Copyright © 2020 PCI0001. All rights reserved.
+//  Created by PCI0001 on 10/7/20.
+//  Copyright © 2020 Thinh Nguyen X. All rights reserved.
 //
+
 import GoogleSignIn
 import UIKit
 import Firebase
@@ -19,8 +20,7 @@ enum RootType {
 typealias HUD = SVProgressHUD
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     static let shared: AppDelegate = {
         guard let shared = UIApplication.shared.delegate as? AppDelegate else { fatalError("cant cast UIAPP") }
@@ -52,16 +52,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
 
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if error == nil {
-        changeRootViewController(changeRoot: .tabbar)
-        } else {
-            print(error.localizedDescription)
-        }
-    }
-
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         guard let url = GIDSignIn.sharedInstance()?.handle(url) else { return true }
         return url
+    }
+}
+
+extension AppDelegate: GIDSignInDelegate {
+
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error == nil {
+            changeRootViewController(changeRoot: .tabbar)
+        }
     }
 }

@@ -215,6 +215,13 @@
                                     <action selector="followButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bcv-Co-nMZ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0r-KY-dO9">
+                                <rect key="frame" x="40" y="211" width="321" height="2"/>
+                                <color key="backgroundColor" red="0.058823529409999999" green="0.1058823529" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="hSL-lJ-VPi"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -223,6 +230,7 @@
                             <constraint firstItem="7Px-bZ-qhc" firstAttribute="trailing" secondItem="utB-zD-kd6" secondAttribute="trailing" id="6H4-Y1-Ego"/>
                             <constraint firstItem="oR4-1E-e82" firstAttribute="trailing" secondItem="L5h-Mx-BsV" secondAttribute="trailing" id="BtF-ai-egj"/>
                             <constraint firstItem="8wn-zx-Pfy" firstAttribute="width" secondItem="utB-zD-kd6" secondAttribute="width" id="Db1-xO-hb2"/>
+                            <constraint firstAttribute="bottom" secondItem="n0r-KY-dO9" secondAttribute="bottom" constant="1" id="FmW-3D-pjM"/>
                             <constraint firstItem="oR4-1E-e82" firstAttribute="top" secondItem="L5h-Mx-BsV" secondAttribute="bottom" constant="3" id="Gc7-Ve-446"/>
                             <constraint firstItem="hdJ-Jc-3bA" firstAttribute="bottom" secondItem="1RL-X3-geL" secondAttribute="bottom" id="JF1-bG-H6n"/>
                             <constraint firstItem="J0a-Nk-2X0" firstAttribute="top" secondItem="mVA-sp-BDd" secondAttribute="top" id="Onb-IA-9ay"/>
@@ -236,6 +244,7 @@
                             <constraint firstItem="L5h-Mx-BsV" firstAttribute="top" secondItem="bit-Vw-D9S" secondAttribute="top" constant="5" id="cF8-CH-YmT"/>
                             <constraint firstItem="7Px-bZ-qhc" firstAttribute="leading" secondItem="utB-zD-kd6" secondAttribute="leading" id="cLQ-cb-es6"/>
                             <constraint firstItem="Ump-23-hgU" firstAttribute="centerY" secondItem="7Px-bZ-qhc" secondAttribute="centerY" id="dbq-1M-LQR"/>
+                            <constraint firstAttribute="trailing" secondItem="n0r-KY-dO9" secondAttribute="trailing" constant="40" id="deQ-g1-9QT"/>
                             <constraint firstItem="utB-zD-kd6" firstAttribute="width" secondItem="bit-Vw-D9S" secondAttribute="width" multiplier="0.359102" constant="3.5899999999999999" id="hFP-Nx-n4R"/>
                             <constraint firstItem="L5h-Mx-BsV" firstAttribute="leading" secondItem="bit-Vw-D9S" secondAttribute="leading" constant="10" id="hqE-l9-Tla"/>
                             <constraint firstAttribute="trailing" secondItem="L5h-Mx-BsV" secondAttribute="trailing" id="n0S-87-TZh"/>
@@ -243,6 +252,7 @@
                             <constraint firstItem="8wn-zx-Pfy" firstAttribute="leading" secondItem="utB-zD-kd6" secondAttribute="trailing" constant="15" id="qvj-Jd-Pqg"/>
                             <constraint firstItem="7Px-bZ-qhc" firstAttribute="height" secondItem="utB-zD-kd6" secondAttribute="height" id="uBi-hg-V7V"/>
                             <constraint firstItem="8wn-zx-Pfy" firstAttribute="top" secondItem="utB-zD-kd6" secondAttribute="top" id="uHN-xE-pdT"/>
+                            <constraint firstItem="n0r-KY-dO9" firstAttribute="leading" secondItem="bit-Vw-D9S" secondAttribute="leading" constant="40" id="ySA-8T-yzQ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -269,7 +279,7 @@
                 <outlet property="numberRecoveredLabel" destination="hdJ-Jc-3bA" id="euL-2U-15k"/>
                 <outlet property="numbercaseLabel" destination="1RL-X3-geL" id="s17-gN-ntV"/>
             </connections>
-            <point key="canvasLocation" x="-337" y="-79"/>
+            <point key="canvasLocation" x="-9.4202898550724647" y="-113.50446428571428"/>
         </tableViewCell>
     </objects>
     <resources>
