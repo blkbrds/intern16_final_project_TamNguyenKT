@@ -100,7 +100,7 @@ final class StatsViewModel {
 
     func viewModelForCellRank(at indexPath: IndexPath) -> RankCellModel {
         guard let item = rankCountries[safe: indexPath.row - 5] else { return RankCellModel() }
-        let viewModel = RankCellModel(rankItem: item, index: indexPath.row - 4)
+        let viewModel = RankCellModel(rankItem: item, indexCountry: indexPath.row - 4)
         return viewModel
     }
 

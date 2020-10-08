@@ -11,21 +11,21 @@ import Foundation
 final class DeadthChartCellModel {
 
     // MARK: Properties
-    var cellFour: DayOneCountry
+    var cellFourCountry: DayOneCountry
     var date: String {
-        return cellFour.date
+        return cellFourCountry.date
     }
     var deadth: Int {
-        return cellFour.deaths
+        return cellFourCountry.deaths
     }
-    var dayOneCountries: [DayOneCountry] = []
+    var dayOneCountriesInChart: [DayOneCountry] = []
     var deadthDayOneCountries: [Int] = []
     var dateCountries: [String] = []
     var dateInDeadthChart: Date = Date()
 
     // MARK: - Initial
     init(cellFour: DayOneCountry = DayOneCountry(), dayOneCountries: [DayOneCountry] = []) {
-        self.cellFour = cellFour
-        self.dayOneCountries = dayOneCountries
+        cellFourCountry = cellFour
+        dayOneCountriesInChart = dayOneCountries
     }
 }

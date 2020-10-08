@@ -39,7 +39,7 @@ final class DeadthChartTableViewCell: UITableViewCell {
 
     private func updateView() {
         guard let viewModel = viewModel else { return }
-        for item in viewModel.dayOneCountries {
+        for item in viewModel.dayOneCountriesInChart {
             viewModel.deadthDayOneCountries.append(item.deaths)
         }
         viewModel.dateInDeadthChart.addTimeInterval(TimeInterval(-24 * 60 * 60 * numberDays))

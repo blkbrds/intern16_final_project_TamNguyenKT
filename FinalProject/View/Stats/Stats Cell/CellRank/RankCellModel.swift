@@ -9,18 +9,18 @@
 import Foundation
 
 final class RankCellModel {
-    var rankItem: Country
+    var rankCountry: Country
     var nameCountry: String {
-        return rankItem.countryName
+        return rankCountry.countryName
     }
     var totalCases: Int {
-        return rankItem.totalconfirmed
+        return rankCountry.totalconfirmed
     }
     var totalReccover: Int {
-        return rankItem.totalRecovered
+        return rankCountry.totalRecovered
     }
     var totalDeadth: Int {
-        return rankItem.totalDeaths
+        return rankCountry.totalDeaths
     }
     var rateRecover: Float {
         if totalCases == 0 {
@@ -42,8 +42,8 @@ final class RankCellModel {
     var index: Int = 0
 
     // MARK: - Initial
-    init(rankItem: Country = Country(), index: Int = 0) {
-        self.rankItem = rankItem
-        self.index = index
+    init(rankItem: Country = Country(), indexCountry: Int = 0) {
+        rankCountry = rankItem
+        index = indexCountry
     }
 }
