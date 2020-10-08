@@ -23,7 +23,6 @@ final class WorldChartTableViewCell: UITableViewCell {
         super.prepareForReuse()
         subviews.forEach { item in
             item.removeFromSuperview()
-
         }
     }
 
