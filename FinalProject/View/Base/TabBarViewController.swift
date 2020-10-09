@@ -50,6 +50,17 @@ final class TabBarViewController: UITabBarController {
         configTabBar()
     }
 
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+            guard let barItemView = item.value(forKey: "view") as? UIView else { return }
+
+        let timeInterval: TimeInterval = 0.5
+            let propertyAnimator = UIViewPropertyAnimator(duration: timeInterval, dampingRatio: 0.5) {
+                barItemView.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
+            }
+            propertyAnimator.addAnimations({ barItemView.transform = .identity }, delayFactor: CGFloat(timeInterval))
+            propertyAnimator.startAnimation()
+        }
+
     // MARK: - Private methods
     private func configViewController() {
         statsNavi.tabBarItem = UITabBarItem(title: TabBar.stats.title, image: UIImage(named: TabBar.stats.image), tag: TabBar.stats.rawValue)
