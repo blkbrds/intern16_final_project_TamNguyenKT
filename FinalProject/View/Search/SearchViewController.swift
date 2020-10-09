@@ -14,8 +14,6 @@ final class SearchViewController: ViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-    private var cellIdentifier: String = "SearchCell"
-    private var titleSearch: String = "Search"
     private var viewModel = SearchViewModel()
     private lazy var searchController = UISearchController(searchResultsController: nil)
 
@@ -29,6 +27,7 @@ final class SearchViewController: ViewController {
 
     // MARK: - Override methods
     override func setUpUI() {
+        super.setUpUI()
         tableView.register(nibWithCellClass: SearchTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,7 +39,7 @@ final class SearchViewController: ViewController {
         viewModel.setupObserver()
     }
     private func configSearchController() {
-        title = titleSearch
+        title = App.TitleInNavigation.search
         navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
@@ -93,7 +92,7 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 210
+        return 195
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

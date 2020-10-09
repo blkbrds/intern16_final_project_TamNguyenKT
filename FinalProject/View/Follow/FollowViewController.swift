@@ -27,6 +27,7 @@ final class FollowViewController: ViewController {
     }
     // MARK: - Override methods
     override func setUpUI() {
+        super.setUpUI()
         tableView.register(nibWithCellClass: FollowCell.self)
         tableView.delegate = self
         tableView.dataSource = self
@@ -38,7 +39,7 @@ final class FollowViewController: ViewController {
                                         target: self,
                                         action: #selector(deleteAllFavoriteButtonTouchUpInside))
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.05882352941, green: 0.1058823529, blue: 0.2156862745, alpha: 1)
-        navigationItem.title = "Follow"
+        navigationItem.title = App.TitleInNavigation.follow
         navigationItem.rightBarButtonItem = deleteAll
     }
 
@@ -91,7 +92,7 @@ extension FollowViewController: UITableViewDataSource {
 extension FollowViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 200
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -35,6 +35,8 @@ extension App {
     }
     struct TitleInNavigation {
         static let stats = "Statistics"
+        static let search = "Search"
+        static let follow = "Following"
     }
 
     struct TitleAlert {

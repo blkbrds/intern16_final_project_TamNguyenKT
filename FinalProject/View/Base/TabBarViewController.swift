@@ -60,7 +60,7 @@ final class TabBarViewController: UITabBarController {
     }
 
     private func configTabBar() {
-        tabBar.tintColor = .black
+        tabBar.tintColor = #colorLiteral(red: 0.262745098, green: 0.6352941176, blue: 0.7058823529, alpha: 1)
         tabBar.isTranslucent = false
         tabBar.clipsToBounds = true
     }

@@ -24,7 +24,7 @@ final class ConfirmChartTableViewCell: UITableViewCell {
     // MARK: - Private methods
     private func generateDataEntries(valueArray: [Int], valueConfirmed: Int) -> [BarEntry] {
         let valueTotal = valueArray
-        let colors = [#colorLiteral(red: 0.05882352941, green: 0.1058823529, blue: 0.2156862745, alpha: 1)]
+        let colors = [#colorLiteral(red: 0.8196078431, green: 0.9568627451, blue: 0.9607843137, alpha: 1)]
         var result: [BarEntry] = []
         for i in 0 ..< valueTotal.count {
             let value = valueTotal[i]

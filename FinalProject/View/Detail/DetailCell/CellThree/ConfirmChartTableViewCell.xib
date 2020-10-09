@@ -20,15 +20,15 @@
                         <rect key="frame" x="25" y="16" width="492" height="326"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total cases for last 100 days" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTo-Ya-NFC">
-                                <rect key="frame" x="20" y="40" width="467" height="18"/>
+                                <rect key="frame" x="20" y="30" width="467" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.2156862745" green="0.18823529410000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="lTo-Ya-NFC" firstAttribute="top" secondItem="w8S-iq-S6D" secondAttribute="top" constant="40" id="JIs-GC-hvM"/>
+                            <constraint firstItem="lTo-Ya-NFC" firstAttribute="top" secondItem="w8S-iq-S6D" secondAttribute="top" constant="30" id="JIs-GC-hvM"/>
                             <constraint firstAttribute="trailing" secondItem="lTo-Ya-NFC" secondAttribute="trailing" constant="5" id="VZI-az-GzC"/>
                             <constraint firstItem="lTo-Ya-NFC" firstAttribute="leading" secondItem="w8S-iq-S6D" secondAttribute="leading" constant="20" id="ziv-ey-Us8"/>
                         </constraints>

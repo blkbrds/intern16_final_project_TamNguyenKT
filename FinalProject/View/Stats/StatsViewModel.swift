@@ -17,7 +17,7 @@ enum RowType: Int {
 
     var size: Int {
         switch self {
-        case .statsWorld:return 100
+        case .statsWorld:return 120
         case .chartWorld:return 170
         case .statsVN:return 120
         case .chartVN:return 170

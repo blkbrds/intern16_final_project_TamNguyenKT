@@ -22,7 +22,6 @@ final class Api {
     struct Stats { }
     struct Search { }
     struct Detail { }
-    struct Map { }
 }
 
 protocol URLStringConvertible {
@@ -66,9 +65,5 @@ extension Api.Path {
     struct Stats {
         static var pathWorld: String { return baseURL + worldURL }
         static var pathVN: String { return baseURL + summaryURL }
-    }
-
-    struct Map {
-        static var path: String { return baseURL + dayoneURL }
     }
 }

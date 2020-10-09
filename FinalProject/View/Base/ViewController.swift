@@ -38,6 +38,8 @@ class ViewController: UIViewController, MVVM.View {
 
   // MARK: - Private functions
   private func configNavi() {
-    // code here
+    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(cgColor: #colorLiteral(red: 0.262745098, green: 0.6352941176, blue: 0.7058823529, alpha: 1))]
+    navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9921568627, alpha: 1)
+    navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.262745098, green: 0.6352941176, blue: 0.7058823529, alpha: 1)
   }
 }

@@ -40,7 +40,7 @@ class CircleGraphic: UIView {
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
 
-        shapeLayer.strokeColor = #colorLiteral(red: 0.9175471663, green: 0.9177045822, blue: 0.917537272, alpha: 1)
+        shapeLayer.strokeColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9921568627, alpha: 1)
         shapeLayer.strokeStart = 0.0
         shapeLayer.strokeEnd = 1
         shapeLayer.lineWidth = 20
@@ -67,6 +67,7 @@ class CircleGraphic: UIView {
         let titleLabel = UILabel()
         titleLabel.frame = CGRect(x: 0, y: 70, width: bounds.width, height: bounds.width)
         titleLabel.textAlignment = .center
+        titleLabel.textColor = #colorLiteral(red: 0.2156862745, green: 0.1882352941, blue: 0.3803921569, alpha: 1)
         titleLabel.text = title
         addSubview(titleLabel)
     }
