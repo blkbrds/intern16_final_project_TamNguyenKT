@@ -105,7 +105,7 @@ final class StatsViewModel {
 
     func getRankCountry(at indexPath: IndexPath) -> DetailViewModel {
         let item = rankCountries[indexPath.row - 5]
-        let detail = DetailViewModel(cellOne: item)
+        let detail = DetailViewModel(cellOne: item, dataInRealm: item)
         return detail
     }
 }

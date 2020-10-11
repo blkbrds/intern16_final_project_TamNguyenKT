@@ -129,7 +129,7 @@ final class SearchViewModel {
 
     func getNameCountry(at indexPath: IndexPath) -> DetailViewModel {
         let item = filter[indexPath.row]
-        let detail = DetailViewModel(cellOne: item)
+        let detail = DetailViewModel(cellOne: item, dataInRealm: item)
         return detail
     }
 }

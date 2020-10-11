@@ -14,7 +14,7 @@ final class DeadthChartTableViewCell: UITableViewCell {
     @IBOutlet private weak var barChart: CustomChart!
 
     // MARK: - Properties
-    private var numberDays: Int = 99
+    private var numberDays: Int = 19
     var viewModel: DeadthChartCellModel? {
         didSet {
             updateView()

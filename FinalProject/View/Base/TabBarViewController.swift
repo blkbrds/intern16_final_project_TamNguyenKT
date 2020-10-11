@@ -13,7 +13,6 @@ final class TabBarViewController: UITabBarController {
     // MARK: - Properties
     private var statsNavi = UINavigationController(rootViewController: StatsViewController())
     private var searchNavi = UINavigationController(rootViewController: SearchViewController())
-    private var mapNavi = UINavigationController(rootViewController: MapViewController())
     private var followNavi = UINavigationController(rootViewController: FollowViewController())
 
     enum TabBar: Int {
@@ -53,9 +52,9 @@ final class TabBarViewController: UITabBarController {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
             guard let barItemView = item.value(forKey: "view") as? UIView else { return }
 
-        let timeInterval: TimeInterval = 0.5
+        let timeInterval: TimeInterval = 0.4
             let propertyAnimator = UIViewPropertyAnimator(duration: timeInterval, dampingRatio: 0.5) {
-                barItemView.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
+                barItemView.transform = CGAffineTransform.identity.scaledBy(x: 2, y: 2)
             }
             propertyAnimator.addAnimations({ barItemView.transform = .identity }, delayFactor: CGFloat(timeInterval))
             propertyAnimator.startAnimation()

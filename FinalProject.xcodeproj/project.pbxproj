@@ -35,8 +35,6 @@
 		3145405F25108C5800696E49 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145404F25108C5800696E49 /* FollowViewController.swift */; };
 		3145406025108C5800696E49 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405125108C5800696E49 /* SearchViewController.swift */; };
 		3145406125108C5800696E49 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405225108C5800696E49 /* SearchViewController.xib */; };
-		3145406225108C5800696E49 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405425108C5800696E49 /* MapViewController.swift */; };
-		3145406325108C5800696E49 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405525108C5800696E49 /* MapViewController.xib */; };
 		3145406425108C5800696E49 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405725108C5800696E49 /* TabBarViewController.swift */; };
 		3145406525108C5800696E49 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405925108C5800696E49 /* LoginViewController.xib */; };
 		3145406625108C5800696E49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405A25108C5800696E49 /* LoginViewController.swift */; };
@@ -149,8 +147,6 @@
 		3145404F25108C5800696E49 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		3145405125108C5800696E49 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3145405225108C5800696E49 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		3145405425108C5800696E49 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		3145405525108C5800696E49 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		3145405725108C5800696E49 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3145405925108C5800696E49 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3145405A25108C5800696E49 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -323,7 +319,6 @@
 				31FE1CFB2511E8EF007F8F8D /* Base */,
 				3145404D25108C5800696E49 /* Follow */,
 				3145405825108C5800696E49 /* Login */,
-				3145405325108C5800696E49 /* Map */,
 				3145405025108C5800696E49 /* Search */,
 				3145405B25108C5800696E49 /* Stats */,
 			);
@@ -350,15 +345,6 @@
 				3145405225108C5800696E49 /* SearchViewController.xib */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		3145405325108C5800696E49 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				3145405425108C5800696E49 /* MapViewController.swift */,
-				3145405525108C5800696E49 /* MapViewController.xib */,
-			);
-			path = Map;
 			sourceTree = "<group>";
 		};
 		3145405825108C5800696E49 /* Login */ = {
@@ -808,7 +794,6 @@
 				D14016E6250A335300110A13 /* LaunchScreen.storyboard in Resources */,
 				31FE1D082512FFB2007F8F8D /* SearchTableViewCell.xib in Resources */,
 				3145C8DC252EC85A006E231C /* CountryStatsTableViewCell.xib in Resources */,
-				3145406325108C5800696E49 /* MapViewController.xib in Resources */,
 				31C3A7E6252447D60001E53B /* StatsTableViewCell.xib in Resources */,
 				31C3A7D3252373DF0001E53B /* WorldChartTableViewCell.xib in Resources */,
 				31174422251994E1006D2516 /* DetailViewController.xib in Resources */,
@@ -1020,7 +1005,6 @@
 				31FE1D012511E8EF007F8F8D /* ViewController.swift in Sources */,
 				3145C8E9252EC86A006E231C /* DetailTableViewCell.swift in Sources */,
 				3143527425134B22000CBA59 /* SearchCellModel.swift in Sources */,
-				3145406225108C5800696E49 /* MapViewController.swift in Sources */,
 				D14016EA250A335300110A13 /* App.swift in Sources */,
 				D14016E8250A335300110A13 /* String.swift in Sources */,
 				D14016D2250A335300110A13 /* RequestSerializer.swift in Sources */,

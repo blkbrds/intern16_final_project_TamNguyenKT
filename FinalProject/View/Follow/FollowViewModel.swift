@@ -91,7 +91,7 @@ final class FollowViewModel {
 
     func getCountryInFollow(at indexPath: IndexPath) -> DetailViewModel {
         let item = countriesInFollow[indexPath.row]
-        let viewModel = DetailViewModel(cellOne: item)
+        let viewModel = DetailViewModel(cellOne: item, dataInRealm: item)
         return viewModel
     }
 }
