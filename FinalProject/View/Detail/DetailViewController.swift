@@ -27,6 +27,12 @@ final class DetailViewController: ViewController {
     }
 
     // MARK: - Life cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        setupNavigation()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDataInDetail()
