@@ -68,7 +68,7 @@ final class DetailViewController: ViewController {
     }
 
     @objc private func followButtonTouchUpInside() {
-        if viewModel.reation() {
+        if viewModel.handleRealm() {
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "favourite-sel"), style: .plain, target: self, action: #selector(followButtonTouchUpInside))
         } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "favourite"), style: .plain, target: self, action: #selector(followButtonTouchUpInside))

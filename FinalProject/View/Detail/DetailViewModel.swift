@@ -110,16 +110,16 @@ final class DetailViewModel: ViewModel {
         }
     }
 
-    func reation() -> Bool {
+    func handleRealm() -> Bool {
         do {
             if !checkFollow() {
                 let realm = try Realm()
                 let country = Country()
-                country.countryName = "\(self.dataInRealm.countryName)"
-                country.countryCode = "\(self.dataInRealm.countryCode)"
-                country.totalconfirmed = self.dataInRealm.totalconfirmed
-                country.totalDeaths = self.dataInRealm.totalDeaths
-                country.totalRecovered = self.dataInRealm.totalRecovered
+                country.countryName = "\(dataInRealm.countryName)"
+                country.countryCode = "\(dataInRealm.countryCode)"
+                country.totalconfirmed = dataInRealm.totalconfirmed
+                country.totalDeaths = dataInRealm.totalDeaths
+                country.totalRecovered = dataInRealm.totalRecovered
                 try realm.write {
                     realm.add(country)
                 }
