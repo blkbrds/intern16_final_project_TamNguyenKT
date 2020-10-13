@@ -24,7 +24,7 @@ final class CustomChart: UIView {
     private let topSpace: CGFloat = 10.0
 
     // contain all layers of the chart
-    private let mainLayer: CALayer = CALayer()
+    private let mainLayer: CAShapeLayer = CAShapeLayer()
 
     // contain mainLayer to support scrolling
     private let scrollView: UIScrollView = UIScrollView()
@@ -44,11 +44,6 @@ final class CustomChart: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
-    }
-
-    convenience init() {
-        self.init(frame: CGRect.zero)
         setupView()
     }
 
@@ -83,7 +78,7 @@ final class CustomChart: UIView {
     }
 
     private func drawBar(xPos: CGFloat, yPos: CGFloat, color: UIColor) {
-        let barLayer = CALayer()
+        let barLayer = CAShapeLayer()
         barLayer.frame = CGRect(x: xPos,
                                 y: yPos,
                                 width: barWidth,
