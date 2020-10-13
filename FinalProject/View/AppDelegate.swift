@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        changeRootViewController(changeRoot: .tabbar)
+        changeRootViewController(changeRoot: .login)
         window?.makeKeyAndVisible()
 
         FirebaseApp.configure()

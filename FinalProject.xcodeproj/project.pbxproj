@@ -41,7 +41,6 @@
 		3145406725108C5800696E49 /* StatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145405C25108C5800696E49 /* StatsViewController.xib */; };
 		3145406825108C5800696E49 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145405D25108C5800696E49 /* StatsViewController.swift */; };
 		3145406C251091E700696E49 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145406B251091E700696E49 /* DeviceType.swift */; };
-		314540702510948700696E49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3145406F2510948700696E49 /* GoogleService-Info.plist */; };
 		314540832511B8B200696E49 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314540822511B8B200696E49 /* Enum.swift */; };
 		3145C8CF252EC6A2006E231C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145C8CE252EC6A2006E231C /* AppDelegate.swift */; };
 		3145C8D4252EC851006E231C /* DeadthChartCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145C8D1252EC851006E231C /* DeadthChartCellModel.swift */; };
@@ -56,6 +55,7 @@
 		3145C8E9252EC86A006E231C /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145C8E6252EC869006E231C /* DetailTableViewCell.swift */; };
 		3145C8EA252EC86A006E231C /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3145C8E7252EC869006E231C /* DetailTableViewCell.xib */; };
 		3145C8EB252EC86A006E231C /* DetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3145C8E8252EC869006E231C /* DetailCellModel.swift */; };
+		3165E3992535A0E50094044F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3165E3982535A0E50094044F /* GoogleService-Info.plist */; };
 		31C3A7D2252373DF0001E53B /* WorldChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7D0252373DF0001E53B /* WorldChartTableViewCell.swift */; };
 		31C3A7D3252373DF0001E53B /* WorldChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C3A7D1252373DF0001E53B /* WorldChartTableViewCell.xib */; };
 		31C3A7D7252377260001E53B /* VNStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3A7D5252377260001E53B /* VNStatsTableViewCell.swift */; };
@@ -153,7 +153,6 @@
 		3145405C25108C5800696E49 /* StatsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsViewController.xib; sourceTree = "<group>"; };
 		3145405D25108C5800696E49 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		3145406B251091E700696E49 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
-		3145406F2510948700696E49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31454071251094F200696E49 /* FinalProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinalProject.entitlements; sourceTree = "<group>"; };
 		314540822511B8B200696E49 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		3145C8CE252EC6A2006E231C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +168,7 @@
 		3145C8E6252EC869006E231C /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		3145C8E7252EC869006E231C /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		3145C8E8252EC869006E231C /* DetailCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCellModel.swift; sourceTree = "<group>"; };
+		3165E3982535A0E50094044F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31C3A7D0252373DF0001E53B /* WorldChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldChartTableViewCell.swift; sourceTree = "<group>"; };
 		31C3A7D1252373DF0001E53B /* WorldChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorldChartTableViewCell.xib; sourceTree = "<group>"; };
 		31C3A7D5252377260001E53B /* VNStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNStatsTableViewCell.swift; sourceTree = "<group>"; };
@@ -521,7 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				31454071251094F200696E49 /* FinalProject.entitlements */,
-				3145406F2510948700696E49 /* GoogleService-Info.plist */,
+				3165E3982535A0E50094044F /* GoogleService-Info.plist */,
 				D14016CA250A335300110A13 /* Define */,
 				D14016BB250A335300110A13 /* Library */,
 				D14016A6250A335200110A13 /* Model */,
@@ -790,6 +790,7 @@
 				D14016E4250A335300110A13 /* Preview Assets.xcassets in Resources */,
 				3145405E25108C5800696E49 /* FollowViewController.xib in Resources */,
 				3145406125108C5800696E49 /* SearchViewController.xib in Resources */,
+				3165E3992535A0E50094044F /* GoogleService-Info.plist in Resources */,
 				31C3A7D8252377260001E53B /* VNStatsTableViewCell.xib in Resources */,
 				D14016E6250A335300110A13 /* LaunchScreen.storyboard in Resources */,
 				31FE1D082512FFB2007F8F8D /* SearchTableViewCell.xib in Resources */,
@@ -798,7 +799,6 @@
 				31C3A7D3252373DF0001E53B /* WorldChartTableViewCell.xib in Resources */,
 				31174422251994E1006D2516 /* DetailViewController.xib in Resources */,
 				D14016D1250A335300110A13 /* .gitkeep in Resources */,
-				314540702510948700696E49 /* GoogleService-Info.plist in Resources */,
 				3142B46525256F25006D238A /* VNChartTableViewCell.xib in Resources */,
 				3145406725108C5800696E49 /* StatsViewController.xib in Resources */,
 				31C3A7DF252428630001E53B /* CellRankTableViewCell.xib in Resources */,
