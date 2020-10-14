@@ -31,7 +31,7 @@ final class ConfirmChartTableViewCell: UITableViewCell {
             let height: Float = Float(value) / Float(valueConfirmed * 2)
             if var date = viewModel?.dateInConfirmChart {
                 date.addTimeInterval(TimeInterval(24 * 60 * 60 * i))
-                result.append(BarEntry(color: colors[i % colors.count], height: height, textValue: "\(value)", title: DateFormatter.dateFormaterInChart().string(from: date)))
+                result.append(BarEntry(color: colors[0], height: height, textValue: "\(value)", title: DateFormatter.dateFormaterInChart().string(from: date)))
             }
         }
         return result
