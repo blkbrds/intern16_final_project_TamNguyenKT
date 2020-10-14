@@ -9,7 +9,6 @@
 import GoogleSignIn
 import UIKit
 import Firebase
-import FBSDKCoreKit
 import SVProgressHUD
 
 enum RootType {
@@ -38,8 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
-
-        ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )
         return true
     }
 
