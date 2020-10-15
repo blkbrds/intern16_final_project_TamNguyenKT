@@ -13,7 +13,6 @@ final class TabBarViewController: UITabBarController {
     // MARK: - Properties
     private var statsNavi = UINavigationController(rootViewController: StatsViewController())
     private var searchNavi = UINavigationController(rootViewController: SearchViewController())
-    private var mapNavi = UINavigationController(rootViewController: MapViewController())
     private var followNavi = UINavigationController(rootViewController: FollowViewController())
 
     enum TabBar: Int {
@@ -50,6 +49,17 @@ final class TabBarViewController: UITabBarController {
         configTabBar()
     }
 
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+            guard let barItemView = item.value(forKey: "view") as? UIView else { return }
+
+        let timeInterval: TimeInterval = 0.4
+            let propertyAnimator = UIViewPropertyAnimator(duration: timeInterval, dampingRatio: 0.5) {
+                barItemView.transform = CGAffineTransform.identity.scaledBy(x: 2, y: 2)
+            }
+            propertyAnimator.addAnimations({ barItemView.transform = .identity }, delayFactor: CGFloat(timeInterval))
+            propertyAnimator.startAnimation()
+        }
+
     // MARK: - Private methods
     private func configViewController() {
         statsNavi.tabBarItem = UITabBarItem(title: TabBar.stats.title, image: UIImage(named: TabBar.stats.image), tag: TabBar.stats.rawValue)
@@ -60,7 +70,7 @@ final class TabBarViewController: UITabBarController {
     }
 
     private func configTabBar() {
-        tabBar.tintColor = .black
+        tabBar.tintColor = #colorLiteral(red: 0.262745098, green: 0.6352941176, blue: 0.7058823529, alpha: 1)
         tabBar.isTranslucent = false
         tabBar.clipsToBounds = true
     }

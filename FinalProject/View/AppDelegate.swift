@@ -6,11 +6,9 @@
 //  Copyright © 2020 Thinh Nguyen X. All rights reserved.
 //
 
-import Foundation
 import GoogleSignIn
 import UIKit
 import Firebase
-import FBSDKCoreKit
 import SVProgressHUD
 
 enum RootType {
@@ -32,15 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        changeRootViewController(changeRoot: .tabbar)
+        changeRootViewController(changeRoot: .login)
         window?.makeKeyAndVisible()
 
         FirebaseApp.configure()
 
         GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
-
-        ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )
         return true
     }
 

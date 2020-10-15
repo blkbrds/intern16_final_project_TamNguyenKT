@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol SearchTableViewCellDelegate: class {
+    func view(view: SearchTableViewCell, needPerform action: SearchTableViewCell.Action)
+}
+
 final class SearchTableViewCell: UITableViewCell {
+
+    enum Action {
+        case follow(isFollow: Bool)
+    }
 
     // MARK: - IBOulets
     @IBOutlet private weak var countryNameLabel: UILabel!
@@ -24,23 +32,28 @@ final class SearchTableViewCell: UITableViewCell {
             updateView()
         }
     }
+    weak var delegate: SearchTableViewCellDelegate?
 
     // MARK: - Private methods
     private func updateView() {
+
         countryNameLabel.text = viewModel?.countryName
         countryCodeLabel.text = viewModel?.countryCode
         if let numberCase = viewModel?.totalConfirmed {
-            numbercaseLabel.text = String(numberCase)
+            numbercaseLabel.text = "\(numberCase)"
         }
         if let numberDeadth = viewModel?.totalDeadth {
-            numberDeadthLabel.text = String(numberDeadth)
+            numberDeadthLabel.text = "\(numberDeadth)"
         }
         if let numberRecovered = viewModel?.totalRecovered {
-            numberRecoveredLabel.text = String(numberRecovered)
+            numberRecoveredLabel.text = "\(numberRecovered)"
+        }
+        if let isFollow = viewModel?.isFollow {
+            followButton.isSelected = isFollow
         }
     }
 
     @IBAction private func followButtonTouchUpInside(_ sender: UIButton) {
-        //TODO: - Handle Realm
+        delegate?.view(view: self, needPerform: .follow(isFollow: followButton.isSelected))
     }
 }

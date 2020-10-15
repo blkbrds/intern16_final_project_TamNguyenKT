@@ -34,7 +34,7 @@ final class VNChartTableViewCell: UITableViewCell {
             let circle = CircleGraphic(frame: CGRect(x: xStart,
                                                      y: (height - widthCircle) / 3,
                                                      width: widthCircle, height: widthCircle),
-                                       percent: Int(active), title: App.TitleInChart.active, color: #colorLiteral(red: 0.06033852696, green: 0.1071578935, blue: 0.2150699496, alpha: 1))
+                                       percent: Int(active), title: App.TitleInChart.active, color: #colorLiteral(red: 0.262745098, green: 0.6352941176, blue: 0.7058823529, alpha: 1))
             addSubview(circle)
         }
         if let recovered = viewModel?.recoverRate {
@@ -42,7 +42,7 @@ final class VNChartTableViewCell: UITableViewCell {
             let circle1 = CircleGraphic(frame: CGRect(x: xStart + widthCircle1 + spaceChart,
                                                       y: (height - widthCircle1) / 3,
                                                       width: widthCircle1, height: widthCircle1),
-                                        percent: Int(recovered), title: App.TitleInChart.recovered, color: #colorLiteral(red: 0.8921368718, green: 0.07753541321, blue: 0.4605419636, alpha: 1))
+                                        percent: Int(recovered), title: App.TitleInChart.recovered, color: #colorLiteral(red: 1, green: 0.8196078431, blue: 0.831372549, alpha: 1))
             addSubview(circle1)
         }
         if let deadth = viewModel?.activeRate {
@@ -50,7 +50,7 @@ final class VNChartTableViewCell: UITableViewCell {
             let circle2 = CircleGraphic(frame: CGRect(x: xStart + 2 * widthCircle2 + 2 * spaceChart,
                                                       y: (height - widthCircle2) / 3,
                                                       width: widthCircle2, height: widthCircle2),
-                                        percent: Int(deadth), title: App.TitleInChart.deadth, color: #colorLiteral(red: 0.01177123282, green: 0.786806643, blue: 0.9336950183, alpha: 1))
+                                        percent: Int(deadth), title: App.TitleInChart.deadth, color: #colorLiteral(red: 0.2156862745, green: 0.1882352941, blue: 0.3803921569, alpha: 1))
             addSubview(circle2)
         }
     }

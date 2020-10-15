@@ -17,7 +17,7 @@ enum RowType: Int {
 
     var size: Int {
         switch self {
-        case .statsWorld:return 100
+        case .statsWorld:return 120
         case .chartWorld:return 170
         case .statsVN:return 120
         case .chartVN:return 170
@@ -35,7 +35,6 @@ final class StatsViewModel {
     var itemVN: Country = Country()
 
     // MARK: - Function
-
     func getDataCellOne(completion: @escaping APICompletion) {
         Api.Path.Stats.getDataCellOne { [weak self] result in
             guard let this = self else { return }
@@ -100,13 +99,13 @@ final class StatsViewModel {
 
     func viewModelForCellRank(at indexPath: IndexPath) -> RankCellModel {
         guard let item = rankCountries[safe: indexPath.row - 5] else { return RankCellModel() }
-        let viewModel = RankCellModel(rankItem: item, indexCountry: indexPath.row - 4)
+        let viewModel = RankCellModel(rankItem: item, index: indexPath.row - 4)
         return viewModel
     }
 
     func getRankCountry(at indexPath: IndexPath) -> DetailViewModel {
         let item = rankCountries[indexPath.row - 5]
-        let detail = DetailViewModel(cellOne: item)
+        let detail = DetailViewModel(cellOne: item, dataInRealm: item)
         return detail
     }
 }

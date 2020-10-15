@@ -22,13 +22,13 @@ final class VNStatsCellModel {
         return country.totalDeaths
     }
     var newCase: Int {
-        return country.newConfirmed
+        return country.confirmNew
     }
     var newRecovered: Int {
-        return country.newRecovered
+        return country.recoverNew
     }
     var newDeadth: Int {
-        return country.newDeaths
+        return country.deadthNew
     }
     var deadRate: Float {
         if cases == 0 {

@@ -8,6 +8,7 @@
 
 import Foundation
 import MVVM
+import RealmSwift
 
 enum RowTypeInDetail: Int {
     case statsCountry
@@ -32,11 +33,13 @@ final class DetailViewModel: ViewModel {
     var confirmedInCharts: [DayOneCountry] = []
     var deadthInCharts: [DayOneCountry] = []
     var cellOne: Country
+    let dataInRealm: Country
 
     // MARK: - Initial
-    init(dayOneCountries: [DayOneCountry] = [], cellOne: Country = Country()) {
+    init(dayOneCountries: [DayOneCountry] = [], cellOne: Country = Country(), dataInRealm: Country = Country()) {
         self.dayOneCountries = dayOneCountries
         self.cellOne = cellOne
+        self.dataInRealm = dataInRealm
     }
 
     // MARK: - Function
@@ -58,7 +61,7 @@ final class DetailViewModel: ViewModel {
 
     func getItemInChart() -> [DayOneCountry] {
         var items: [DayOneCountry] = []
-        for index in dayOneCountries.count - 100 ..< dayOneCountries.count {
+        for index in dayOneCountries.count - 20 ..< dayOneCountries.count {
             items.append(dayOneCountries[index])
         }
         return items
@@ -91,5 +94,46 @@ final class DetailViewModel: ViewModel {
     func viewModelForDeadthChart(at indexPath: IndexPath) -> DeadthChartCellModel {
         let viewModel = DeadthChartCellModel(dayOneCountries: deadthInCharts)
         return viewModel
+    }
+
+    func checkFollow() -> Bool {
+        do {
+            let realm = try Realm()
+            let results = realm.objects(Country.self).filter("countryCode = '\(dataInRealm.countryCode)'")
+            if results.isEmpty {
+                return false
+            } else {
+                return true
+            }
+        } catch {
+            return false
+        }
+    }
+
+    func handleRealm() -> Bool {
+        do {
+            if !checkFollow() {
+                let realm = try Realm()
+                let country = Country()
+                country.countryName = "\(dataInRealm.countryName)"
+                country.countryCode = "\(dataInRealm.countryCode)"
+                country.totalconfirmed = dataInRealm.totalconfirmed
+                country.totalDeaths = dataInRealm.totalDeaths
+                country.totalRecovered = dataInRealm.totalRecovered
+                try realm.write {
+                    realm.add(country)
+                }
+                return true
+            } else {
+                let realm = try Realm()
+                let country = realm.objects(Country.self).filter("countryCode = '\(self.dataInRealm.countryCode)'")
+                try realm.write {
+                    realm.delete(country)
+                }
+                return false
+            }
+        } catch {
+            return false
+        }
     }
 }

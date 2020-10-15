@@ -8,35 +8,56 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-final class Country: Mappable {
+final class Country: Object, Mappable {
 
     // MARK: - Properties
-    var countryName: String = ""
-    var countryCode: String = ""
-    var newConfirmed: Int = 0
-    var totalconfirmed: Int = 0
-    var newDeaths: Int = 0
-    var totalDeaths: Int = 0
-    var newRecovered: Int = 0
-    var totalRecovered: Int = 0
+    @objc dynamic var countryName: String = ""
+    @objc dynamic var countryCode: String = ""
+    @objc dynamic var confirmNew: Int = 0
+    @objc dynamic var totalconfirmed: Int = 0
+    @objc dynamic var deadthNew: Int = 0
+    @objc dynamic var totalDeaths: Int = 0
+    @objc dynamic var recoverNew: Int = 0
+    @objc dynamic var totalRecovered: Int = 0
     var date: String = ""
+    var isFollow: Bool = false
 
     // MARK: - Initial
-    init?(map: Map) { }
+    required init?(map: Map) { }
 
-    init() { }
+    required init() { }
+
+    init(countryName: String = "", countryCode: String = "", confirmNew: Int = 0, totalconfirmed: Int = 0, deadthNew: Int = 0, totalDeadths: Int = 0, recoverNew: Int = 0, totalRecovered: Int = 0) {
+        self.countryName = countryName
+        self.countryCode = countryCode
+        self.confirmNew = confirmNew
+        self.totalconfirmed = totalconfirmed
+        self.deadthNew = deadthNew
+        self.totalDeaths = totalDeadths
+        self.recoverNew = recoverNew
+        self.totalRecovered = totalRecovered
+    }
 
     // MARK: - Function
     func mapping(map: Map) {
         countryName <- map["Country"]
         countryCode <- map["CountryCode"]
-        newConfirmed <- map["NewConfirmed"]
+        confirmNew <- map["NewConfirmed"]
         totalconfirmed <- map["TotalConfirmed"]
-        newDeaths <- map["NewDeaths"]
+        deadthNew <- map["NewDeaths"]
         totalDeaths <- map["TotalDeaths"]
-        newRecovered <- map["NewRecovered"]
+        recoverNew <- map["NewRecovered"]
         totalRecovered <- map["TotalRecovered"]
         date <- map["Date"]
+    }
+
+    override static func primaryKey() -> String? {
+        return "countryCode"
+    }
+
+    override static func ignoredProperties() -> [String] {
+        return ["date"]
     }
 }

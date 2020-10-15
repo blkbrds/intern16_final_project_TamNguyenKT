@@ -14,13 +14,13 @@ final class StatsCellModel: ViewModel {
     // MARK: - Properties
     var cellCountry: Country
     var cases: Int {
-        return cellCountry.newConfirmed
+        return cellCountry.confirmNew
     }
     var deadth: Int {
-        return cellCountry.newDeaths
+        return cellCountry.deadthNew
     }
     var recover: Int {
-        return cellCountry.newRecovered
+        return cellCountry.recoverNew
     }
     var deadRate: Float {
         if cases == 0 {

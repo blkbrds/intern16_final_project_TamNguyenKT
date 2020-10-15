@@ -22,6 +22,7 @@ final class StatsViewController: ViewController {
         super.viewDidLoad()
         configRefreshControl()
         title = App.TitleInNavigation.stats
+
     }
 
     override func setUpData() {
@@ -176,7 +177,8 @@ extension StatsViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.row > 5 else { return }
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard indexPath.row > 4 else { return }
         let vc = DetailViewController()
         vc.viewModel = viewModel.getRankCountry(at: indexPath)
         navigationController?.pushViewController(vc, animated: true)

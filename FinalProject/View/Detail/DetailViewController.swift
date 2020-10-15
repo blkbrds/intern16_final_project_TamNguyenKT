@@ -8,22 +8,40 @@
 
 import UIKit
 
+protocol DetailViewControllerDelegate: class {
+
+    func view(view: DetailViewController, needPerform action: DetailViewController.Action)
+}
+
 final class DetailViewController: ViewController {
 
     // MARK: - IBOulets
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
+    var rightButton: UIBarButtonItem?
     var viewModel: DetailViewModel = DetailViewModel()
+    weak var delegate: DetailViewControllerDelegate?
+    enum Action {
+        case follow(isFollow: Bool)
+    }
 
     // MARK: - Life cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        setupNavigation()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDataInDetail()
+        setupNavigation()
     }
 
     // MARK: - Override methods
     override func setUpUI() {
+        super.setUpUI()
         tableView.register(nibWithCellClass: CountryStatsTableViewCell.self)
         tableView.register(nibWithCellClass: DetailTableViewCell.self)
         tableView.register(nibWithCellClass: ConfirmChartTableViewCell.self)
@@ -43,6 +61,23 @@ final class DetailViewController: ViewController {
             case .failure(let error):
                 this.alert(error: error)
             }
+        }
+    }
+
+    private func setupNavigation() {
+        if viewModel.checkFollow() {
+           let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "favourite-sel"), style: .plain, target: self, action: #selector(followButtonTouchUpInside))
+            navigationItem.rightBarButtonItem = rightButton
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "favourite"), style: .plain, target: self, action: #selector(followButtonTouchUpInside))
+        }
+    }
+
+    @objc private func followButtonTouchUpInside() {
+        if viewModel.handleRealm() {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "favourite-sel"), style: .plain, target: self, action: #selector(followButtonTouchUpInside))
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "favourite"), style: .plain, target: self, action: #selector(followButtonTouchUpInside))
         }
     }
 }
