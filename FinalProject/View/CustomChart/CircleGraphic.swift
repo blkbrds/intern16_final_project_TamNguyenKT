@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class CircleGraphic: UIView {
 
     // MARK: - Properties

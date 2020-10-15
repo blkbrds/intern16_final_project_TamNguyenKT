@@ -11,16 +11,12 @@ import UIKit
 final class CustomChart: UIView {
 
     // MARK: - Properties
-    // the width of each bar
     let barWidth: CGFloat = 25.0
 
-    // space between each bar
     let space: CGFloat = 10
 
-    // space at the bottom of the bar to show the title
     private let bottomSpace: CGFloat = 20.0
 
-    // space at the top of each bar to show the value
     private let topSpace: CGFloat = 10.0
 
     // contain all layers of the chart
@@ -36,7 +32,7 @@ final class CustomChart: UIView {
                 scrollView.contentSize = CGSize(width: (barWidth + space) * CGFloat(dataEntries.count), height: self.frame.size.height)
                 mainLayer.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)
                 scrollView.showsHorizontalScrollIndicator = false
-                for i in 0..<dataEntries.count {
+                for i in 0 ..< dataEntries.count {
                     showEntry(index: i, entry: dataEntries[i])
                 }
             }
@@ -63,18 +59,14 @@ final class CustomChart: UIView {
     }
 
     private func showEntry(index: Int, entry: BarEntry) {
-        // Starting x postion of the bar
         let xPos: CGFloat = space + CGFloat(index) * (barWidth + space)
 
-        // Starting y postion of the bar
         let yPos: CGFloat = translateHeightValueToYPosition(value: entry.height)
 
         drawBar(xPos: xPos, yPos: yPos, color: entry.color)
 
-        // Draw text above the bar
         drawTextValue(xPos: xPos - space / 2, yPos: yPos - 30, textValue: entry.textValue, color: .black)
 
-        // Draw text below the bar
         drawTitle(xPos: xPos - space / 2, yPos: mainLayer.frame.height - bottomSpace + 10, title: entry.title, color: .black)
     }
 
